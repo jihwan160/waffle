@@ -89,6 +89,21 @@ const BestMenu = styled.div`
 
 const BmLeft = styled.div`
     width: 200px;
+    & ul {
+        padding: 140px 0;
+        & li {
+            padding: 20px 0;
+
+                & span {
+                    font-size: 24px;
+                    color: #1c48a7;
+                    font-weight: 600;
+                    line-height: 1;
+                    cursor: pointer;
+                }
+        }
+    }
+    
 `;
 
 const BmRight = styled.div`
@@ -98,10 +113,49 @@ const BmRight = styled.div`
 
 const BmImg = styled.div`
     width: 600px;
+
+    & .imgArea {
+        position: relative;
+        width: 100%;
+        background-image: url('./../../img/main/sec2/waffle/sec02_menu__bg01.png');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: contain;
+
+    }
+
+    & .desc {
+        padding: 30px 0;
+
+        & .descTitle {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1c48a7;
+            margin-bottom: 20px;
+        }
+    }
 `;
 
 const BmTopping = styled.div`
     width: calc(100% - 600px);
+
+    & .basicTopping {
+
+        & .btTitle {
+            font-size: 20px;
+            font-weight: 600;
+            color: #3d3d3d;
+        }
+    }
+
+    & .justTopping {
+
+        & .jtTitle {
+            font-size: 20px;
+            font-weight: 600;
+            color: #3d3d3d;
+        }
+    }
 `;
 
 
@@ -132,30 +186,32 @@ const Main = () => {
                         <BmLeft>
                             <ul>
                                 <li>
-                                    <span>a</span>
+                                    <span>Waffle</span>
                                 </li>
                                 <li>
-                                    <span>b</span>
+                                    <span>Special Waffle</span>
                                 </li>
                                 <li>
-                                    <span>c</span>
+                                    <span>Coffee / Latte</span>
                                 </li>
                                 <li>
-                                    <span>d</span>
+                                    <span>Beverage</span>
                                 </li>
                                 <li>
-                                    <span>e</span>
+                                    <span>Gelato</span>
                                 </li>
                                 <li>
-                                    <span>f</span>
+                                    <span>School Food</span>
                                 </li>
                             </ul>
                         </BmLeft>
 
                         <BmRight>
                             <BmImg>
-                                <div>
-                                    <img src='1' alt='1' />
+                                <div className='imgArea'>
+                                    <div className='img'>
+                                        <img src={`${process.env.PUBLIC_URL}img/main/sec2/waffle/sec02_menu__img01.png`} alt='img1' />
+                                    </div>
                                 </div>
                                 <div className='desc'>
                                     <h2 className='descTitle'>
@@ -173,14 +229,14 @@ const Main = () => {
     
                             <BmTopping>
                                 <div className='basicTopping'>
-                                    <h2 className='btTitle'>베이직토핑이름</h2>
+                                    <h2 className='btTitle'>Basic toppings for waffle</h2>
                                     <ul>
                                         <li>1</li>
                                         <li>2</li>
                                     </ul>
                                 </div>
                                 <div className='justTopping'>
-                                    <h2 className='jtTitle'>토핑이름</h2>
+                                    <h2 className='jtTitle'>Toppings for waffle</h2>
                                     <ul>
                                         <li>1</li>
                                         <li>2</li>
