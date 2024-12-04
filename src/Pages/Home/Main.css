@@ -1,0 +1,17 @@
+.slider-container {
+    width: calc(100% - 200px);
+    width: 600px !important;
+}
+
+.slick-slider {
+    display: block; /* 슬라이더 컨테이너가 올바르게 렌더링되도록 설정 */
+}
+
+.slick-track {
+    display: flex; /* 가로 배치를 강제 */
+    flex-direction: row; /* 세로 방향 설정 방지 */
+}
+
+.slick-slide {
+    height: auto; /* 슬라이드 높이를 자동으로 설정 */
+}
