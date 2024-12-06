@@ -407,8 +407,11 @@ const Main = () => {
                                 <div className='basicTopping'>
                                     <h2 className='btTitle'>Basic toppings for waffle</h2>
                                     <ul>
-                                        <li>1</li>
-                                        <li>2</li>
+                                        <li>
+                                            <img src={`${process.env.PUBLIC_URL}img/main/sec2/waffle/btopping/sec02_basic__topping01.png`} alt='밀크크림' />
+                                            <div>asdf</div>
+                                        </li>
+                                        
                                     </ul>
                                 </div>
                                 <div className='justTopping'>
