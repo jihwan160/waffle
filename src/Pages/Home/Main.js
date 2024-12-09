@@ -113,6 +113,7 @@ const BmLeft = styled.div`
 `;
 
 const BmRight = styled.div`
+    width: 100%;
     display: flex;
 `;
 
@@ -159,7 +160,41 @@ const BmTopping = styled.div`
             font-size: 20px;
             font-weight: 600;
             color: #3d3d3d;
+            
         }
+
+        & li {
+            position: relative;
+            cursor: pointer;
+            
+            & .btoppingFlim {
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color: rgba(0, 0, 0, .6);
+                z-index: 3;
+                opacity: 0;
+                transition: all 0.3s;
+
+                & p {
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 16px;
+                    color: #fff;
+                    font-weight: 600;
+                }
+            }
+            &:hover .btoppingFlim {
+                opacity: 1;
+                transition: all 0.3s;
+            }
+        }
+
     }
 
     & .justTopping {
@@ -409,9 +444,16 @@ const Main = () => {
                                     <ul>
                                         <li>
                                             <img src={`${process.env.PUBLIC_URL}img/main/sec2/waffle/btopping/sec02_basic__topping01.png`} alt='밀크크림' />
-                                            <div>asdf</div>
+                                            <div className='btoppingFlim'>
+                                                <p>밀크크림</p>
+                                            </div>
                                         </li>
-                                        
+                                        <li>
+                                            <img src={`${process.env.PUBLIC_URL}img/main/sec2/waffle/btopping/sec02_basic__topping01.png`} alt='밀크크림' />
+                                            <div className='btoppingFlim'>
+                                                <p>밀크크림</p>
+                                            </div>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div className='justTopping'>
