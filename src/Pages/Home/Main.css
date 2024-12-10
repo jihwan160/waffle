@@ -1,17 +1,30 @@
-.slider-container {
-    width: calc(100% - 200px);
+.btoppingSlider {
     width: 600px !important;
 }
 
-.slick-slider {
+.btoppingSlider .slick-slider {
     display: block; /* 슬라이더 컨테이너가 올바르게 렌더링되도록 설정 */
 }
 
-.slick-track {
+.btoppingSlider.slick-track {
     display: flex; /* 가로 배치를 강제 */
     flex-direction: row; /* 세로 방향 설정 방지 */
 }
 
-.slick-slide {
+.btoppingSlider .slick-slide {
     height: auto; /* 슬라이드 높이를 자동으로 설정 */
+}
+
+.jtoppingSlider {
+    width: 100%;
+}
+
+.jtoppingSlider .slick-slide {
+    width: auto !important;
+    padding: 12px 15px;
+}
+
+.slick-prev,
+.slick-next {
+    display: none !important;
 }
