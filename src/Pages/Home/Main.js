@@ -106,7 +106,7 @@ const BmLeft = styled.div`
         }
 
         & .click {
-            color: red;
+            color: #ffe019;
         }
     }
     
@@ -160,7 +160,7 @@ const BmTopping = styled.div`
             font-size: 20px;
             font-weight: 600;
             color: #3d3d3d;
-            
+            margin-bottom: 20px;
         }
 
         & .btoppingList {
@@ -210,7 +210,10 @@ const BmTopping = styled.div`
             }
         }
 
-
+    }
+    /* swaffle */
+    & .pb180 {
+        padding-bottom: 180px;
     }
 
     & .justTopping {
@@ -219,6 +222,7 @@ const BmTopping = styled.div`
             font-size: 20px;
             font-weight: 600;
             color: #3d3d3d;
+            margin-bottom: 20px;
         }
         & .jtopping {
             position: relative;
@@ -251,7 +255,41 @@ const BmTopping = styled.div`
                 opacity: 1;
             }
         }
+
+        /* swaffle */
+        & .jtoppingCover {
+            display: flex;
+
+            & .jtopping {
+                padding: 12px 15px;
+            }
+        }
     }
+
+    
+    & .menuMore {
+        margin-top: 40px;
+        display: flex;
+        justify-content: center;
+        & button {
+            width: 100%;
+            max-width: 240px;
+            height: 56px;
+            font-size: 20px;
+            font-weight: 600;
+            background: #2a56b6;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+
+            &:hover {
+                background: #123888;
+            }
+        }
+    }
+
+
 `;
 
 
@@ -422,6 +460,8 @@ const Main = () => {
 
     const Section2 = () => {
 
+        // waffle
+
         const btoppingList = [
             {
                 img : 'img/main/sec2/waffle/btopping/sec02_basic__topping01.png',
@@ -475,7 +515,90 @@ const Main = () => {
             },
         ]
 
-        const toppungList = [
+        const toppingList = [
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping01.png',
+                alt : '초코칩',
+                name : '초코칩',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping02.png',
+                alt : '해바라기씨',
+                name : '해바라기씨',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping07.png',
+                alt : '코코넛',
+                name : '코코넛',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping03.png',
+                alt : '아몬드',
+                name : '아몬드',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping09.png',
+                alt : '호두',
+                name : '호두',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping04.png',
+                alt : '블루베리',
+                name : '블루베리',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping05.png',
+                alt : '오레오',
+                name : '오레오',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping06.png',
+                alt : '치즈케이크',
+                name : '치즈케이크',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping08.png',
+                alt : '크랜베리',
+                name : '크랜베리',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping10.png',
+                alt : '크런치쿠키',
+                name : '크런치쿠키',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping11.png',
+                alt : '망고다이스',
+                name : '망고다이스',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping12.png',
+                alt : '딸기시럽',
+                name : '딸기시럽',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping13.png',
+                alt : '블루베리시럽',
+                name : '블루베리시럽',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping14.png',
+                alt : '사과잼',
+                name : '사과잼',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping15.png',
+                alt : '초코시럽',
+                name : '초코시럽',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping16.png',
+                alt : '화이트크림',
+                name : '화이트크림',
+            },
+        ]
+
+        const jtoppingList = [
             {
                 img : 'img/main/sec2/waffle/topping/sec02_custom__topping01.png',
                 alt : '초코칩',
@@ -488,38 +611,38 @@ const Main = () => {
             },
             {
                 img : 'img/main/sec2/waffle/topping/sec02_custom__topping03.png',
-                alt : '코코넛',
-                name : '코코넛',
-            },
-            {
-                img : 'img/main/sec2/waffle/topping/sec02_custom__topping04.png',
                 alt : '아몬드',
                 name : '아몬드',
             },
             {
-                img : 'img/main/sec2/waffle/topping/sec02_custom__topping05.png',
-                alt : '호두',
-                name : '호두',
-            },
-            {
-                img : 'img/main/sec2/waffle/topping/sec02_custom__topping06.png',
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping04.png',
                 alt : '블루베리',
                 name : '블루베리',
             },
             {
-                img : 'img/main/sec2/waffle/topping/sec02_custom__topping07.png',
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping05.png',
                 alt : '오레오',
                 name : '오레오',
             },
             {
-                img : 'img/main/sec2/waffle/topping/sec02_custom__topping08.png',
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping06.png',
                 alt : '치즈케이크',
                 name : '치즈케이크',
             },
             {
-                img : 'img/main/sec2/waffle/topping/sec02_custom__topping09.png',
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping07.png',
+                alt : '코코넛',
+                name : '코코넛',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping08.png',
                 alt : '크랜베리',
                 name : '크랜베리',
+            },
+            {
+                img : 'img/main/sec2/waffle/topping/sec02_custom__topping09.png',
+                alt : '호두',
+                name : '호두',
             },
             {
                 img : 'img/main/sec2/waffle/topping/sec02_custom__topping10.png',
@@ -564,6 +687,9 @@ const Main = () => {
             SetActiveTab(tab);
         }
 
+        const [currentSlider , setCurrentSlider] = useState(0);
+
+
         function SimpleSlider() {
             const settings = {
                 dots: true,
@@ -571,7 +697,8 @@ const Main = () => {
                 speed: 500,
                 slidesToShow: 1,
                 slidesToScroll: 1,
-                fade : true
+                fade : true,
+                afterChange : (index) => setCurrentSlider(index),
             };
             return (
                 <div className="slider-container btoppingSlider">
@@ -623,45 +750,150 @@ const Main = () => {
                 
             };
             return(
-                // <div>
-                //     <ul className='jtoppingList'>
-                //         <Slider {...settings}>
-                //             {toppungList.map((topping,index) => (
-                //                 <li key={index}>
-                //                     <div className='imgCover'>
-                //                         <img src={process.env.PUBLIC_URL + topping.img} alt={topping.alt} />
-                //                         <div className='jtoppingFlim'>
-                //                             <p>{topping.name}</p>
-                //                         </div>
-                //                     </div>
-                //                 </li>
-                //             ))}
-                //         </Slider>
-                //     </ul>
-                // </div>
                 <div className="slider-container jtoppingSlider">
                     <Slider {...settings}>
-                            {toppungList.map((topping,index) => (
-                                <div className='jtopping' key={index}>
-                                    <img src={process.env.PUBLIC_URL + topping.img} alt={topping.alt} />
-                                    <div className='jtoppingFlim'>
-                                        <p>{topping.name}</p>
-                                    </div>
+                        {toppingList.map((topping,index) => (
+                            <div className='jtopping' key={index}>
+                                <img src={process.env.PUBLIC_URL + topping.img} alt={topping.alt} />
+                                <div className='jtoppingFlim'>
+                                    <p>{topping.name}</p>
                                 </div>
-                            ))}
+                            </div>
+                        ))}
                     </Slider>
                 </div>
             )
         }
 
+        function JToppingSlider() {
+            const settings = {
+                dots: true,
+                infinite: false,
+                speed: 500,
+                slidesToShow: 5,
+                slidesToScroll: 5,
+                
+            };
+            return(
+                <div className="slider-container jtoppingSlider">
+                    <Slider {...settings}>
+                        {jtoppingList.map((topping,index) => (
+                            <div className='jtopping' key={index}>
+                                <img src={process.env.PUBLIC_URL + topping.img} alt={topping.alt} />
+                                <div className='jtoppingFlim'>
+                                    <p>{topping.name}</p>
+                                </div>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+            )
+        }
+
+        // swaffle
+
+        function SimpleSlider2() {
+            const settings = {
+                dots: true,
+                infinite: false,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                fade : true,
+                afterChange : (index) => setCurrentSlider(index),
+            };
+            return (
+                <div className="slider-container btoppingSlider">
+                    <Slider {...settings}>
+                        <BmImg>
+                            <div className='imgArea'>
+                                <div className='img'>
+                                    <img src={`${process.env.PUBLIC_URL}img/main/sec2/swaffle/sec02_menu__img01.png`} alt='img1' />
+                                </div>
+                            </div>
+                            <div className='desc'>
+                                <h2 className='descTitle'>
+                                    초코범벅젤라또 와플
+                                </h2>
+                                <p>
+                                    달달한 하루를 만들고 싶을 땐 <br />          
+                                    초콜릿이 범벅인 와플을 만나보세요.
+                                </p>
+                            </div>
+                        </BmImg>
+                        <BmImg>
+                            <div className='imgArea'>
+                                <div className='img'>
+                                    <img src={`${process.env.PUBLIC_URL}img/main/sec2/swaffle/sec02_menu__img02.png`} alt='img1' />
+                                </div>
+                            </div>
+                            <div className='desc'>
+                                <h2 className='descTitle'>
+                                    딸기누텔라와플
+                                </h2>
+                                <p>
+                                    바삭한 와플에 상큼한 딸기와 <br />   
+                                    달달한 초코잼을 더한 와플
+                                </p>
+                            </div>
+                        </BmImg>
+                    </Slider>
+                </div>
+            );
+        }
+
+        const btoppingList2 = [
+            {
+                img : 'img/main/sec2/swaffle/btopping/sec02_basic__topping01.png',
+                alt : '초코젤라또',
+                name : '초코젤라또',
+            },
+            {
+                img : 'img/main/sec2/swaffle/btopping/sec02_basic__topping02.png',
+                alt : '초코크림',
+                name : '초코크림',
+            },
+        ]
+
+        const btoppingList2_1 = [
+            {
+                img : 'img/main/sec2/swaffle/btopping/sec02_basic__topping03.png',
+                alt : '생크림',
+                name : '생크림',
+            },
+            {
+                img : 'img/main/sec2/swaffle/btopping/sec02_basic__topping04.png',
+                alt : '누텔라',
+                name : '누텔라',
+            },
+            {
+                img : 'img/main/sec2/swaffle/btopping/sec02_basic__topping05.png',
+                alt : '딸기',
+                name : '딸기',
+            },
+        ]
+
+        const jtopping2 = [
+            {
+                img : 'img/main/sec2/swaffle/topping/sec02_custom__topping01.png',
+                alt : '초코칩',
+                name : '초코칩',
+            },
+            {
+                img : 'img/main/sec2/swaffle/topping/sec02_custom__topping15.png',
+                alt : '초코시럽',
+                name : '초코시럽',
+            },
+        ]
+
+
         const renderContent = () => {
+
             switch(activeTab) {
                 case 'waffle' :
                     return(
                         <BmRight>
-                            
                             {SimpleSlider()}
-    
                             <BmTopping>
                                 <div className='basicTopping'>
                                     <h2 className='btTitle'>Basic toppings for waffle</h2>
@@ -680,17 +912,52 @@ const Main = () => {
                                 </div>
                                 <div className='justTopping'>
                                     <h2 className='jtTitle'>Toppings for waffle</h2>
-                                    {ToppingSlider()}
+                                    {currentSlider === 0 ? (ToppingSlider()) : (JToppingSlider())}
                                 </div>
-                                <button>
-                                    메뉴 더보기
-                                </button>
+                                <div className='menuMore'>
+                                    <button>메뉴 더보기</button>
+                                </div>
                             </BmTopping>
                         </BmRight>
                     )
-                case 'sWaffle' :
+                case 'swaffle' :
                     return(
-                        <div></div>
+                        <BmRight>
+                            {SimpleSlider2()}
+                            <BmTopping>
+                                <div className='basicTopping pb180'>
+                                    <h2 className='btTitle'>Basic toppings for waffle</h2>
+                                    <ul className='btoppingList'>
+                                        {(currentSlider === 0 ? btoppingList2 : btoppingList2_1).map((topping, index) => (
+                                            <li key={index}>
+                                                <div className='imgCover'>
+                                                    <img src={process.env.PUBLIC_URL + topping.img} alt={topping.alt} />
+                                                    <div className='btoppingFlim'>
+                                                        <p>{topping.name}</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className='justTopping'>
+                                    <h2 className='jtTitle'>Toppings for waffle</h2>
+                                    <div className='jtoppingCover'>
+                                        {jtopping2.map((topping,index) => (
+                                            <div className='jtopping' key={index}>
+                                                <img src={process.env.PUBLIC_URL + topping.img} alt={topping.alt} />
+                                                <div className='jtoppingFlim'>
+                                                    <p>{topping.name}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className='menuMore'>
+                                    <button>메뉴 더보기</button>
+                                </div>
+                            </BmTopping>
+                        </BmRight>
                     )
                 case 'coffee' :
                     return(
