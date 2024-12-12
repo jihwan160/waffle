@@ -215,6 +215,10 @@ const BmTopping = styled.div`
     & .pb180 {
         padding-bottom: 180px;
     }
+    /* sfood */
+    & .pb300 {
+        padding-bottom: 300px;
+    }
 
     & .justTopping {
 
@@ -309,154 +313,6 @@ const Main = () => {
             </Sec1>
         )
     }
-
-    // const Section2 = () => {
-
-    //     const [activeTab, SetActiveTab] = useState('waffle');
-
-    //     const handleTabClick = (tab) => {
-    //         SetActiveTab(tab);
-    //     }
-
-    //     function SimpleSlider() {
-    //         const settings = {
-    //             dots: true,
-    //             infinite: true,
-    //             speed: 500,
-    //             slidesToShow: 1,
-    //             slidesToScroll: 1
-    //         };
-    //         return (
-    //             <div className="slider-container">
-    //                 <Slider {...settings}>
-    //                     <div>
-    //                         <img src={`${process.env.PUBLIC_URL}img/main/sec2/waffle/sec02_menu__img01.png`} alt='img1' />
-    //                     </div>
-    //                     <div>
-    //                         <img src={`${process.env.PUBLIC_URL}img/main/sec2/waffle/sec02_menu__img02.png`} alt='img1' />
-    //                     </div>
-    //                 </Slider>
-    //             </div>
-    //         );
-    //     }
-
-    //     const renderContent = () => {
-    //         switch(activeTab) {
-    //             case 'waffle' :
-    //                 return(
-    //                     <BmRight>
-                            
-    //                         <BmImg>
-    //                             <div className='imgArea'>
-    //                                 <div className='img'>
-    //                                     {SimpleSlider()}
-    //                                 </div>
-                                    
-    //                             </div>
-    //                             <div className='desc'>
-    //                                 <h2 className='descTitle'>
-    //                                     크림와플
-    //                                 </h2>
-    //                                 <p>
-    //                                     10가지 와플크림 중 원하는 크림을 <br />
-    //                                     선택하여 즐겨보세요
-    //                                 </p>
-    //                                 <div className='docs'>
-    //                                     <span>1</span>
-    //                                     <span>2</span>
-    //                                 </div>
-    //                             </div>
-    //                         </BmImg>
-    
-    //                         <BmTopping>
-    //                             <div className='basicTopping'>
-    //                                 <h2 className='btTitle'>Basic toppings for waffle</h2>
-    //                                 <ul>
-    //                                     <li>1</li>
-    //                                     <li>2</li>
-    //                                 </ul>
-    //                             </div>
-    //                             <div className='justTopping'>
-    //                                 <h2 className='jtTitle'>Toppings for waffle</h2>
-    //                                 <ul>
-    //                                     <li>1</li>
-    //                                     <li>2</li>
-    //                                 </ul>
-    //                                 <div className='docs'>
-    //                                     <span>1</span>
-    //                                     <span>2</span>
-    //                                 </div>
-    //                             </div>
-    //                             <button>
-    //                                 메뉴 더보기
-    //                             </button>
-    //                         </BmTopping>
-    //                     </BmRight>
-    //                 )
-    //             case 'sWaffle' :
-    //                 return(
-    //                     <div></div>
-    //                 )
-    //             case 'coffee' :
-    //                 return(
-    //                     <div></div>
-    //                 )
-    //             case 'beverage' :
-    //                 return(
-    //                     <div></div>
-    //                 )
-    //             case 'gelato' :
-    //                 return(
-    //                     <div></div>
-    //                 )
-    //             case 'sfood' :
-    //                 return(
-    //                     <div></div>
-    //                 )
-    //             default :
-    //                 return(
-    //                     <></>
-    //                 )
-    //         }
-    //     }
-
-    //     return(
-            
-    //         <Sec2>
-    //             <div className='sec2Cover'>
-    //                 <h2 className='title'>와플대학 Best 10 Menu</h2>
-    //                 <BestMenu>
-
-    //                     <BmLeft>
-    //                         <ul>
-    //                             <li onClick={() => {handleTabClick('waffle')} } className={activeTab === 'waffle' ? 'click' : ''}>
-    //                                 Waffle
-    //                             </li>
-    //                             <li onClick={() => {handleTabClick('swaffle')} } className={activeTab === 'swaffle' ? 'click' : ''}>
-    //                                 Special Waffle
-    //                             </li>
-    //                             <li onClick={() => {handleTabClick('coffee')} } className={activeTab === 'coffee' ? 'click' : ''}>
-    //                                 Coffee / Latte
-    //                             </li>
-    //                             <li onClick={() => {handleTabClick('beverage')} } className={activeTab === 'beverage' ? 'click' : ''}>
-    //                                 Beverage
-    //                             </li>
-    //                             <li onClick={() => {handleTabClick('gelato')} } className={activeTab === 'gelato' ? 'click' : ''}>
-    //                                 Gelato
-    //                             </li>
-    //                             <li onClick={() => {handleTabClick('sfood')} } className={activeTab === 'sfood' ? 'click' : ''}>
-    //                                 School Food
-    //                             </li>
-    //                         </ul>
-    //                     </BmLeft>
-
-    //                     {renderContent()}
-
-    //                 </BestMenu>
-    //             </div>
-    //         </Sec2>
-    //     )
-    // }
 
     const Section2 = () => {
 
@@ -973,7 +829,41 @@ const Main = () => {
                     )
                 case 'sfood' :
                     return(
-                        <div></div>
+                        <BmRight>
+                            <BmImg>
+                                <div className='imgArea'>
+                                    <div className='img'>
+                                        <img src={`${process.env.PUBLIC_URL}img/main/sec2/sfood/sec02_menu__img04.png`} alt='떡꼬치' />
+                                    </div>
+                                </div>
+                                <div className='desc'>
+                                    <h2 className='descTitle'>
+                                        떡꼬치와플
+                                    </h2>
+                                    <p>
+                                        와플대학의 감성 한스푼 추가한 추억의 떡꼬치
+                                    </p>
+                                </div>
+                            </BmImg>
+                            <BmTopping>
+                                <div className='basicTopping pb300'>
+                                    <h2 className='btTitle'>와플대학! 런치 디너 타임을 책임질 든든한 학식!</h2>
+                                    <ul className='btoppingList'>
+                                        <li>
+                                            <div className='imgCover'>
+                                                <img src={`${process.env.PUBLIC_URL}img/main/sec2/sfood/sec02_recommended01__img04.png`} alt='떡꼬치'/>
+                                                <div className='btoppingFlim'>
+                                                    <p>떡꼬치와플</p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className='menuMore'>
+                                    <button>메뉴 더보기</button>
+                                </div>
+                            </BmTopping>
+                        </BmRight>
                     )
                 default :
                     return(
