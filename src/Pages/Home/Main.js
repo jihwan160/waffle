@@ -127,25 +127,37 @@ const BmImg = styled.div`
         background-repeat: no-repeat;
         background-position: 0 0;
         background-size: contain;
-
     }
+
+    
+    & .imgArea2 {
+        position: relative;
+        width: 100%;
+        background-image: url('./../../img/main/sec2/coffee/sec02_menu__bg02.png');
+        background-repeat: no-repeat;
+        background-position: 0 0;
+        background-size: contain;
+    }
+
     & .desc {
     padding: 30px 0;
     text-align: center;
-    & .descTitle {
-        font-size: 24px;
-        font-weight: 700;
-        color: #1c48a7;
-        margin-bottom: 20px;
-    }
 
-    & p {
-        font-size: 18px;
-        line-height: 1.4;
-        color: #1c48a7;
-        height: 60px;
+        & .descTitle {
+            font-size: 24px;
+            font-weight: 700;
+            color: #1c48a7;
+            margin-bottom: 20px;
+        }
+
+        & p {
+            font-size: 18px;
+            line-height: 1.4;
+            color: #1c48a7;
+            height: 60px;
+        }
+
     }
-}
 
 
 `;
@@ -198,6 +210,8 @@ const BmTopping = styled.div`
                             font-size: 16px;
                             color: #fff;
                             font-weight: 600;
+                            white-space: pre-line;
+                            text-align: center;
                         }
                     }
                     &:hover .btoppingFlim {
@@ -742,6 +756,573 @@ const Main = () => {
             },
         ]
 
+        // coffee
+
+        function SimpleSlider3() {
+            const settings = {
+                dots: true,
+                infinite: false,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                fade : true,
+                afterChange : (index) => setCurrentSlider(index),
+            };
+            return (
+                <div className="slider-container btoppingSlider">
+                    <Slider {...settings}>
+                        <BmImg>
+                            <div className='imgArea imgArea2'>
+                                <div className='img'>
+                                    <img src={`${process.env.PUBLIC_URL}img/main/sec2/coffee/sec02_menu__img01.png`} alt='아메리카노' />
+                                </div>
+                            </div>
+                            <div className='desc'>
+                                <h2 className='descTitle'>
+                                    아메리카노 (HOT / ICE)
+                                </h2>
+                                <p>
+                                    스페셜티급 고급 원두를 사용한<br />          
+                                    와플대학 아메리카노
+                                </p>
+                            </div>
+                        </BmImg>
+                        <BmImg>
+                            <div className='imgArea imgArea2'>
+                                <div className='img'>
+                                    <img src={`${process.env.PUBLIC_URL}img/main/sec2/coffee/sec02_menu__img02.png`} alt='카페라떼' />
+                                </div>
+                            </div>
+                            <div className='desc'>
+                                <h2 className='descTitle'>
+                                    카페라떼 (HOT / ICE)
+                                </h2>
+                                <p>
+                                    스페셜티급 고급 원두와 1등급 우유를 사용한<br />
+                                    와플대학 카페라떼
+                                </p>
+                            </div>
+                        </BmImg>
+                        <BmImg>
+                            <div className='imgArea imgArea2'>
+                                <div className='img'>
+                                    <img src={`${process.env.PUBLIC_URL}img/main/sec2/coffee/sec02_menu__img03.png`} alt='리얼초코라떼' />
+                                </div>
+                            </div>
+                            <div className='desc'>
+                                <h2 className='descTitle'>
+                                    리얼초코라떼 (HOT / ICE)
+                                </h2>
+                                <p>
+                                    리얼 초코파우더가 함유된 리얼초코라떼
+                                </p>
+                            </div>
+                        </BmImg>
+                    </Slider>
+                </div>
+            );
+        }
+
+        const waffleList = [
+            {
+                img : 'img/main/sec2/coffee/americano/sec02_recommended01__img01.png',
+                alt : '스노우와플',
+                name : '스노우와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/americano/sec02_recommended01__img02.png',
+                alt : '오레오누텔라와플',
+                name : '오레오누텔라\n와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/americano/sec02_recommended01__img03.png',
+                alt : '딸기누텔라와플',
+                name : '딸기누텔라\n와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/americano/sec02_recommended01__img04.png',
+                alt : '바나나누텔라와플',
+                name : '바나나누텔라\n와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/americano/sec02_recommended01__img05.png',
+                alt : '더티초코케이크와플',
+                name : '더티초코\n케이크와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/americano/sec02_recommended01__img06.png',
+                alt : '블루베리 와플',
+                name : '블루베리 와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/americano/sec02_recommended01__img07.png',
+                alt : '티라미수와플',
+                name : '티라미수와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/americano/sec02_recommended01__img08.png',
+                alt : '크런치딸기잼와플',
+                name : '크런치\n딸기잼와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/americano/sec02_recommended01__img09.png',
+                alt : '초코범벅젤라또와플',
+                name : '초코범벅\n젤라또와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/americano/sec02_recommended01__img10.png',
+                alt : '치즈범벅젤라또와플',
+                name : '치즈범벅\n젤라또와플',
+            },
+        ]
+
+        const waffleList2 = [
+            {
+                img : 'img/main/sec2/coffee/latte/sec02_recommended02__img01.png',
+                alt : '애플시나몬와플 ',
+                name : '애플시나몬\n와플 ',
+            },
+            {
+                img : 'img/main/sec2/coffee/latte/sec02_recommended02__img02.png',
+                alt : '딸기듬뿍와플',
+                name : '딸기듬뿍\n와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/latte/sec02_recommended02__img03.png',
+                alt : '팥스노우와플',
+                name : '팥스노우\n와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/latte/sec02_recommended02__img04.png',
+                alt : '모카케이크와플',
+                name : '모카케이크\n와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/latte/sec02_recommended02__img05.png',
+                alt : '허니브레드와플',
+                name : '허니브레드\n와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/latte/sec02_recommended02__img06.png',
+                alt : '딸기케이크와플',
+                name : '딸기케이크\n와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/latte/sec02_recommended02__img07.png',
+                alt : '치즈케이크&크랜베리와플',
+                name : '치즈케이크&\n크랜베리와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/latte/sec02_recommended02__img08.png',
+                alt : '고구마와플',
+                name : '고구마와플',
+            },
+            {
+                img : 'img/main/sec2/coffee/latte/sec02_recommended02__img09.png',
+                alt : '망고범벅젤라또와플 ',
+                name : '망고범벅\n젤라또와플 ',
+            },
+            {
+                img : 'img/main/sec2/coffee/latte/sec02_recommended02__img10.png',
+                alt : '딸기범벅젤라또와플',
+                name : '딸기범벅\n젤라또와플',
+            },
+        ]
+
+        // beverage
+
+        function SimpleSlider4() {
+            const settings = {
+                dots: true,
+                infinite: false,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                fade : true,
+                afterChange : (index) => setCurrentSlider(index),
+            };
+            return (
+                <div className="slider-container btoppingSlider">
+                    <Slider {...settings}>
+                        <BmImg>
+                            <div className='imgArea imgArea2'>
+                                <div className='img'>
+                                    <img src={`${process.env.PUBLIC_URL}img/main/sec2/beverage/sec02_menu__img01.png`} alt='복숭아아이스티' />
+                                </div>
+                            </div>
+                            <div className='desc'>
+                                <h2 className='descTitle'>
+                                    복숭아아이스티 (Only Ice)
+                                </h2>
+                                <p>
+                                    갈증 해소에 좋은 복숭아 아이스티
+                                </p>
+                            </div>
+                        </BmImg>
+                        <BmImg>
+                            <div className='imgArea imgArea2'>
+                                <div className='img'>
+                                    <img src={`${process.env.PUBLIC_URL}img/main/sec2/beverage/sec02_menu__img02.png`} alt='청포도에이드' />
+                                </div>
+                            </div>
+                            <div className='desc'>
+                                <h2 className='descTitle'>
+                                    청포도에이드 (Only Ice)
+                                </h2>
+                                <p>
+                                    달달한 청포도 과육이 가득한 <br />
+                                    초록빛 색상의 청포도에이드
+                                </p>
+                            </div>
+                        </BmImg>
+                        <BmImg>
+                            <div className='imgArea imgArea2'>
+                                <div className='img'>
+                                    <img src={`${process.env.PUBLIC_URL}img/main/sec2/beverage/sec02_menu__img03.png`} alt='복숭아자두스무디' />
+                                </div>
+                            </div>
+                            <div className='desc'>
+                                <h2 className='descTitle'>
+                                    복숭아자두스무디 (Only Ice)
+                                </h2>
+                                <p>
+                                    취향저격 사랑스러운 복숭아자두스무디
+                                </p>
+                            </div>
+                        </BmImg>
+                    </Slider>
+                </div>
+            );
+        }
+
+        const waffleList5 = [
+            {
+                img : 'img/main/sec2/beverage/icetea/sec02_recommended01__img01.png',
+                alt : '딸기누텔라와플',
+                name : '딸기누텔라\n와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/icetea/sec02_recommended01__img02.png',
+                alt : '바나나누텔라와플',
+                name : '바나나누텔라\n와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/icetea/sec02_recommended01__img03.png',
+                alt : '크런치딸기잼와플',
+                name : '크런치딸기잼\n와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/icetea/sec02_recommended01__img04.png',
+                alt : '베리베리케이크와플',
+                name : '베리베리\n케이크와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/icetea/sec02_recommended01__img05.png',
+                alt : '치즈범벅젤라또와플',
+                name : '치즈범벅\n젤라또와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/icetea/sec02_recommended01__img06.png',
+                alt : '블루베리범벅젤라또와플',
+                name : '블루베리범벅\n젤라또와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/icetea/sec02_recommended01__img07.png',
+                alt : '티라미수와플',
+                name : '티라미수\n와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/icetea/sec02_recommended01__img08.png',
+                alt : '딸기듬뿍와플',
+                name : '딸기듬뿍\n와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/icetea/sec02_recommended01__img09.png',
+                alt : '슈크림와플',
+                name : '슈크림와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/icetea/sec02_recommended01__img10.png',
+                alt : '슈크림크런치와플',
+                name : '슈크림크런치\n와플',
+            },
+        ]
+        
+        const waffleList6 = [
+            {
+                img : 'img/main/sec2/beverage/ade/sec02_recommended02__img01.png',
+                alt : '티라미수와플 ',
+                name : '티라미수\n와플 ',
+            },
+            {
+                img : 'img/main/sec2/beverage/ade/sec02_recommended02__img02.png',
+                alt : '허니브레드와플',
+                name : '허니브레드\n와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/ade/sec02_recommended02__img03.png',
+                alt : '슈크림와플',
+                name : '슈크림와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/ade/sec02_recommended02__img04.png',
+                alt : '밀크카라멜와플',
+                name : '밀크카라멜\n와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/ade/sec02_recommended02__img05.png',
+                alt : '팥스노우와플',
+                name : '팥스노우\n와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/ade/sec02_recommended02__img06.png',
+                alt : '17곡와플',
+                name : '17곡와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/ade/sec02_recommended02__img07.png',
+                alt : '고구마와플',
+                name : '고구마와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/ade/sec02_recommended02__img08.png',
+                alt : '딸기케이크와플',
+                name : '딸기케이크\n와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/ade/sec02_recommended02__img09.png',
+                alt : '딸기듬뿍와플 ',
+                name : '딸기듬뿍\n와플 ',
+            },
+            {
+                img : 'img/main/sec2/beverage/ade/sec02_recommended02__img10.png',
+                alt : '허니브레드와플 ',
+                name : '허니브레드\n와플 ',
+            },
+        ]
+        
+        const waffleList7 = [
+            {
+                img : 'img/main/sec2/beverage/smoodthie/sec02_recommended03__img01.png',
+                alt : '스노우와플 ',
+                name : '스노우와플 ',
+            },
+            {
+                img : 'img/main/sec2/beverage/smoodthie/sec02_recommended03__img02.png',
+                alt : '오레오누텔라와플',
+                name : '오레오누텔라\n와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/smoodthie/sec02_recommended03__img03.png',
+                alt : '애플시나몬와플',
+                name : '애플시나몬\n와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/smoodthie/sec02_recommended03__img04.png',
+                alt : '블루베리와플',
+                name : '블루베리\n와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/smoodthie/sec02_recommended03__img05.png',
+                alt : '바나나와플',
+                name : '바나나와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/smoodthie/sec02_recommended03__img06.png',
+                alt : '딸기와플',
+                name : '딸기와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/smoodthie/sec02_recommended03__img07.png',
+                alt : '메이플시나몬와플',
+                name : '메이플시나몬\n와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/smoodthie/sec02_recommended03__img08.png',
+                alt : '크림와플',
+                name : '크림와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/smoodthie/sec02_recommended03__img09.png',
+                alt : '딸기케이크와플',
+                name : '딸기케이크\n와플',
+            },
+            {
+                img : 'img/main/sec2/beverage/smoodthie/sec02_recommended03__img10.png',
+                alt : '모카케이크와플',
+                name : '모카케이크\n와플',
+            },
+        ]
+
+        const getWaffleList = () => {
+            if(currentSlider === 0) return waffleList5;
+            if(currentSlider === 1) return waffleList6;
+            return waffleList7;
+        }
+
+        // gelato
+
+        function SimpleSlider5() {
+            const settings = {
+                dots: true,
+                infinite: false,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                fade : true,
+                afterChange : (index) => setCurrentSlider(index),
+            };
+            return (
+                <div className="slider-container btoppingSlider">
+                    <Slider {...settings}>
+                        <BmImg>
+                            <div className='imgArea imgArea2'>
+                                <div className='img'>
+                                    <img src={`${process.env.PUBLIC_URL}img/main/sec2/gelato/sec02_menu__img01.png`} alt='젤라또' />
+                                </div>
+                            </div>
+                            <div className='desc'>
+                                <h2 className='descTitle'>
+                                    젤라또
+                                </h2>
+                                <p>
+                                    젤라또와플에 토핑으로 올라가는 젤라또를<br /> 
+                                    따로 즐겨보세요!
+                                </p>
+                            </div>
+                        </BmImg>
+                        <BmImg>
+                            <div className='imgArea imgArea2'>
+                                <div className='img'>
+                                    <img src={`${process.env.PUBLIC_URL}img/main/sec2/gelato/sec02_menu__img02.png`} alt='치즈케이크젤라또컵' />
+                                </div>
+                            </div>
+                            <div className='desc'>
+                                <h2 className='descTitle'>
+                                    치즈케이크젤라또컵
+                                </h2>
+                                <p>
+                                    치즈케이크가 가득한 치즈케이크젤라또컵
+                                </p>
+                            </div>
+                        </BmImg>
+                        <BmImg>
+                            <div className='imgArea imgArea2'>
+                                <div className='img'>
+                                    <img src={`${process.env.PUBLIC_URL}img/main/sec2/gelato/sec02_menu__img03.png`} alt='오레오젤라또컵' />
+                                </div>
+                            </div>
+                            <div className='desc'>
+                                <h2 className='descTitle'>
+                                    오레오젤라또컵
+                                </h2>
+                                <p>
+                                    오레오가 가득한 오레오젤라또컵
+                                </p>
+                            </div>
+                        </BmImg>
+                        <BmImg>
+                            <div className='imgArea imgArea2'>
+                                <div className='img'>
+                                    <img src={`${process.env.PUBLIC_URL}img/main/sec2/gelato/sec02_menu__img04.png`} alt='딸기케이크젤라또컵' />
+                                </div>
+                            </div>
+                            <div className='desc'>
+                                <h2 className='descTitle'>
+                                    딸기케이크젤라또컵
+                                </h2>
+                                <p>
+                                    상큼한 딸기가 가득한 딸기젤라또컵
+                                </p>
+                            </div>
+                        </BmImg>
+                    </Slider>
+                </div>
+            );
+        }
+
+        const gelatoList = [
+            {
+                img : 'img/main/sec2/gelato/flavor/sec02_basic01__topping01.png',
+                alt : '바닐라',
+                name : '바닐라',
+            },
+            {
+                img : 'img/main/sec2/gelato/flavor/sec02_basic01__topping02.png',
+                alt : '초코',
+                name : '초코',
+            },
+            {
+                img : 'img/main/sec2/gelato/flavor/sec02_basic01__topping03.png',
+                alt : '초코바닐라',
+                name : '초코바닐라',
+            },
+            {
+                img : 'img/main/sec2/gelato/flavor/sec02_basic01__topping04.png',
+                alt : '딸기',
+                name : '딸기',
+            },
+            {
+                img : 'img/main/sec2/gelato/flavor/sec02_basic01__topping05.png',
+                alt : '크림치즈',
+                name : '크림치즈',
+            },
+            {
+                img : 'img/main/sec2/gelato/flavor/sec02_basic01__topping06.png',
+                alt : '플레인요거트',
+                name : '플레인요거트',
+            },
+            {
+                img : 'img/main/sec2/gelato/flavor/sec02_basic01__topping07.png',
+                alt : '블루베리',
+                name : '블루베리',
+            },
+            {
+                img : 'img/main/sec2/gelato/flavor/sec02_basic01__topping08.png',
+                alt : '녹차',
+                name : '녹차',
+            },
+            {
+                img : 'img/main/sec2/gelato/flavor/sec02_basic01__topping09.png',
+                alt : '망고',
+                name : '망고',
+            },
+            {
+                img : 'img/main/sec2/gelato/flavor/sec02_basic01__topping10.png',
+                alt : '바나나우유',
+                name : '바나나우유',
+            },
+        ]
+
+        const gelatoList2 = [
+            {
+                img : 'img/main/sec2/gelato/topping/sec02_custom01__topping01.png',
+                alt : '딸기',
+                name : '딸기',
+            },
+            {
+                img : 'img/main/sec2/gelato/topping/sec02_custom01__topping02.png',
+                alt : '치즈케이크',
+                name : '치즈케이크',
+            },
+            {
+                img : 'img/main/sec2/gelato/topping/sec02_custom01__topping03.png',
+                alt : '크런치딸기잼',
+                name : '크런치딸기잼',
+            },
+            {
+                img : 'img/main/sec2/gelato/topping/sec02_custom01__topping04.png',
+                alt : '블루베리',
+                name : '블루베리',
+            },
+            {
+                img : 'img/main/sec2/gelato/topping/sec02_custom01__topping05.png',
+                alt : '베리베리',
+                name : '베리베리',
+            },
+        ]
+
+
 
         const renderContent = () => {
 
@@ -817,15 +1398,94 @@ const Main = () => {
                     )
                 case 'coffee' :
                     return(
-                        <div></div>
+                        <BmRight>
+                            {SimpleSlider3()}
+                            <BmTopping>
+                                <div className='basicTopping pb180'>
+                                    <h2 className='btTitle'>Recommended waffles TOP 10</h2>
+                                    <ul className='btoppingList'>
+                                        {(currentSlider === 0 ? waffleList : waffleList2).map((topping, index) => (
+                                            <li key={index}>
+                                                <div className='imgCover'>
+                                                    <img src={process.env.PUBLIC_URL + topping.img} alt={topping.alt} />
+                                                    <div className='btoppingFlim'>
+                                                        <p>{topping.name}</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className='menuMore'>
+                                    <button>메뉴 더보기</button>
+                                </div>
+                            </BmTopping>
+                        </BmRight>
                     )
                 case 'beverage' :
                     return(
-                        <div></div>
+                        <BmRight>
+                            {SimpleSlider4()}
+                            <BmTopping>
+                                <div className='basicTopping pb180'>
+                                    <h2 className='btTitle'>Recommended waffles TOP 10</h2>
+                                    <ul className='btoppingList'>
+                                        {getWaffleList().map((topping, index) => (
+                                            <li key={index}>
+                                                <div className='imgCover'>
+                                                    <img src={process.env.PUBLIC_URL + topping.img} alt={topping.alt} />
+                                                    <div className='btoppingFlim'>
+                                                        <p>{topping.name}</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className='menuMore'>
+                                    <button>메뉴 더보기</button>
+                                </div>
+                            </BmTopping>
+                        </BmRight>
                     )
                 case 'gelato' :
                     return(
-                        <div></div>
+                        <BmRight>
+                            {SimpleSlider5()}
+                            <BmTopping>
+                                <div className='basicTopping' style={{paddingBottom : currentSlider === 0 ? '0' : '195px'}}>
+                                    <h2 className='btTitle'>Recommended waffles TOP 10</h2>
+                                    <ul className='btoppingList'>
+                                        {gelatoList.map((topping, index) => (
+                                            <li key={index}>
+                                                <div className='imgCover'>
+                                                    <img src={process.env.PUBLIC_URL + topping.img} alt={topping.alt} />
+                                                    <div className='btoppingFlim'>
+                                                        <p>{topping.name}</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className='justTopping'style={{display : currentSlider === 0 ? 'block' : 'none'}}>
+                                    <h2 className='jtTitle'>Toppings for waffle</h2>
+                                    <div className='jtoppingCover'>
+                                        {(currentSlider === 0 ? gelatoList2 : []).map((topping,index) => (
+                                            <div className='jtopping' key={index}>
+                                                <img src={process.env.PUBLIC_URL + topping.img} alt={topping.alt} />
+                                                <div className='jtoppingFlim'>
+                                                    <p>{topping.name}</p>
+                                                </div>
+                                            </div>
+                                        ))}
+                                    </div>
+                                </div>
+                                <div className='menuMore'>
+                                    <button>메뉴 더보기</button>
+                                </div>
+                            </BmTopping>
+                        </BmRight>
                     )
                 case 'sfood' :
                     return(
