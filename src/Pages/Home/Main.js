@@ -6,6 +6,7 @@ import styled from 'styled-components'
 
 import './Main.css'
 
+// sec1
 
 const Sec1 = styled.div`
     padding: 120px 0;
@@ -68,6 +69,8 @@ const Sec1 = styled.div`
         }
     }
 `;
+
+// sec2
 
 const Sec2 = styled.div`
     padding: 160px 0;
@@ -310,6 +313,16 @@ const BmTopping = styled.div`
 
 `;
 
+// sec3
+
+const Sec3 = styled.div`
+    width: 100%;
+    padding: 340px 0;
+    /* background-image: url('./../../img/main/sec3/sec03_bg.png'); */
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: contain;
+`;
 
 const Main = () => {
 
@@ -1570,11 +1583,28 @@ const Main = () => {
         )
     }
 
+    const Section3 = () => {
+        return(
+            <Sec3>
+                <div className='sec3Cover'>
+                    <div className='sec3Content'>
+                        <h2 className='sec3Sub'>WAFFLE & COFFEE</h2>
+                        <div className='sec3Title'>와플대학 BRAND STORY</div>
+                        <div className='sec3Sub2'>2008년부터 시작한 대한민국 와플 NO.1,</div>
+                        <p className='sec3Desc1'>와플대학은 다양한 10가지 맛 크림과 맛있는 토핑으로 만든<br />바삭한 와플을 커플, 가족, 친구, 아이와 함께 즐길 수 있는 카페입니다.</p>
+                        <p className='sec3Desc2'>와플대학에서 K와플을 즐겨보세요!</p>
+                    </div>
+                </div>
+            </Sec3>
+        )
+    }
+
 
     return (
         <>
             <Section1 />
             <Section2 />
+            <Section3 />
         </>
     )
 }
