@@ -318,10 +318,153 @@ const BmTopping = styled.div`
 const Sec3 = styled.div`
     width: 100%;
     padding: 340px 0;
-    /* background-image: url('./../../img/main/sec3/sec03_bg.png'); */
+    background-image: url('./../../img/main/sec3/sec03_bg.png'),linear-gradient(to bottom, #fffce8, #fff);
     background-repeat: no-repeat;
     background-position: 0 0;
-    background-size: contain;
+    background-size: cover;
+
+    & .sec3Cover {
+        width: 100%;
+
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 344px;
+            height: 344px;
+            background-image: url('./../../img/main/sec3/sec03_ele01.png');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: cover;
+            position: absolute;
+            left: 9%;
+            top: -30px;
+            z-index: 2;
+        }
+
+        &::after {
+            content: '';
+            width: 532px;
+            height: 532px;
+            background-image: url('./../../img/main/sec3/sec03_ele02.png');
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: cover;
+            position: absolute;
+            right: -70px;
+            top: -90px;
+            z-index: 2;
+        }
+
+        & .sec3Area {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            & .sec3Content {
+                &::before {
+                    content: 'WAFFLE';
+                    display: block; 
+                    font-size: 100px;
+                    font-weight: bold;
+                    color: #f7eaad;
+                    position: absolute;
+                    left: 200px;
+                    top: -150px;
+                    z-index: 2;
+                }
+
+                &::after {
+                    content: 'UNIVERCITY';
+                    display: block; 
+                    font-size: 100px;
+                    font-weight: bold;
+                    color: #f7eaad;
+                    position: absolute;
+                    right: 0;
+                    bottom: -150px;
+                    z-index: 2;
+                }
+
+                & .sec3Sub {
+                    font-size: 28px;
+                    font-weight: 700;
+                    line-height: 1;
+                    margin-bottom: 20px;
+                }
+
+                & .sec3Title {
+                    font-size: 40px;
+                    font-weight: 700;
+                    color: #2a56b6;
+                    margin-bottom: 40px;
+                }
+
+                & .sec3Sub2 {
+                    font-size: 28px;
+                    font-weight: 500;
+                    margin-bottom: 40px;
+
+                    & span {
+                        font-weight: bold;
+                    }
+                }
+
+                & .sec3Desc1 {
+                    font-size: 18px;
+                    line-height: 1.8;
+                    margin-bottom: 40px;
+                }
+
+                & .sec3Desc2 {
+                    font-size: 20px;
+                    line-height: 1.8;
+                    margin-bottom: 40px;
+                }
+
+                & .sec3Link {
+                    max-width: 550px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin: 70px 0 0;
+
+                    & .sec3LinkBtn {
+                        width: 100%;
+                        height: 56px;
+                        font-size: 18px;
+                        font-weight: 600;
+                        margin: 0 10px;
+                        border-radius: 10px;
+                        border: 1px solid #2a56b6;
+                        color: #2a56b6;
+                        transition: all 0.3s;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #2a56b6;
+                            color: #fff;
+                            transition: all 0.3s;
+                        }
+                    }
+
+                    & .sec3LinkBtn2 {
+                        background: #2a56b6;
+                        color: #fff;
+                        transition: all 0.3s;
+                        &:hover {
+                            background: #123888;
+                            transition: all 0.3s;
+                        }
+                    } 
+                }
+            }
+        }
+
+        
+    }
 `;
 
 const Main = () => {
@@ -1587,12 +1730,18 @@ const Main = () => {
         return(
             <Sec3>
                 <div className='sec3Cover'>
-                    <div className='sec3Content'>
-                        <h2 className='sec3Sub'>WAFFLE & COFFEE</h2>
-                        <div className='sec3Title'>와플대학 BRAND STORY</div>
-                        <div className='sec3Sub2'>2008년부터 시작한 대한민국 와플 NO.1,</div>
-                        <p className='sec3Desc1'>와플대학은 다양한 10가지 맛 크림과 맛있는 토핑으로 만든<br />바삭한 와플을 커플, 가족, 친구, 아이와 함께 즐길 수 있는 카페입니다.</p>
-                        <p className='sec3Desc2'>와플대학에서 K와플을 즐겨보세요!</p>
+                    <div className='sec3Area'>
+                        <div className='sec3Content'>
+                            <h2 className='sec3Sub'>WAFFLE & COFFEE</h2>
+                            <div className='sec3Title'>와플대학 BRAND STORY</div>
+                            <div className='sec3Sub2'>2008년부터 시작한 대한민국 와플 <span>NO.1,</span></div>
+                            <p className='sec3Desc1'>와플대학은 다양한 10가지 맛 크림과 맛있는 토핑으로 만든<br />바삭한 와플을 커플, 가족, 친구, 아이와 함께 즐길 수 있는 카페입니다.</p>
+                            <p className='sec3Desc2'>와플대학에서 K와플을 즐겨보세요!</p>
+                            <div className='sec3Link'>
+                                <button className='sec3LinkBtn'>창업 문의</button>
+                                <button className='sec3LinkBtn sec3LinkBtn2'>브랜드 소개</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </Sec3>
