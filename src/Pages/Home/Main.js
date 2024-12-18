@@ -352,7 +352,7 @@ const Sec3 = styled.div`
             background-position: 0 0;
             background-size: cover;
             position: absolute;
-            right: -70px;
+            right: 0;
             top: -90px;
             z-index: 2;
         }
@@ -465,6 +465,58 @@ const Sec3 = styled.div`
 
         
     }
+`;
+
+const Sec4 = styled.div`
+    width: 100%;
+    padding: 160px 0;
+
+    & .sec4Cover {
+        max-width: 1630px;
+        margin: 0 auto;
+        padding: 0 15px;
+
+        & .sec4Title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #101010;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        & .sec4Tab {
+            
+            & .sec4TabList {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                & li {
+                    position: relative;
+                    padding: 0 40px;
+                    
+                    &:first-child::after {
+                        content: '';
+                        display: block;
+                        width: 2px;
+                        height: 20px;
+                        background: #000;
+                        position: absolute;
+                        right: -1px;
+                        top: 2px;
+                    }
+
+                    & p {
+                        font-size: 20px;
+                        font-weight: 500;
+                        color: #000;
+                        cursor: pointer;
+                    }
+                }   
+            }
+        }
+    }
+    
 `;
 
 const Main = () => {
@@ -1748,12 +1800,41 @@ const Main = () => {
         )
     }
 
+    const Section4 = () => {
+        return(
+            <Sec4>
+                <div className='sec4Cover'>
+                    <h2 className='sec4Title'>와플대학 BRAND NEWS</h2>
+                    <div className='sec4Tab'>
+                        <ul className='sec4TabList'>
+                            <li>
+                                <p>이벤트</p>
+                            </li>
+                            <li>
+                                <p>사회공헌</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div className='sec4Content'>
+                        <ul className='sec4ContentList'>
+                            <li>
+                                <img src='' alt=''/>
+                                <p>제목</p>
+                                <p>내용</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </Sec4>
+        )
+    }
 
     return (
         <>
             <Section1 />
             <Section2 />
             <Section3 />
+            <Section4 />
         </>
     )
 }
