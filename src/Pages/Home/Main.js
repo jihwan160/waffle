@@ -485,7 +485,7 @@ const Sec4 = styled.div`
         }
 
         & .sec4Tab {
-            
+            margin-bottom: 20px;
             & .sec4TabList {
                 display: flex;
                 align-items: center;
@@ -512,8 +512,59 @@ const Sec4 = styled.div`
                         color: #000;
                         cursor: pointer;
                     }
+                    & .on {
+                        color: #073290;
+                        border-bottom: 2px solid #073290;
+                    }
+                    
                 }   
+
+
             }
+        }
+
+        & .sec4Content {
+
+            & .sec4ContentList {
+                display: grid;
+                grid-template-columns: repeat(4,1fr);
+
+                & li {
+                    padding: 20px;
+                    cursor: pointer;
+                    & .imgCover {
+                        border-radius: 10px;
+                        overflow: hidden;
+                        & img {
+                            width: 100%;
+                            transition: all 0.3s;
+                        }
+                    }
+                    
+                    & .contentDesc {
+                        padding-top: 30px;
+
+                        & h2 {
+                            font-size: 18px;
+                            font-weight: 600;
+                            height: 50px;
+                            margin-bottom: 20px;
+                        }
+
+                        & p {
+                            font-size: 16px;
+                            font-weight: 600;
+                            color: #a8a8a8;
+                        }
+                    }
+                    &:hover img{
+                        transform: scale(1.1);
+                        transition: all 0.3s;
+                    }
+                }
+                
+            }
+
         }
     }
     
@@ -1801,6 +1852,112 @@ const Main = () => {
     }
 
     const Section4 = () => {
+
+        const [sec4Tab, SetSec4Tab] = useState('event');
+
+        const handleTabClick2 = (tab2) => {
+            SetSec4Tab(tab2)
+        }
+
+        const imgList = [
+            {
+                img : 'img/main/sec4/img1.jpg',
+                alt : 'img1',
+                title : '롯데월드캠퍼스 개교일 맞추기 이벤트!',
+                date : '2024.11.15',
+            },
+            {
+                img : 'img/main/sec4/img2.jpg',
+                alt : 'img2',
+                title : '와플대학 2024 수험표 인증 이벤트 🎉',
+                date : '2024.11.14',
+            },
+            {
+                img : 'img/main/sec4/img3.png',
+                alt : 'img3',
+                title : '와플대학 2024 수능 이벤트 📝👩🏻‍🎓',
+                date : '2024.11.14',
+            },
+            {
+                img : 'img/main/sec4/img4.jpg',
+                alt : 'img4',
+                title : '빼빼로데이 이벤트🤎',
+                date : '2024.11.12',
+            },
+        ]
+
+        const imgList2 = [
+            {
+                img : 'img/main/sec4/img5.jpg',
+                alt : 'img5',
+                title : '와플대학 X 도봉경찰서 함께 손잡고 사전등록제도 캠페인 홍보 진행',
+                date : '2024.10.21',
+            },
+            {
+                img : 'img/main/sec4/img6.jpg',
+                alt : 'img6',
+                title : '와플대학 X 광주FC, 출정식 기념 "파이팅 와플" 나눔소식',
+                date : '2024.10.18',
+            },
+            {
+                img : 'img/main/sec4/img7.jpg',
+                alt : 'img7',
+                title : '와플대학 X 인천유나이티드FC, 인성여고 "사랑의 간식" 와플 나눔소식',
+                date : '2024.09.11',
+            },
+            {
+                img : 'img/main/sec4/img8.jpg',
+                alt : 'img8',
+                title : '와플대학, 5월 가정의 달 맞아 송광종합사회복지관에 기부 진행',
+                date : '2024.06.10',
+            },
+        ]
+
+        const renderContent2 = () => {
+            switch(sec4Tab) {
+                case 'event' :
+                    return(
+                        <div className='sec4Content'>
+                            <ul className='sec4ContentList'>
+                                {imgList.map((content, index) => (
+                                    <li key={index}>
+                                        <div className='imgCover'>
+                                            <img src={process.env.PUBLIC_URL + content.img} alt={content.alt}/>
+                                        </div>
+                                        <div className='contentDesc'>
+                                            <h2>{content.title}</h2>
+                                            <p>{content.date}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )
+                case 'csr' :
+                    return(
+                        <div className='sec4Content'>
+                            <ul className='sec4ContentList'>
+                                {imgList2.map((content, index) => (
+                                    <li key={index}>
+                                        <div className='imgCover'>
+                                            <img src={process.env.PUBLIC_URL + content.img} alt={content.alt}/>
+                                        </div>
+                                        <div className='contentDesc'>
+                                            <h2>{content.title}</h2>
+                                            <p>{content.date}</p>
+                                        </div>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    )
+                default : 
+                    return(
+                        <></>
+                    )
+            }
+        }
+
         return(
             <Sec4>
                 <div className='sec4Cover'>
@@ -1808,24 +1965,26 @@ const Main = () => {
                     <div className='sec4Tab'>
                         <ul className='sec4TabList'>
                             <li>
-                                <p>이벤트</p>
+                                <p onClick={ () => handleTabClick2('event')} className={sec4Tab === 'event' ? 'on' : ''}>
+                                    이벤트
+                                </p>
                             </li>
                             <li>
-                                <p>사회공헌</p>
+                                <p onClick={ () => handleTabClick2('csr')} className={sec4Tab === 'csr' ? 'on' : ''}>
+                                    사회공헌
+                                </p>
                             </li>
                         </ul>
                     </div>
-                    <div className='sec4Content'>
-                        <ul className='sec4ContentList'>
-                            <li>
-                                <img src='' alt=''/>
-                                <p>제목</p>
-                                <p>내용</p>
-                            </li>
-                        </ul>
-                    </div>
+                    {renderContent2()}
                 </div>
             </Sec4>
+        )
+    }
+
+    const Section5 = () => {
+        return(
+            <div></div>
         )
     }
 
@@ -1835,6 +1994,7 @@ const Main = () => {
             <Section2 />
             <Section3 />
             <Section4 />
+            <Section5 />
         </>
     )
 }
