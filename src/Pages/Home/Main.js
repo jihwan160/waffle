@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 import './Main.css'
 
@@ -467,6 +467,8 @@ const Sec3 = styled.div`
     }
 `;
 
+// sec4 
+
 const Sec4 = styled.div`
     width: 100%;
     padding: 160px 0;
@@ -568,6 +570,82 @@ const Sec4 = styled.div`
         }
     }
     
+`;
+
+
+// sec5
+
+const rotate = keyframes`
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+`;
+
+const Sec5 = styled.div`
+        padding: 80px 0;
+        background: #fffce8;
+        background:rgb(161, 104, 226);
+        background-image: url('./../../img/main/sec5/sec05_bg.png');
+        background-repeat: no-repeat;
+        background-position: 0 130px;
+        background-size: contain;
+    & .sec5Cover {
+        max-width: 1630px;
+        margin: 0 auto;
+        padding: 0 15px;
+        & .sec5Content {
+            display: flex;
+            justify-content: end;
+
+            & .sec5Since {
+                padding-right: 120px;
+                text-align: right;
+
+                & .since {
+                    font-size: 28px;
+                    color: #ffdb00;
+                    font-weight: 700;
+                    position: relative;
+                    &::after {
+                        content: '';
+                        background-image: url('./../../img/main/sec5/sec00_rolling02.png');
+                        display: block;
+                        width: 88px;
+                        height: 88px;
+                        position: absolute;
+                        right: -60px;
+                        bottom: -10px;
+                        z-index: 2;
+                        animation: ${rotate} 7s linear infinite;
+                    }
+                }
+
+                & .title {
+                    margin: 20px 0 30px;
+                    font-size: 40px;
+                    font-weight: 500;
+                    color: #2a56b6;
+                }
+
+                & .desc {
+                    font-size: 24px;
+                    font-weight: 500;
+                    line-height: 1.5;
+                    color: #2a56b6;
+                    & span {
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            & .sec5Search {
+                width: 480px;
+            }
+        }
+    }
 `;
 
 const Main = () => {
@@ -1984,7 +2062,36 @@ const Main = () => {
 
     const Section5 = () => {
         return(
-            <div></div>
+            <Sec5>
+                <div className='sec5Cover'>
+                    <div className='sec5Content'>
+                        <div className='sec5Since'>
+                            <p className='since'>Since 2008</p>
+                            <h2 className='title'>1000만개의 와플, 그렇지만 단 하나의 와플!</h2>
+                            <p className='desc'>
+                                와플대학은 <span>초심을 잃지 않고</span> 첫 날 판매한 <br />
+                                첫 번째 와플을 기억하고 있습니다. <br />
+                                와플대학을 찾아주시는 분들을 위해서<br />
+                                <span>세상 단 하나뿐인 와플</span>을 드리기 위해 <br />
+                                더욱 노력하고 있습니다.
+                            </p>
+                        </div>
+                        <div className='sec5Search'>
+                            <div className='searchCover'>
+                                <h2>캠퍼스 찾기</h2>
+                                <span>와플대학 캠퍼스 위치안내 입니다.</span>
+                                <div>
+                                    <input type='text' />
+                                    <div className='searchImg'></div>
+                                </div>
+                                <div>
+                                    <button>매장 검색하기</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </Sec5>
         )
     }
 
