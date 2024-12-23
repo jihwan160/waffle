@@ -587,7 +587,6 @@ const rotate = keyframes`
 const Sec5 = styled.div`
         padding: 80px 0;
         background: #fffce8;
-        background:rgb(161, 104, 226);
         background-image: url('./../../img/main/sec5/sec05_bg.png');
         background-repeat: no-repeat;
         background-position: 0 130px;
