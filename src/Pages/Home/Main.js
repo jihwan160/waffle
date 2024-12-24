@@ -642,10 +642,117 @@ const Sec5 = styled.div`
 
             & .sec5Search {
                 width: 480px;
+                position: relative;
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 130px;
+                    background-image: url('./../../img/main/sec5/sec05_ai01.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    position: absolute;
+                    left: 0;
+                    top: -122px;
+                }
+                & .searchCover {
+                    padding: 80px 40px 20px;
+                    background: #ffdb00;
+                    border-radius: 50px;
+                    & .titleCover {
+                        margin-bottom: 20px;
+                        & .searchTitle {
+                            display: inline-block;
+                            font-size: 26px;
+                            font-weight: 700;
+                            color: #101010;
+                            line-height: 1;
+                        }
+
+                        & .searchSub {
+                            padding-left: 10px;
+                            display: inline-block;
+                            font-size: 16px;
+                            font-weight: 500;
+                            color: #515151;
+                        }
+                    }
+
+                    & #searchForm {
+                        
+                        & .searchTab {
+                            width: 100%;
+                            height: 56px;
+                            position: relative;
+                            
+                            & input {
+                                width: calc(100% - 20px);
+                                height: 100%;
+                                padding: 0;
+                                padding-left: 20px;
+                                font-size: 18px;
+                                font-weight: 500;
+                                outline: none;
+                                background: #fff;
+                                border: 1px solid #073290;
+                            }
+                            & .inputBtn {
+                                width: 54px;
+                                height: 54px;
+                                position: absolute;
+                                right: -1px;
+                                top: 2px;
+                                outline: none;
+                                border: none;
+                                cursor: pointer;
+                                &::before {
+                                    content: '';
+                                    display: block;
+                                    width: 100%;
+                                    height: 100%;
+                                    background-image: url('./../../img/main/sec5/sec05_sch.png');
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                }
+                            }
+                        }
+
+                        & .searchBtn {
+                            margin: 10px 0 20px;
+                            & button {
+                                width: 100%;
+                                height: 56px;
+                                background: #2a56b6;
+                                font-size: 20px;
+                                color: #fff;
+                                font-weight: 600;
+                                border: none;
+                                outline: none;
+                                cursor: pointer;
+                            }
+                        }
+
+                        & .searchImg {
+                            display: flex;
+                            justify-content: flex-end;
+                            position: relative;
+
+                            & .searchImgFirst {
+                                position: absolute;
+                                top: 0;
+                                left: -100px;
+                            }
+                        }
+
+                    }
+
+
+                }
             }
         }
     }
 `;
+
 
 const Main = () => {
 
@@ -2077,15 +2184,23 @@ const Main = () => {
                         </div>
                         <div className='sec5Search'>
                             <div className='searchCover'>
-                                <h2>캠퍼스 찾기</h2>
-                                <span>와플대학 캠퍼스 위치안내 입니다.</span>
-                                <div>
-                                    <input type='text' />
-                                    <div className='searchImg'></div>
+                                <div className='titleCover'>
+                                    <h2 className='searchTitle'>캠퍼스 찾기</h2>
+                                    <p className='searchSub'>와플대학 캠퍼스 위치안내 입니다.</p>
                                 </div>
-                                <div>
-                                    <button>매장 검색하기</button>
-                                </div>
+                                <form id='searchForm' method='#' action=''>
+                                    <div className='searchTab'>
+                                        <input type='text' placeholder='찾으시는 캠퍼스명을 입력해주세요.' />
+                                        <button type='submit' className='inputBtn'></button>
+                                    </div>
+                                    <div className='searchBtn'>
+                                        <button>매장 검색하기</button>
+                                    </div>
+                                    <div className='searchImg'>
+                                        <img src={`${process.env.PUBLIC_URL}img/main/sec5/sec05_ai02.png`} alt='img2' className='searchImgFirst'/>
+                                        <img src={`${process.env.PUBLIC_URL}img/main/sec5/sec05_ai03.png`} alt='img2' />
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -2093,6 +2208,7 @@ const Main = () => {
             </Sec5>
         )
     }
+
 
     return (
         <>
