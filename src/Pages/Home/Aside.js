@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 
@@ -77,10 +77,15 @@ const BottomArea = styled.div`
         }
 
         & .b_arrow {
-
+            transition: all 0.3s;
             & img {
                 width: 100%;
             }
+        }
+
+        & .b_arrowRotate {
+            transform: rotate(180deg);
+            transition: all 0.3s;
         }
 
     }
@@ -322,89 +327,147 @@ const Aside = () => {
     }
 
     const BottomSide = () => {
+
+        const [isOpen, setIsOpen] = useState(false);
+
+        const handleOpen = () => {
+            setIsOpen(!isOpen);
+        }
+
+        const cityData = {
+            "창업 희망 시/도 선택": [],
+            "서울": ["선택해주세요", "강남구", "강북구", "강서구", "관악구", "송파구"],
+            "부산": ["선택해주세요", "해운대구", "사하구", "중구", "서구", "동래구"],
+            "대구": ["선택해주세요", "달서구", "북구", "동구", "남구", "수성구"],
+            "인천": ["선택해주세요", "부평구", "남동구", "연수구", "서구", "중구"],
+            "광주": ["선택해주세요", "동구", "서구", "남구", "북구", "광산구"],
+            "대전": ["선택해주세요", "중구", "동구", "서구", "유성구", "대덕구"],
+            "울산": ["선택해주세요", "남구", "중구", "북구", "동구", "울주군"],
+            "세종": ["선택해주세요", "세종시"],
+            "경기도": ["선택해주세요", "수원시", "고양시", "용인시", "성남시", "안산시"],
+            "강원도": ["선택해주세요", "춘천시", "강릉시", "원주시", "속초시", "동해시"],
+            "충청북도": ["선택해주세요", "청주시", "충주시", "제천시", "음성군", "진천군"],
+            "충청남도": ["선택해주세요", "천안시", "아산시", "공주시", "서산시", "논산시"],
+            "전라북도": ["선택해주세요", "전주시", "익산시", "군산시", "남원시", "정읍시"],
+            "전라남도": ["선택해주세요", "여수시", "순천시", "목포시", "광양시", "나주시"],
+            "경상북도": ["선택해주세요", "포항시", "경주시", "구미시", "안동시", "김천시"],
+            "경상남도": ["선택해주세요", "창원시", "김해시", "진주시", "양산시", "거제시"],
+            "제주특별자치도": ["선택해주세요", "제주시", "서귀포시"]
+        }
+
+        const [selectedCity, setSelectCity] = useState('창업 희망 시/도 선택');
+        const [districts, setDistricts] = useState([]);
+
+        const handleCityChange = (e) => {
+            const city = e.target.value;
+            setSelectCity(city);
+            setDistricts(cityData[city]);
+        }
+
         return (
             <BottomArea>
-                <div className='BottomCover'>
+                <div className='BottomCover' onClick={handleOpen}>
                     <div className='b_logoImg'>
                         <img src={`${process.env.PUBLIC_URL}img/aside/brand_logo.png`} alt='logo' />
                     </div>
                     <p>와플대학 창업 문의</p>
-                    <div className='b_arrow'>
+                    <div className={isOpen ? 'b_arrowRotate' : 'b_arrow'}>
                         <img src={`${process.env.PUBLIC_URL}img/aside/brand_arrow.png`} alt='arrow' />
                     </div>
                 </div>
-                <div className='openTab'>
-                    <div className='openTabCover'>
-                        <div className='otcLeft'>
-                            <div className='otcLeftCover'>
-                                <h2 className='otclTitle'>1588-706</h2>
-                                <p className='otclDesc'>
-                                    어려웠던 창업! K-와플로 고민 해결! <br />
-                                    와플대학과 함께라면 행복한 창업이 시작됩니다.
-                                </p>
+                {
+                    isOpen && (
+                        <div className='openTab'>
+                            <div className='openTabCover'>
+                                <div className='otcLeft'>
+                                    <div className='otcLeftCover'>
+                                        <h2 className='otclTitle'>1588-706</h2>
+                                        <p className='otclDesc'>
+                                            어려웠던 창업! K-와플로 고민 해결! <br />
+                                            와플대학과 함께라면 행복한 창업이 시작됩니다.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className='otcRight'>
+                                    <form id='otFrm' method='#' action='#'>
+                                        <div className='frmTop'>
+                                            <div className='td frmRdi'>
+                                                <ul className='RdiList'>
+                                                    <li>
+                                                        <input type='radio' id='rdi' name='shop' value='보유' />
+                                                        <label id='rdi' for='rdi'>점포 있음</label>
+                                                    </li>
+                                                    <li>
+                                                        <input type='radio' id='rdi2' name='shop' value='미보유' checked='checked' />
+                                                        <label id='rdi2' for='rdi2' >점포 없음</label>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className='td frmSel'>
+                                                <ul className='selCover'>
+                                                    <li>
+                                                        <select id='area' value={selectedCity} onChange={handleCityChange}>
+                                                            {Object.keys(cityData).map((city) => (
+                                                                <option key={city} value={city}>
+                                                                    {city}
+                                                                </option>
+                                                            ))}
+                                                        </select>
+                                                    </li>
+                                                    <li>
+                                                        <select id='area'>
+                                                            {districts.length === 0 ? (
+                                                                <option value='창업 희망 구/군 선택'>창업 희망 구/군 선택</option>
+                                                            ) : (
+                                                                districts.map((district) => (
+                                                                    <option key={district} value={district}>
+                                                                        {district}
+                                                                    </option>
+                                                                ))
+                                                            )
+                                                            
+                                                            }
+                                                            
+                                                            
+                                                        </select>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className='td frmtxt'>
+                                                <ul className='txtCover'>
+                                                    <li>
+                                                        <input type='text' id='txt' placeholder='이름' />
+                                                    </li>
+                                                    <li>
+                                                        <input type='text' id='txt' placeholder='휴대폰번호(-없이 적으셔도됩니다)' />
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div className='td frmtxtarea'>
+                                                <div className='txtareaCover'>
+                                                    <textarea value='문의내용'></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className='frmBot'>
+                                            <div className='fbCover'>
+                                                <div className='fbl'>
+                                                    <input type='checkbox' id='chk' />
+                                                    <label id='chk' for='chk'>개인정보처리방침 동의</label>
+                                                    <span>[전문보기]</span>
+                                                </div>
+                                                <div className='fbr'>
+                                                    <button>상담신청하기</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
                             </div>
                         </div>
-                        <div className='otcRight'>
-                            <form id='otFrm' method='#' action='#'>
-                                <div className='frmTop'>
-                                    <div className='td frmRdi'>
-                                        <ul className='RdiList'>
-                                            <li>
-                                                <input type='radio' id='rdi' name='shop' value='보유' />
-                                                <label id='rdi' for='rdi'>점포 있음</label>
-                                            </li>
-                                            <li>
-                                                <input type='radio' id='rdi2' name='shop' value='미보유' checked='checked' />
-                                                <label id='rdi2' for='rdi2' >점포 없음</label>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div className='td frmSel'>
-                                        <ul className='selCover'>
-                                            <li>
-                                                <select id='area'>
-                                                    <option>서울시</option>
-                                                </select>
-                                            </li>
-                                            <li>
-                                                <select id='area'>
-                                                    <option>동대문구</option>
-                                                </select>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div className='td frmtxt'>
-                                        <ul className='txtCover'>
-                                            <li>
-                                                <input type='text' id='txt' placeholder='이름' />
-                                            </li>
-                                            <li>
-                                                <input type='text' id='txt' placeholder='휴대폰번호(-없이 적으셔도됩니다)' />
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div className='td frmtxtarea'>
-                                        <div className='txtareaCover'>
-                                            <textarea value='문의내용'></textarea>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className='frmBot'>
-                                    <div className='fbCover'>
-                                        <div className='fbl'>
-                                            <input type='checkbox' id='chk' />
-                                            <label id='chk' for='chk'>개인정보처리방침 동의</label>
-                                            <span>[전문보기]</span>
-                                        </div>
-                                        <div className='fbr'>
-                                            <button>상담신청하기</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                    )
+                }
+                
             </BottomArea>
         )
     }
