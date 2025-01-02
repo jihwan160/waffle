@@ -328,12 +328,21 @@ const Aside = () => {
 
     const BottomSide = () => {
 
+        // 라디오 버튼
+        const [shopStatus , setShopStatus] = useState('미보유');
+
+        const handleShopStatus = (event) => {
+            setShopStatus(event.target.value)
+        }
+
+        // 탭 오픈
         const [isOpen, setIsOpen] = useState(false);
 
         const handleOpen = () => {
             setIsOpen(!isOpen);
         }
 
+        // 도시 데이터
         const cityData = {
             "창업 희망 시/도 선택": [],
             "서울": ["선택해주세요", "강남구", "강북구", "강서구", "관악구", "송파구"],
@@ -394,12 +403,12 @@ const Aside = () => {
                                             <div className='td frmRdi'>
                                                 <ul className='RdiList'>
                                                     <li>
-                                                        <input type='radio' id='rdi' name='shop' value='보유' />
-                                                        <label id='rdi' for='rdi'>점포 있음</label>
+                                                        <input type='radio' id='rdi' name='shop' value='보유' checked={shopStatus === '보유'} onChange={handleShopStatus} />
+                                                        <label for='rdi'>점포 있음</label>
                                                     </li>
                                                     <li>
-                                                        <input type='radio' id='rdi2' name='shop' value='미보유' checked='checked' />
-                                                        <label id='rdi2' for='rdi2' >점포 없음</label>
+                                                        <input type='radio' id='rdi2' name='shop' value='미보유' checked={shopStatus === '미보유'} onChange={handleShopStatus} />
+                                                        <label for='rdi2' >점포 없음</label>
                                                     </li>
                                                 </ul>
                                             </div>

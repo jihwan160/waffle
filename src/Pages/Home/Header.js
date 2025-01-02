@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components'
 
 
@@ -179,6 +180,8 @@ const Header = () => {
             SetIsHover(false)
         }
 
+        const navigate = useNavigate(null);
+
         return(
             <GnbCover>
                 <div className='GnbArea' onMouseEnter={handleEnter} onMouseLeave={handleLeave}>
@@ -198,9 +201,9 @@ const Header = () => {
                             </ul>
                         </li>
                         <li className='GnbListTab'>
-                            <p>MENU</p>
+                            <p onClick={ () => {navigate('/new')}}>MENU</p>
                             <ul className={`subGnbList ${Ishover ? 'active' : ''}`}>
-                                <li>
+                                <li onClick={ () => {navigate('/new')}}>
                                     <span>신메뉴</span>
                                 </li>
                                 <li>
@@ -229,7 +232,7 @@ const Header = () => {
                             </ul>
                         </li>
                     </ul>
-                    <div className='logo'>
+                    <div className='logo' onClick={()=>{navigate('/')}}>
                         <img src={`${process.env.PUBLIC_URL}img/logo.svg`} alt='logo'/>
                     </div>
                     <ul className='GnbList'>
