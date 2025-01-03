@@ -52,6 +52,86 @@ const NewArea = styled.div`
                 position: absolute;
                 right: 15px;
                 bottom: 120px;
+
+                & ul {
+                    margin: -10px 0;
+                    text-align: right;
+                    & li {
+                        font-size: 22px;
+                        font-weight: 600;
+                        color: #b8b8b8;
+                        padding: 10px 0;
+                        cursor: pointer;
+                    }
+                    & .on {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    & .content {
+        padding: 120px 0;
+        & .contentCover {
+            max-width: 1310px;
+            margin: 0 auto;
+            padding: 0 15px;
+
+            & .contentBtn {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-bottom: 80px;
+                & .contentBtnCover {
+                    max-width: 560px;
+                    display: flex;
+                    width: 100%;
+                    & button {
+                        width: 100%;
+                        height: 56px;
+                        margin: 0 20px;
+                        outline: none;
+                        border: 1px solid #2a56b6;
+                        background: #2a56b6;
+                        color: #fff;
+                        font-size: 18px;
+                        font-weight: 500;
+                        border-radius: 10px;
+                        cursor: pointer;
+                        &:hover {
+                            background: #123888;
+                            
+                        }
+
+                        &:last-child {
+                            background: #ffde04;
+                            border: 1px solid #ffde04;
+                            color: #202020;
+                            
+                            &:hover {
+                                background: #ffea60;
+                            }
+                        }
+                    }
+                }
+            }
+
+            & .contentImg {
+
+                & .contentImgCover {
+                    width: 100%;
+                    height: 100%;
+                    background: #fff;
+                    border: 1px solid #e5e5e5;
+                    padding: 80px 100px;
+                    box-sizing: border-box;
+                    & img {
+                        width: 100%;
+                        max-width: 100%;
+                        display: block;d
+                    }
+                }
             }
         }
     }
@@ -60,6 +140,13 @@ const NewArea = styled.div`
 const New = () => {
 
     const NewMenu = () => {
+
+        // const [tabClick, setTabClick] = useState(false);
+
+        // const handleClick = () => {
+        //     setTabClick(!tabClick);
+        // }
+
         return(
             <NewArea>
                 <div className='visual'>
@@ -81,7 +168,20 @@ const New = () => {
                     </div>
                 </div>
                 <div className='content'>
-
+                    <div className='contentCover'>
+                        <div className='contentBtn'>
+                            <div className='contentBtnCover'>
+                                <button>신메뉴 보러가기</button>
+                                <button>카카오톡 선물하기</button>
+                            </div>
+                        </div>
+                        <div className='contentImg'>
+                            <div className='contentImgCover'>
+                                <img src={`${process.env.PUBLIC_URL}img/new/img1.png`} alt='img1' />
+                                <img src={`${process.env.PUBLIC_URL}img/new/img2.png`} alt='img2' />
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </NewArea>
         )
