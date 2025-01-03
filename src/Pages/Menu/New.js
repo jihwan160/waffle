@@ -129,7 +129,7 @@ const NewArea = styled.div`
                     & img {
                         width: 100%;
                         max-width: 100%;
-                        display: block;d
+                        display: block;
                     }
                 }
             }
