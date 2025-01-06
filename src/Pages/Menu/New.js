@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from '../Home/Header'
 import Footer from '../Home/Footer'
 import Aside from '../Home/Aside'
 import styled from 'styled-components'
 
-import bg from './../../img/menu/new/sv2-1.png'
+// import bg from './../../img/menu/new/sv2-1.png'
 
 
 const NewArea = styled.div`
@@ -13,7 +13,6 @@ const NewArea = styled.div`
     & .visual {
         width: 100%;
         height: 720px;
-        background-image: url(${bg});
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -138,51 +137,104 @@ const NewArea = styled.div`
 `;
 
 const New = () => {
+    
 
     const NewMenu = () => {
 
-        // const [tabClick, setTabClick] = useState(false);
+        const [tabClick, setTabClick] = useState('new');
 
-        // const handleClick = () => {
-        //     setTabClick(!tabClick);
-        // }
+        const handleClick = (tab) => {
+            setTabClick(tab);
+        }
+
+        const tabData = {
+            new : {
+                title : '신메뉴',
+                subTitle : 'NEW MENU',
+                desc : '와플대학의 다양한 수업과 프로모션을 소개합니다.',
+                bgImg : '/img/menu/new/sv2-1.png',
+            },
+            waffle : {
+                title : '와플',
+                subTitle : 'WAFFLE',
+                desc : '와플대학의 다양한 와플학과를 소개합니다.',
+                bgImg : '/img/menu/waffle/sv2-2.png',
+            },
+            drink : {
+                title : '음료',
+                subTitle : 'BEVERAGE',
+                desc : '와플대학의 즐거운 음료학과를 소개합니다.',
+                bgImg : '/img/menu/drink/sv2-3.png',
+            },
+            gelato : {
+                title : '젤라또',
+                subTitle : 'GELATO',
+                desc : '와플대학의 시원한 젤라또학과를 소개합니다.',
+                bgImg : '/img/menu/gelato/sv2-4.png',
+            },
+            sfood : {
+                title : '스쿨푸드',
+                subTitle : 'SCHOOL FOOD',
+                desc : '와플대학의 스쿨푸드를 소개합니다.',
+                bgImg : '/img/menu/sfood/sv2-5.png',
+            },
+        }
+
+        const renderContent = () => {
+            switch (tabClick) {
+                case 'new':
+                    return(
+                        <div className='content'>
+                            <div className='contentCover'>
+                                <div className='contentBtn'>
+                                    <div className='contentBtnCover'>
+                                        <button>신메뉴 보러가기</button>
+                                        <button>카카오톡 선물하기</button>
+                                    </div>
+                                </div>
+                                <div className='contentImg'>
+                                    <div className='contentImgCover'>
+                                        <img src={`${process.env.PUBLIC_URL}img//menu/new/img1.png`} alt='img1' />
+                                        <img src={`${process.env.PUBLIC_URL}img/menu/new/img2.png`} alt='img2' />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )
+                case 'waffle':
+                    return(
+                        <div></div>
+                    )
+                default:
+                    return(
+                        <div></div>
+                    )
+            }
+        }
+
+        const currentTab = tabData[tabClick] || tabData.default;
 
         return(
             <NewArea>
-                <div className='visual'>
+                <div className='visual' style={{backgroundImage : `url(${currentTab.bgImg})`}}>
                     <div className='visualCover'>
                         <div className='titleArea'>
-                            <h2>신메뉴</h2>
-                            <span>NEW MENU</span>
-                            <p>와플대학의 다양한 수업과 프로모션을 소개합니다</p>
+                            <h2>{currentTab.title}</h2>
+                            <span>{currentTab.subTitle}</span>
+                            <p>{currentTab.desc}</p>
                         </div>
                         <div className='tabArea'>
                             <ul>
-                                <li>신메뉴</li>
-                                <li>와플</li>
-                                <li>음료</li>
-                                <li>젤라또</li>
-                                <li>스쿨푸드</li>
+                                <li className={tabClick === 'new' ? 'on' : ''} onClick={()=>{handleClick('new')}}>신메뉴</li>
+                                <li className={tabClick === 'waffle' ? 'on' : ''} onClick={()=>{handleClick('waffle')}}>와플</li>
+                                <li className={tabClick === 'drink' ? 'on' : ''} onClick={()=>{handleClick('drink')}}>음료</li>
+                                <li className={tabClick === 'gelato' ? 'on' : ''} onClick={()=>{handleClick('gelato')}}>젤라또</li>
+                                <li className={tabClick === 'sfood' ? 'on' : ''} onClick={()=>{handleClick('sfood')}}>스쿨푸드</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-                <div className='content'>
-                    <div className='contentCover'>
-                        <div className='contentBtn'>
-                            <div className='contentBtnCover'>
-                                <button>신메뉴 보러가기</button>
-                                <button>카카오톡 선물하기</button>
-                            </div>
-                        </div>
-                        <div className='contentImg'>
-                            <div className='contentImgCover'>
-                                <img src={`${process.env.PUBLIC_URL}img/new/img1.png`} alt='img1' />
-                                <img src={`${process.env.PUBLIC_URL}img/new/img2.png`} alt='img2' />
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {renderContent()}
             </NewArea>
         )
     }
