@@ -4,7 +4,6 @@ import Footer from '../Home/Footer'
 import Aside from '../Home/Aside'
 import styled from 'styled-components'
 
-// import bg from './../../img/menu/new/sv2-1.png'
 
 
 const NewArea = styled.div`

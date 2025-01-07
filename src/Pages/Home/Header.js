@@ -201,9 +201,9 @@ const Header = () => {
                             </ul>
                         </li>
                         <li className='GnbListTab'>
-                            <p onClick={ () => {navigate('/new')}}>MENU</p>
+                            <p onClick={ () => {navigate('/menu')}}>MENU</p>
                             <ul className={`subGnbList ${Ishover ? 'active' : ''}`}>
-                                <li onClick={ () => {navigate('/new')}}>
+                                <li onClick={ () => {navigate('/menu')}}>
                                     <span>신메뉴</span>
                                 </li>
                                 <li>

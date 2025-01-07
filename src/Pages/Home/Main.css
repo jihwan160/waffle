@@ -26,7 +26,6 @@
     padding: 12px 15px;
 }
 
-.jtoppingSlider 
 
 
 /* 공통 */
@@ -34,15 +33,19 @@
 .slick-next {
     display: none !important;
 }
-.slick-dots {
+.jtoppingSlider .slick-dots,
+.btoppingSlider .slick-dots{
     bottom: -18px;
 }
-.slick-dots li {
+.jtoppingSlider .slick-dots li,
+.btoppingSlider .slick-dots li {
     margin: 0;
 }
-.slick-dots li button:before {
+.jtoppingSlider .slick-dots li button:before,
+.btoppingSlider .slick-dots li button:before {
     font-size: 8px;
 }
-.slick-dots li.slick-active button:before {
+.jtoppingSlider .slick-dots li.slick-active button:before,
+.btoppingSlider .slick-dots li.slick-active button:before {
     color: #ffdb00
 }

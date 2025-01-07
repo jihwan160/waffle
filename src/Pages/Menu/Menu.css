@@ -1,0 +1,42 @@
+
+
+.newWaffleContainer .slick-slider {
+    display: block; /* 슬라이더 컨테이너가 올바르게 렌더링되도록 설정 */
+}
+
+.newWaffleContainer .slick-track {
+    /* width: 100% !important; */
+    display: flex; /* 가로 배치를 강제 */
+    flex-direction: row; /* 세로 방향 설정 방지 */
+}
+
+.newWaffleContainer .slick-slide {
+    margin-right: 40px;
+}
+
+.slick-prev,
+.slick-next {
+    display: none !important;
+}
+
+
+
+.newWaffleContainer .slick-dots {
+    bottom: -35px;
+}
+
+.newWaffleContainer .slick-dots li {
+    margin: 0;
+}
+
+.newWaffleContainer .slick-dots li button {
+
+}
+
+.newWaffleContainer .slick-dots li button:before {
+    font-size: 10px;
+}
+
+.newWaffleContainer .slick-dots li.slick-active button:before {
+    color: #2a56b6;
+}
