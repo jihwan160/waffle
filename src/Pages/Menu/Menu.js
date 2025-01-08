@@ -188,7 +188,7 @@ const NewArea = styled.div`
                     align-items: center;
                     & .left {
                         width: 240px;
-                        & ul {
+                        & .tabList {
                             position: relative;
                             width: 100%;
                             height: 100%;
@@ -198,14 +198,17 @@ const NewArea = styled.div`
                                 width: 220px;
                                 height: 178px;
                                 display: block;
-                                background-image: url('/img/menu/waffle/prd_new__img.png');
+                                background-image: url('/img/menu/waffle/prd_best__img.png');
                                 background-repeat: no-repeat;
                                 background-position: 0 0;
                                 background-size: contain;
                                 position: relative;
                                 left: 0;
                                 bottom: -40px;
+                                transition: all 0.6s;
                             }
+                            
+                        }
 
                             & li {
                                 padding: 20px 0;
@@ -215,17 +218,43 @@ const NewArea = styled.div`
                                     font-weight: 600;
                                     display: flex;
                                     align-items: center;
+                                    cursor: pointer;
                                     &::before {
                                         content: '';
-                                        width: 36px;
+                                        width: 0px;
                                         height: 4px;
                                         display: block;
                                         background: #000;
                                         margin-right: 16px;
+                                        transition: all 0.3s;
                                     }
                                 }
                             }
+                            & .tabOn {
+                                color: #ffe32c;
+
+                                &::before {
+                                    width: 36px;
+                                    background: #ffe32c;
+                                    transition: all 0.3s;
+                                }
+                            }
+                            & .tabOn2 {
+                                color: #267dff;
+
+                                &::before {
+                                    width: 36px;
+                                    background: #267dff;
+                                    transition: all 0.3s;
+                                }
+                            }
+                            
                         }
+                        & .bgCh {
+                            &::after {
+                                background-image: url('/img/menu/waffle/prd_new__img.png') !important;
+                                transition: all 0.6s;
+                            }
                     }
                     & .right {
                         width: calc(100% - 240px);
@@ -423,6 +452,132 @@ const Menu = () => {
             );
         }
 
+        // 베스트 와플 리스트
+        const bestWaffleList = [
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/waffle/bestWaffle/img1.png',
+                alt : 'B.C.D 샌드와플',
+                title : 'B.C.D 샌드와플',
+                desc : 'Scallion Bacon Cream Cheese Sand Waffle',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/waffle/bestWaffle/img2.png',
+                alt : '사과는 햄복햄 샌드와플',
+                title : '사과는 햄복햄 샌드와플',
+                desc : 'Double ham & Apple',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/waffle/bestWaffle/img3.png',
+                alt : '에그마요 샌드와플',
+                title : '에그마요 샌드와플',
+                desc : 'Egg Mayo',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/waffle/bestWaffle/img4.png',
+                alt : '오레오누텔라와플',
+                title : '오레오누텔라와플',
+                desc : 'Oreo Nutella Waffle',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/waffle/bestWaffle/img5.png',
+                alt : '초코범벅젤라또와플',
+                title : '초코범벅젤라또와플',
+                desc : 'Chocolate Bomb Gelato Waffle',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/waffle/bestWaffle/img6.png',
+                alt : '치즈케이크누텔라젤라또와플',
+                title : '치즈케이크누텔라젤라또와플',
+                desc : 'Cheese Cake Nutella Gelato Waffle',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/waffle/bestWaffle/img7.png',
+                alt : '애플시나몬와플',
+                title : '애플시나몬와플',
+                desc : 'Apple Cinnamon Waffle',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/waffle/bestWaffle/img8.png',
+                alt : '스노우와플',
+                title : '스노우와플',
+                desc : 'Snow Waffle',
+            },
+        ]
+
+        // 베스트 와플 슬릭
+        function bestWaffle() {
+            const settings = {
+                dots: true,
+                infinite: false,
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            };
+            return (
+                <div className="slider-container newWaffleContainer">
+                    <Slider {...settings}>
+                        {bestWaffleList.map((waffle, index) => (
+                            <div className="newWaffle" key={index}>
+                                <div className="newIcon">
+                                    <img src={process.env.PUBLIC_URL + waffle.icon} alt={waffle.iconalt} />
+                                </div>
+                                <div className="img">
+                                    <img src={process.env.PUBLIC_URL + waffle.img} alt={waffle.alt} />
+                                </div>
+                                <h2 className="title">{waffle.title}</h2>
+                                <p className="desc">{waffle.desc}</p>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+            );
+        }
+
+        // 신메뉴 베스트 탭 스위치문 usestate
+        const [newTab , setNewTab] = useState('newWaffle');
+
+        const handleNewWaffle = (newWaffleTab) => {
+            setNewTab(newWaffleTab)
+        }
+
+        // 신메뉴 베스트 탭 스위치문
+        const renderNewWaffle = () => {
+            switch(newTab) {
+                case 'newWaffle' : 
+                    return(
+                        <>
+                            {newWaffle()}
+                        </>
+                    )
+                case 'bestWaffle' : 
+                    return(
+                        <>
+                            {bestWaffle()}
+                        </>
+                    )
+                default :
+                    return(
+                        <></>
+                    )
+            }
+        }
+
 
         const renderContent = () => {
             switch (tabClick) {
@@ -466,17 +621,21 @@ const Menu = () => {
                                 <div className='content2SlideCover'>
                                     <div className='c2SlideArea'>
                                         <div className='left'>
-                                            <ul>
+                                            <ul className={newTab === 'newWaffle' ? 'tabList bgCh' : 'tabList'}>
                                                 <li>
-                                                    <p>신메뉴</p>
+                                                    <p className={newTab === 'newWaffle' ? 'tabOn' : ''} onClick={ () => {handleNewWaffle('newWaffle')}}>
+                                                        신메뉴
+                                                    </p>
                                                 </li>
                                                 <li>
-                                                    <p>베스트</p>
+                                                    <p className={newTab === 'bestWaffle' ? 'tabOn2' : ''} onClick={ () => {handleNewWaffle('bestWaffle')}}>
+                                                        베스트
+                                                    </p>
                                                 </li>
                                             </ul>
                                         </div>
                                         <div className='right'>
-                                            {newWaffle()}
+                                            {renderNewWaffle()}
                                         </div>
                                     </div>
                                 </div>
