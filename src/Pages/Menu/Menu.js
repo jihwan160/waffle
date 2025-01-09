@@ -300,6 +300,109 @@ const NewArea = styled.div`
                 }
             }
         }
+
+        & .content2List {
+
+            & .content2ListCover {
+                display: flex;
+                flex-wrap: wrap;
+                border-top: 1px solid #f8f8f8;
+                & .content2Listone {
+                    box-sizing: border-box;
+                    width: 100%;
+                    max-width: 25%;
+                    flex: 0 0 25%;
+                    padding: 80px 15px;
+                    border-right: 1px solid #f8f8f8;
+                    border-bottom: 1px solid #f8f8f8;
+                    text-align: center;
+                    position: relative;
+                    background: #fff;
+                    transition: all 0.5s;
+                    cursor: pointer;
+                    &:nth-child(4n) {
+                        border-right: 0px;
+                    }
+                    & .cloImg img{
+                        width: 100%;
+                    }
+                    & .cloDesc {
+                        margin-top: 40px;
+
+                        & h2 {
+                            font-size: 22px;
+                            font-weight: 600;
+                            color: #202020;
+                            margin-bottom: 10px;
+                        }
+
+                        & p {
+                            font-size: 16px;
+                            font-weight: 700;
+                            color: #888;
+                            height: 44px;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                        }
+                    }
+
+                    & .moreIcon {
+                        position: absolute;
+                        left: 50%;
+                        top: 34%;
+                        transform: translateX(-50%);
+                        width: 80px;
+                        height: 80px;
+                        display: block;
+                        opacity: 0;
+                        transition: all 0.5s;
+                    }
+
+                    &:hover {
+                        background: #f8f8f8;
+                        transition: all 0.5s;
+                    }
+                    &:hover .moreIcon{
+                        opacity: 1;
+                        transition: all 0.5s;
+                    }
+                }
+            }
+        }
+
+        & .content2ListBtn {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            & button {
+                max-width: 240px;
+                width: 100%;
+                height: 56px;
+                background: #3d3d3d;
+                color: #fff;
+                outline: none;
+                box-sizing: border-box;
+                border-radius: 10px;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 18px;
+                font-weight: 600;
+                &::after {
+                    content: '';
+                    width: 16px;
+                    height: 8px;
+                    display: block;
+                    background-image: url('/img/menu/waffle/prd_menu__more.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    margin-left: 20px;
+                }
+            }
+        }
     }
 `;
 
@@ -578,6 +681,82 @@ const Menu = () => {
             }
         }
 
+        // 베이직와플 리스트
+        const basicWaffleList = [
+            {
+                img : '/img/menu/waffle/waffleList/img1.png',
+                alt : '블랙와플',
+                title : '블랙와플',
+                sub : 'Black Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img2.png',
+                alt : '플레인와플',
+                title : '플레인와플',
+                sub : 'Plain waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img3.png',
+                alt : '우리쌀와플',
+                title : '우리쌀와플',
+                sub : 'Rice Flour Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img4.png',
+                alt : '추억의딸기잼와플',
+                title : '추억의딸기잼와플',
+                sub : 'Strawberry Jam Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img5.png',
+                alt : '추억의사과잼와플',
+                title : '추억의사과잼와플',
+                sub : 'Apple Jam Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img6.png',
+                alt : '크림와플',
+                title : '크림와플',
+                sub : 'Cream Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img7.png',
+                alt : '애플시나몬와플',
+                title : '애플시나몬와플',
+                sub : 'Apple Cinnamon Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img8.png',
+                alt : '메이플시나몬와플',
+                title : '메이플시나몬와플',
+                sub : 'Maple Cinnamon Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img9.png',
+                alt : '스노우와플',
+                title : '스노우와플',
+                sub : 'Snow Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+        ]
+
 
         const renderContent = () => {
             switch (tabClick) {
@@ -641,7 +820,25 @@ const Menu = () => {
                                 </div>
                             </div>
                             <div className='content2List'>
-
+                                <div className='content2ListCover'>
+                                    {basicWaffleList.map((bwaffle,index) => (
+                                        <div className='content2Listone' key={index}>
+                                            <div className='cloImg'>
+                                                <img src={process.env.PUBLIC_URL + bwaffle.img} alt={bwaffle.alt} />
+                                            </div>
+                                            <div className='cloDesc'>
+                                                <h2>{bwaffle.title}</h2>
+                                                <p>{bwaffle.sub}</p>
+                                            </div>
+                                            <div className='moreIcon'>
+                                                <img src={process.env.PUBLIC_URL + bwaffle.moreimg} alt={bwaffle.morealt} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className='content2ListBtn'>
+                                <button>더보기</button>
                             </div>
                         </div>
                     )
