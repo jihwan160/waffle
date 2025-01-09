@@ -170,8 +170,13 @@ const NewArea = styled.div`
                     font-weight: 500;
                     cursor: pointer;
                 }
+                & .waffleTabOn {
+                    color: #073290;
+                    font-weight: 700;
+                }
             }
         }
+        
 
         & .content2Slide {
             padding: 80px 0;
@@ -757,6 +762,87 @@ const Menu = () => {
             },
         ]
 
+        const [waffleTab , setWaffleTab] = useState('basic');
+
+        const handleWaffleTab = (wtab) => {
+            setWaffleTab(wtab);
+        }
+
+
+        const [visibleItems , setVisibleItems] = useState(8);
+
+        const handleLoadMore = () => {
+            setVisibleItems((prev) => prev + 8);
+        }
+        
+        // 와플 메인 탭 스위치문
+        const renderContentTab = () => {
+
+            switch (waffleTab) {
+                case 'basic':
+                    return(
+                        <>
+                            <div className='content2Slide'>
+                                <div className='content2SlideCover'>
+                                    <div className='c2SlideArea'>
+                                        <div className='left'>
+                                            <ul className={newTab === 'newWaffle' ? 'tabList bgCh' : 'tabList'}>
+                                                <li>
+                                                    <p className={newTab === 'newWaffle' ? 'tabOn' : ''} onClick={ () => {handleNewWaffle('newWaffle')}}>
+                                                        신메뉴
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p className={newTab === 'bestWaffle' ? 'tabOn2' : ''} onClick={ () => {handleNewWaffle('bestWaffle')}}>
+                                                        베스트
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className='right'>
+                                            {renderNewWaffle()}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className='content2List'>
+                                <div className='content2ListCover'>
+                                    {basicWaffleList.slice(0 , visibleItems).map((bwaffle,index) => (
+                                        <div className='content2Listone' key={index}>
+                                            <div className='cloImg'>
+                                                <img src={process.env.PUBLIC_URL + bwaffle.img} alt={bwaffle.alt} />
+                                            </div>
+                                            <div className='cloDesc'>
+                                                <h2>{bwaffle.title}</h2>
+                                                <p>{bwaffle.sub}</p>
+                                            </div>
+                                            <div className='moreIcon'>
+                                                <img src={process.env.PUBLIC_URL + bwaffle.moreimg} alt={bwaffle.morealt} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {visibleItems < basicWaffleList.length && (
+                                <div className='content2ListBtn'>
+                                    <button onClick={handleLoadMore}>더보기</button>
+                                </div>
+                            )}
+                        </>
+                    )
+                
+                case 'nutella' :
+                    return(
+                        <>
+                        </>
+                    )
+            
+                default:
+                    return(
+                        <></>
+                    )
+            }
+        }
 
         const renderContent = () => {
             switch (tabClick) {
@@ -784,62 +870,27 @@ const Menu = () => {
                         <div className='content2'>
                             <ul className='content2Tab'>
                                 <li>
-                                    <p>베이직 와플</p>
+                                    <p className={waffleTab === 'basic' ? 'waffleTabOn' : ''} onClick={()=>{handleWaffleTab('basic')}}>
+                                        베이직 와플
+                                    </p>
                                 </li>
                                 <li>
-                                    <p>누텔라 와플</p>
+                                    <p className={waffleTab === 'nutella' ? 'waffleTabOn' : ''} onClick={()=>{handleWaffleTab('nutella')}}>
+                                        누텔라 와플
+                                    </p>
                                 </li>
                                 <li>
-                                    <p>과일/스페셜 와플</p>
+                                    <p className={waffleTab === 'special' ? 'waffleTabOn' : ''} onClick={()=>{handleWaffleTab('special')}}>
+                                        과일/스페셜 와플
+                                    </p>
                                 </li>
                                 <li>
-                                    <p>젤라또 와플</p>
+                                    <p className={waffleTab === 'gelato' ? 'waffleTabOn' : ''} onClick={()=>{handleWaffleTab('gelato')}}>
+                                        젤라또 와플
+                                    </p>
                                 </li>
                             </ul>
-                            <div className='content2Slide'>
-                                <div className='content2SlideCover'>
-                                    <div className='c2SlideArea'>
-                                        <div className='left'>
-                                            <ul className={newTab === 'newWaffle' ? 'tabList bgCh' : 'tabList'}>
-                                                <li>
-                                                    <p className={newTab === 'newWaffle' ? 'tabOn' : ''} onClick={ () => {handleNewWaffle('newWaffle')}}>
-                                                        신메뉴
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p className={newTab === 'bestWaffle' ? 'tabOn2' : ''} onClick={ () => {handleNewWaffle('bestWaffle')}}>
-                                                        베스트
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div className='right'>
-                                            {renderNewWaffle()}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className='content2List'>
-                                <div className='content2ListCover'>
-                                    {basicWaffleList.map((bwaffle,index) => (
-                                        <div className='content2Listone' key={index}>
-                                            <div className='cloImg'>
-                                                <img src={process.env.PUBLIC_URL + bwaffle.img} alt={bwaffle.alt} />
-                                            </div>
-                                            <div className='cloDesc'>
-                                                <h2>{bwaffle.title}</h2>
-                                                <p>{bwaffle.sub}</p>
-                                            </div>
-                                            <div className='moreIcon'>
-                                                <img src={process.env.PUBLIC_URL + bwaffle.moreimg} alt={bwaffle.morealt} />
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                            <div className='content2ListBtn'>
-                                <button>더보기</button>
-                            </div>
+                            {renderContentTab()}
                         </div>
                     )
                 default:
@@ -849,6 +900,7 @@ const Menu = () => {
             }
         }
 
+        // 메인 이미지와 탭을 클릭시 바뀌게 하는 것
         const currentTab = tabData[tabClick] || tabData.default;
 
         return(
