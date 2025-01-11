@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../Home/Header'
 import Footer from '../Home/Footer'
 import Aside from '../Home/Aside'
@@ -8,6 +8,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './../Menu/Menu.css'
+import { useLocation } from 'react-router-dom'
 
 const NewArea = styled.div`
     width: 100%;
@@ -416,11 +417,19 @@ const Menu = () => {
 
     const MenuList = () => {
 
-        const [tabClick, setTabClick] = useState('waffle');
+        const location = useLocation();
+        const [tabClick, setTabClick] = useState('new');
 
         const handleClick = (tab) => {
             setTabClick(tab);
         }
+
+        // header에서 탭클릭시 넘어온 값을 읽어서 해당 탭으로 이동
+        useEffect(() => {
+            if(location.state && location.state.tab) {
+                setTabClick(location.state.tab);
+            }
+        }, [location.state]);
 
         const tabData = {
             new : {
@@ -762,6 +771,387 @@ const Menu = () => {
             },
         ]
 
+        // 누텔라와플 리스트
+        const nutellaWaffleList = [
+            {
+                img : '/img/menu/waffle/nutellaList/img1.png',
+                alt : '오레오누텔라와플',
+                title : '오레오누텔라와플',
+                sub : 'Oreo Nutella Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/nutellaList/img2.png',
+                alt : '바나나누텔라와플',
+                title : '바나나누텔라와플',
+                sub : 'Banana Nutella waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/nutellaList/img3.png',
+                alt : '딸기누텔라와플',
+                title : '딸기누텔라와플',
+                sub : 'Strawberry Nutella Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/nutellaList/img4.png',
+                alt : '누텔라에 빠진 마시멜로 젤라또 와플',
+                title : '누텔라에 빠진 마시멜로 젤라또 와플',
+                sub : 'Nutella Marshmallow Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/nutellaList/img5.png',
+                alt : '치즈케이크누텔라젤라또와플',
+                title : '치즈케이크누텔라젤라또와플',
+                sub : 'Cheese Cake Nutella Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/nutellaList/img6.png',
+                alt : '오레오누텔라젤라또와플',
+                title : '오레오누텔라젤라또와플',
+                sub : 'Oreo Nutella Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/nutellaList/img7.png',
+                alt : '누텔라에 빠진 마시멜로 와플',
+                title : '누텔라에 빠진 마시멜로 와플',
+                sub : 'Nutella Marshmallow Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+        ]
+
+        // 과일/스페셜와플 리스트
+        const specialWaffleList = [
+            {
+                img : '/img/menu/waffle/specialList/img1.png',
+                alt : 'B.C.D 샌드와플',
+                title : 'B.C.D 샌드와플',
+                sub : 'Scallion Bacon Cream Cheese Sand Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img2.png',
+                alt : '와플에빠진붕어 (고구마)',
+                title : '와플에빠진붕어 (고구마)',
+                sub : 'Hot & Sweet stuffed Waffle (Sweet Potato)',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img3.png',
+                alt : '와플에빠진붕어 (슈크림)',
+                title : '와플에빠진붕어 (슈크림)',
+                sub : 'Hot & Sweet stuffed Waffle (Custard)',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img4.png',
+                alt : '와플에빠진붕어 (팥)',
+                title : '와플에빠진붕어 (팥)',
+                sub : 'Hot & Sweet stuffed Waffle (Sweet Red-bean)',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img5.png',
+                alt : '사과는 햄복햄 샌드와플',
+                title : '사과는 햄복햄 샌드와플',
+                sub : 'Double ham & Apple',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img6.png',
+                alt : '에그마요 샌드와플',
+                title : '에그마요 샌드와플',
+                sub : 'Egg Mayo',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img7.png',
+                alt : '바나나와플',
+                title : '바나나와플',
+                sub : 'Banana Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img8.png',
+                alt : '블루베리와플',
+                title : '블루베리와플',
+                sub : 'Blueberry Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img9.png',
+                alt : '베리베리와플',
+                title : '베리베리와플',
+                sub : 'Berry Berry Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img10.png',
+                alt : '딸기와플',
+                title : '딸기와플',
+                sub : 'Strawberry Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img11.png',
+                alt : '모카케이크와플',
+                title : '모카케이크와플',
+                sub : 'Mocha Cake Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img12.png',
+                alt : '베리베리케이크와플',
+                title : '베리베리케이크와플',
+                sub : 'Berryberry Cake Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img13.png',
+                alt : '더티초코케이크와플',
+                title : '더티초코케이크와플',
+                sub : 'Dirty Chocolate Cake Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img14.png',
+                alt : '허니브레드와플',
+                title : '허니브레드와플',
+                sub : 'Honey Bread Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img15.png',
+                alt : '슈크림와플',
+                title : '슈크림와플',
+                sub : 'Choux Cream Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img16.png',
+                alt : '슈크림크런치와플',
+                title : '슈크림크런치와플',
+                sub : 'Choux Cream Crunch Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img17.png',
+                alt : '딸기케이크와플',
+                title : '딸기케이크와플',
+                sub : 'Strawberry Cake Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img18.png',
+                alt : '티라미수와플',
+                title : '티라미수와플',
+                sub : 'Tiramisu Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img19.png',
+                alt : '크런치딸기잼와플',
+                title : '크런치딸기잼와플',
+                sub : 'Crunch Strawberry Jam Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img20.png',
+                alt : '딸기듬뿍와플',
+                title : '딸기듬뿍와플',
+                sub : 'Waffle full of Strawberries',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img21.png',
+                alt : '팥스노우와플',
+                title : '팥스노우와플',
+                sub : 'Red Beans Snow Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img22.png',
+                alt : '호두고구마와플',
+                title : '호두고구마와플',
+                sub : 'Sweetpotato Walnuts Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img23.png',
+                alt : '와숫가루레드빈와플',
+                title : '와숫가루레드빈와플',
+                sub : 'WU MISUGARU Red Bean Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img24.png',
+                alt : '치즈케이크&크랜베리와플',
+                title : '치즈케이크&크랜베리와플',
+                sub : 'Cheese cake & Cranberry Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+
+        ]
+
+        // 젤라또와플 리스트
+        const gelatoWaffleList = [
+            {
+                img : '/img/menu/waffle/gelatoList/img1.png',
+                alt : '솜사탕 젤라또와플',
+                title : '솜사탕 젤라또와플',
+                sub : 'COTTON CANDY GELATO WAFFLE',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img2.png',
+                alt : '더블 애플 시나몬 젤라또 와플',
+                title : '더블 애플 시나몬 젤라또 와플',
+                sub : 'DOUBLE APPLE CINNAMON GELATO WAFFLE',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img3.png',
+                alt : '슈크림젤라또와플',
+                title : '슈크림젤라또와플',
+                sub : 'Choux Cream Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img4.png',
+                alt : '크런치딸기잼젤라또와플',
+                title : '크런치딸기잼젤라또와플',
+                sub : 'Crunch Strawberry Jam Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img5.png',
+                alt : '초코범벅젤라또와플',
+                title : '초코범벅젤라또와플',
+                sub : 'Chocolate Bomb Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img6.png',
+                alt : '치즈범벅젤라또와플',
+                title : '치즈범벅젤라또와플',
+                sub : 'Cheese Bomb Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img7.png',
+                alt : '블루베리범벅젤라또와플',
+                title : '블루베리범벅젤라또와플',
+                sub : 'Blueberry Bomb Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img8.png',
+                alt : '망고범벅젤라또와플',
+                title : '망고범벅젤라또와플',
+                sub : 'Mango Bomb Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img9.png',
+                alt : '딸기범벅젤라또와플',
+                title : '딸기범벅젤라또와플',
+                sub : 'Strawberry Bomb Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img10.png',
+                alt : '싸만코젤라또와플',
+                title : '싸만코젤라또와플',
+                sub : 'Red Beans Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img11.png',
+                alt : '딸기누텔라젤라또와플',
+                title : '딸기누텔라젤라또와플',
+                sub : 'Strawberry Nutella Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img12.png',
+                alt : '베리베리젤라또와플',
+                title : '베리베리젤라또와플',
+                sub : 'Berryberry Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img13.png',
+                alt : '블루베리젤라또와플',
+                title : '블루베리젤라또와플',
+                sub : 'Blueberry Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img14.png',
+                alt : '크림젤라또와플',
+                title : '크림젤라또와플',
+                sub : 'Cream Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img15.png',
+                alt : '젤라또와플',
+                title : '젤라또와플',
+                sub : 'Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+        ]
+
         const [waffleTab , setWaffleTab] = useState('basic');
 
         const handleWaffleTab = (wtab) => {
@@ -772,7 +1162,7 @@ const Menu = () => {
         const [visibleItems , setVisibleItems] = useState(8);
 
         const handleLoadMore = () => {
-            setVisibleItems((prev) => prev + 8);
+            setVisibleItems((prev) => prev + 4);
         }
         
         // 와플 메인 탭 스위치문
@@ -782,29 +1172,6 @@ const Menu = () => {
                 case 'basic':
                     return(
                         <>
-                            <div className='content2Slide'>
-                                <div className='content2SlideCover'>
-                                    <div className='c2SlideArea'>
-                                        <div className='left'>
-                                            <ul className={newTab === 'newWaffle' ? 'tabList bgCh' : 'tabList'}>
-                                                <li>
-                                                    <p className={newTab === 'newWaffle' ? 'tabOn' : ''} onClick={ () => {handleNewWaffle('newWaffle')}}>
-                                                        신메뉴
-                                                    </p>
-                                                </li>
-                                                <li>
-                                                    <p className={newTab === 'bestWaffle' ? 'tabOn2' : ''} onClick={ () => {handleNewWaffle('bestWaffle')}}>
-                                                        베스트
-                                                    </p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div className='right'>
-                                            {renderNewWaffle()}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div className='content2List'>
                                 <div className='content2ListCover'>
                                     {basicWaffleList.slice(0 , visibleItems).map((bwaffle,index) => (
@@ -834,9 +1201,87 @@ const Menu = () => {
                 case 'nutella' :
                     return(
                         <>
+                            <div className='content2List'>
+                                <div className='content2ListCover'>
+                                    {nutellaWaffleList.slice(0 , visibleItems).map((bwaffle,index) => (
+                                        <div className='content2Listone' key={index}>
+                                            <div className='cloImg'>
+                                                <img src={process.env.PUBLIC_URL + bwaffle.img} alt={bwaffle.alt} />
+                                            </div>
+                                            <div className='cloDesc'>
+                                                <h2>{bwaffle.title}</h2>
+                                                <p>{bwaffle.sub}</p>
+                                            </div>
+                                            <div className='moreIcon'>
+                                                <img src={process.env.PUBLIC_URL + bwaffle.moreimg} alt={bwaffle.morealt} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {visibleItems < nutellaWaffleList.length && (
+                                <div className='content2ListBtn'>
+                                    <button onClick={handleLoadMore}>더보기</button>
+                                </div>
+                            )}
                         </>
                     )
-            
+                case 'special' :
+                    return(
+                        <>
+                            <div className='content2List'>
+                                <div className='content2ListCover'>
+                                    {specialWaffleList.slice(0 , visibleItems).map((bwaffle,index) => (
+                                        <div className='content2Listone' key={index}>
+                                            <div className='cloImg'>
+                                                <img src={process.env.PUBLIC_URL + bwaffle.img} alt={bwaffle.alt} />
+                                            </div>
+                                            <div className='cloDesc'>
+                                                <h2>{bwaffle.title}</h2>
+                                                <p>{bwaffle.sub}</p>
+                                            </div>
+                                            <div className='moreIcon'>
+                                                <img src={process.env.PUBLIC_URL + bwaffle.moreimg} alt={bwaffle.morealt} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {visibleItems < specialWaffleList.length && (
+                                <div className='content2ListBtn'>
+                                    <button onClick={handleLoadMore}>더보기</button>
+                                </div>
+                            )}
+                        </>
+                    )
+                case 'gelato' :
+                    return(
+                        <>
+                            <div className='content2List'>
+                                <div className='content2ListCover'>
+                                    {gelatoWaffleList.slice(0 , visibleItems).map((bwaffle,index) => (
+                                        <div className='content2Listone' key={index}>
+                                            <div className='cloImg'>
+                                                <img src={process.env.PUBLIC_URL + bwaffle.img} alt={bwaffle.alt} />
+                                            </div>
+                                            <div className='cloDesc'>
+                                                <h2>{bwaffle.title}</h2>
+                                                <p>{bwaffle.sub}</p>
+                                            </div>
+                                            <div className='moreIcon'>
+                                                <img src={process.env.PUBLIC_URL + bwaffle.moreimg} alt={bwaffle.morealt} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {visibleItems < gelatoWaffleList.length && (
+                                <div className='content2ListBtn'>
+                                    <button onClick={handleLoadMore}>더보기</button>
+                                </div>
+                            )}
+                        </>
+                    )
                 default:
                     return(
                         <></>
@@ -890,8 +1335,35 @@ const Menu = () => {
                                     </p>
                                 </li>
                             </ul>
+                            <div className='content2Slide'>
+                                <div className='content2SlideCover'>
+                                    <div className='c2SlideArea'>
+                                        <div className='left'>
+                                            <ul className={newTab === 'newWaffle' ? 'tabList bgCh' : 'tabList'}>
+                                                <li>
+                                                    <p className={newTab === 'newWaffle' ? 'tabOn' : ''} onClick={ () => {handleNewWaffle('newWaffle')}}>
+                                                        신메뉴
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p className={newTab === 'bestWaffle' ? 'tabOn2' : ''} onClick={ () => {handleNewWaffle('bestWaffle')}}>
+                                                        베스트
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className='right'>
+                                            {renderNewWaffle()}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             {renderContentTab()}
                         </div>
+                    )
+                case 'drink' :
+                    return(
+                        <div></div>
                     )
                 default:
                     return(

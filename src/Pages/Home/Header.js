@@ -201,21 +201,21 @@ const Header = () => {
                             </ul>
                         </li>
                         <li className='GnbListTab'>
-                            <p onClick={ () => {navigate('/menu')}}>MENU</p>
+                            <p onClick={ () => navigate('/menu' , {state: {tab: 'new'}})}>MENU</p>
                             <ul className={`subGnbList ${Ishover ? 'active' : ''}`}>
-                                <li onClick={ () => {navigate('/menu')}}>
+                                <li onClick={ () => navigate('/menu' , {state: {tab: 'new'}})}>
                                     <span>신메뉴</span>
                                 </li>
-                                <li>
+                                <li onClick={ () => navigate('/menu' , {state: {tab: 'waffle'}})}>
                                     <span>와플</span>
                                 </li>
-                                <li>
+                                <li onClick={ () => navigate('/menu' , {state: {tab: 'drink'}})}>
                                     <span>음료</span>
                                 </li>
-                                <li>
+                                <li onClick={ () => navigate('/menu' , {state: {tab: 'gelato'}})}>
                                     <span>젤라또</span>
                                 </li>
-                                <li>
+                                <li onClick={ () => navigate('/menu' , {state: {tab: 'sfood'}})}>
                                     <span>스쿨푸드</span>
                                 </li>
                             </ul>
