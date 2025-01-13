@@ -272,7 +272,6 @@ const NewArea = styled.div`
                                     position: relative;
                                     padding: 60px 40px 40px;
                                     background: #fffce8;
-                                    /* margin-right: 40px; */
                                     & .newIcon {
                                         position: absolute;
                                         left: 0;
@@ -301,6 +300,10 @@ const NewArea = styled.div`
                                         text-align: center;
                                     }
                                     
+                                }
+
+                                & .bestWaffle {
+                                    background: #e9f2ff !important;
                                 }
                     }
                 }
@@ -650,7 +653,7 @@ const Menu = () => {
                 <div className="slider-container newWaffleContainer">
                     <Slider {...settings}>
                         {bestWaffleList.map((waffle, index) => (
-                            <div className="newWaffle" key={index}>
+                            <div className="newWaffle bestWaffle" key={index}>
                                 <div className="newIcon">
                                     <img src={process.env.PUBLIC_URL + waffle.icon} alt={waffle.iconalt} />
                                 </div>
