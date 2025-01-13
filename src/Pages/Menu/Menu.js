@@ -265,7 +265,7 @@ const NewArea = styled.div`
                     & .right {
                         width: calc(100% - 240px);
 
-                                & .newWaffle {
+                                & .newMenu {
                                     width: 100%;
                                     min-height: 490px;
                                     box-sizing: border-box;
@@ -302,7 +302,7 @@ const NewArea = styled.div`
                                     
                                 }
 
-                                & .bestWaffle {
+                                & .bestMenu {
                                     background: #e9f2ff !important;
                                 }
                     }
@@ -467,6 +467,15 @@ const Menu = () => {
             },
         }
 
+        // 더보기 클릭시 4개씩 보여줌 ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ공통
+        const [visibleItems , setVisibleItems] = useState(8);
+
+        const handleLoadMore = () => {
+            setVisibleItems((prev) => prev + 4);
+        }
+
+        // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ와플
+
         // 신메뉴 와플 리스트
         const newWaffleList = [
             {
@@ -556,7 +565,7 @@ const Menu = () => {
                 <div className="slider-container newWaffleContainer">
                     <Slider {...settings}>
                         {newWaffleList.map((waffle, index) => (
-                            <div className="newWaffle" key={index}>
+                            <div className="newMenu" key={index}>
                                 <div className="newIcon">
                                     <img src={process.env.PUBLIC_URL + waffle.icon} alt={waffle.iconalt} />
                                 </div>
@@ -653,7 +662,7 @@ const Menu = () => {
                 <div className="slider-container newWaffleContainer">
                     <Slider {...settings}>
                         {bestWaffleList.map((waffle, index) => (
-                            <div className="newWaffle bestWaffle" key={index}>
+                            <div className="newMenu bestMenu" key={index}>
                                 <div className="newIcon">
                                     <img src={process.env.PUBLIC_URL + waffle.icon} alt={waffle.iconalt} />
                                 </div>
@@ -1155,19 +1164,13 @@ const Menu = () => {
             },
         ]
 
+        // 와플 음료 젤라또 스쿨푸드 탭에서 와플탭
         const [waffleTab , setWaffleTab] = useState('basic');
 
         const handleWaffleTab = (wtab) => {
             setWaffleTab(wtab);
         }
 
-
-        const [visibleItems , setVisibleItems] = useState(8);
-
-        const handleLoadMore = () => {
-            setVisibleItems((prev) => prev + 4);
-        }
-        
         // 와플 메인 탭 스위치문
         const renderContentTab = () => {
 
@@ -1292,6 +1295,799 @@ const Menu = () => {
             }
         }
 
+        // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ와플 끝
+
+        // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ음료
+
+        // 신메뉴 베스트 탭 스위치문 usestate
+        const [dnbmenu , setDnbMneu] = useState('newDrink');
+
+        const handleDnbmenu = (DnbmenuTab) => {
+            setDnbMneu(DnbmenuTab)
+        }
+
+        // 신메뉴 베스트 탭 스위치문
+        const renderDnbmenu = () => {
+            switch(dnbmenu) {
+                case 'newDrink' : 
+                    return(
+                        <>
+                            {newDrink()}
+                        </>
+                    )
+                case 'bestDrink' : 
+                    return(
+                        <>
+                            {bestDrink()}
+                        </>
+                    )
+                default :
+                    return(
+                        <></>
+                    )
+            }
+        }
+
+        // 신메뉴 음료 리스트
+        const newDrinkList = [
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/drink/newDrink/img1.png',
+                alt : '자두에이드',
+                title : '자두에이드',
+                desc : 'Plum Ade',
+            },
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/drink/newDrink/img2.png',
+                alt : '복숭아주스',
+                title : '복숭아주스',
+                desc : 'Peach Juice',
+            },
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/drink/newDrink/img3.png',
+                alt : '애플시나몬 티(HOT/ICE)',
+                title : '애플시나몬 티(HOT/ICE)',
+                desc : 'Apple Cinnamon Tea',
+            },
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/drink/newDrink/img4.png',
+                alt : '애플시나몬 요거치노',
+                title : '애플시나몬 요거치노',
+                desc : 'Apple Cinnamon Yogurt Smoothie',
+            },
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/drink/newDrink/img5.png',
+                alt : '애플시나몬 티에이드',
+                title : '애플시나몬 티에이드',
+                desc : 'Apple Cinnamon Tea Ade',
+            },
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/drink/newDrink/img6.png',
+                alt : '와숫가루 라떼',
+                title : '와숫가루 라떼',
+                desc : 'WU MISUGARU',
+            },
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/drink/newDrink/img7.png',
+                alt : '디카페인 프라페',
+                title : '디카페인 프라페',
+                desc : 'DECAF FRAPPE',
+            },
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/drink/newDrink/img8.png',
+                alt : '나 진짜 수박',
+                title : '나 진짜 수박',
+                desc : 'I AM REAL WATERMELON',
+            },
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/drink/newDrink/img9.png',
+                alt : '빨간사과유자차(HOT/ICE)',
+                title : '빨간사과유자차(HOT/ICE)',
+                desc : 'Red Apple Citron Tea',
+            },
+        ]
+
+        // 신메뉴 음료 슬릭
+        function newDrink() {
+            const settings = {
+                dots: true,
+                infinite: false,
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            };
+            return (
+                <div className="slider-container newWaffleContainer">
+                    <Slider {...settings}>
+                        {newDrinkList.map((drink, index) => (
+                            <div className="newMenu" key={index}>
+                                <div className="newIcon">
+                                    <img src={process.env.PUBLIC_URL + drink.icon} alt={drink.iconalt} />
+                                </div>
+                                <div className="img">
+                                    <img src={process.env.PUBLIC_URL + drink.img} alt={drink.alt} />
+                                </div>
+                                <h2 className="title">{drink.title}</h2>
+                                <p className="desc">{drink.desc}</p>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+            );
+        }
+
+        // 베스트 음료 리스트
+        const bestDrinkList = [
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/drink/bestDrink/img1.png',
+                alt : '복숭아아이스티',
+                title : '복숭아아이스티',
+                desc : 'Peach Iced Tea',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/drink/bestDrink/img2.png',
+                alt : '디카페인 콜드브루 (HOT/ ICE)',
+                title : '디카페인 콜드브루 (HOT/ ICE)',
+                desc : 'Decafe Coldbrew',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/drink/bestDrink/img3.png',
+                alt : '카페라떼(HOT/ ICE)',
+                title : '카페라떼(HOT/ ICE)',
+                desc : 'Cafe Latte',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/drink/bestDrink/img4.png',
+                alt : '아메리카노 (HOT/ ICE)',
+                title : '아메리카노 (HOT/ ICE)',
+                desc : 'Americano',
+            },
+        ]
+
+        // 베스트 음료 슬릭
+        function bestDrink() {
+            const settings = {
+                dots: true,
+                infinite: false,
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            };
+            return (
+                <div className="slider-container newWaffleContainer">
+                    <Slider {...settings}>
+                        {bestDrinkList.map((waffle, index) => (
+                            <div className="newMenu bestMenu" key={index}>
+                                <div className="newIcon">
+                                    <img src={process.env.PUBLIC_URL + waffle.icon} alt={waffle.iconalt} />
+                                </div>
+                                <div className="img">
+                                    <img src={process.env.PUBLIC_URL + waffle.img} alt={waffle.alt} />
+                                </div>
+                                <h2 className="title">{waffle.title}</h2>
+                                <p className="desc">{waffle.desc}</p>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+            );
+        }
+
+        // 와플 음료 젤라또 스쿨푸드 탭에서 음료탭
+        const [drinkTab , setDrinkTab] = useState('coffee');
+
+        const handleDrinkTab = (dtab) => {
+            setDrinkTab(dtab);
+        }
+
+        // 와플 메인 탭 스위치문
+        const renderContentTab2 = () => {
+
+            switch (drinkTab) {
+                case 'coffee':
+                    return(
+                        <>
+                            <div className='content2List'>
+                                <div className='content2ListCover'>
+                                    {coffeeList.slice(0 , visibleItems).map((coffee,index) => (
+                                        <div className='content2Listone' key={index}>
+                                            <div className='cloImg'>
+                                                <img src={process.env.PUBLIC_URL + coffee.img} alt={coffee.alt} />
+                                            </div>
+                                            <div className='cloDesc'>
+                                                <h2>{coffee.title}</h2>
+                                                <p>{coffee.sub}</p>
+                                            </div>
+                                            <div className='moreIcon'>
+                                                <img src={process.env.PUBLIC_URL + coffee.moreimg} alt={coffee.morealt} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {visibleItems < coffeeList.length && (
+                                <div className='content2ListBtn'>
+                                    <button onClick={handleLoadMore}>더보기</button>
+                                </div>
+                            )}
+                        </>
+                    )
+                
+                case 'noncoffee' :
+                    return(
+                        <>
+                            <div className='content2List'>
+                                <div className='content2ListCover'>
+                                    {noncoffeeList.slice(0 , visibleItems).map((noncoffee,index) => (
+                                        <div className='content2Listone' key={index}>
+                                            <div className='cloImg'>
+                                                <img src={process.env.PUBLIC_URL + noncoffee.img} alt={noncoffee.alt} />
+                                            </div>
+                                            <div className='cloDesc'>
+                                                <h2>{noncoffee.title}</h2>
+                                                <p>{noncoffee.sub}</p>
+                                            </div>
+                                            <div className='moreIcon'>
+                                                <img src={process.env.PUBLIC_URL + noncoffee.moreimg} alt={noncoffee.morealt} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {visibleItems < noncoffeeList.length && (
+                                <div className='content2ListBtn'>
+                                    <button onClick={handleLoadMore}>더보기</button>
+                                </div>
+                            )}
+                        </>
+                    )
+                case 'smoody' :
+                    return(
+                        <>
+                            <div className='content2List'>
+                                <div className='content2ListCover'>
+                                    {smoodyList.slice(0 , visibleItems).map((smoody,index) => (
+                                        <div className='content2Listone' key={index}>
+                                            <div className='cloImg'>
+                                                <img src={process.env.PUBLIC_URL + smoody.img} alt={smoody.alt} />
+                                            </div>
+                                            <div className='cloDesc'>
+                                                <h2>{smoody.title}</h2>
+                                                <p>{smoody.sub}</p>
+                                            </div>
+                                            <div className='moreIcon'>
+                                                <img src={process.env.PUBLIC_URL + smoody.moreimg} alt={smoody.morealt} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {visibleItems < smoodyList.length && (
+                                <div className='content2ListBtn'>
+                                    <button onClick={handleLoadMore}>더보기</button>
+                                </div>
+                            )}
+                        </>
+                    )
+                case 'tea' :
+                    return(
+                        <>
+                            <div className='content2List'>
+                                <div className='content2ListCover'>
+                                    {teaList.slice(0 , visibleItems).map((tea,index) => (
+                                        <div className='content2Listone' key={index}>
+                                            <div className='cloImg'>
+                                                <img src={process.env.PUBLIC_URL + tea.img} alt={tea.alt} />
+                                            </div>
+                                            <div className='cloDesc'>
+                                                <h2>{tea.title}</h2>
+                                                <p>{tea.sub}</p>
+                                            </div>
+                                            <div className='moreIcon'>
+                                                <img src={process.env.PUBLIC_URL + tea.moreimg} alt={tea.morealt} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {visibleItems < teaList.length && (
+                                <div className='content2ListBtn'>
+                                    <button onClick={handleLoadMore}>더보기</button>
+                                </div>
+                            )}
+                        </>
+                    )
+                default:
+                    return(
+                        <></>
+                    )
+            }
+        }
+
+        // 커피 리스트
+        const coffeeList = [
+            {
+                img : '/img/menu/waffle/waffleList/img1.png',
+                alt : '블랙와플',
+                title : '블랙와플',
+                sub : 'Black Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img2.png',
+                alt : '플레인와플',
+                title : '플레인와플',
+                sub : 'Plain waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img3.png',
+                alt : '우리쌀와플',
+                title : '우리쌀와플',
+                sub : 'Rice Flour Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img4.png',
+                alt : '추억의딸기잼와플',
+                title : '추억의딸기잼와플',
+                sub : 'Strawberry Jam Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img5.png',
+                alt : '추억의사과잼와플',
+                title : '추억의사과잼와플',
+                sub : 'Apple Jam Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img6.png',
+                alt : '크림와플',
+                title : '크림와플',
+                sub : 'Cream Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img7.png',
+                alt : '애플시나몬와플',
+                title : '애플시나몬와플',
+                sub : 'Apple Cinnamon Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img8.png',
+                alt : '메이플시나몬와플',
+                title : '메이플시나몬와플',
+                sub : 'Maple Cinnamon Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/waffleList/img9.png',
+                alt : '스노우와플',
+                title : '스노우와플',
+                sub : 'Snow Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+        ]
+
+        // 논커피 리스트
+        const noncoffeeList = [
+            {
+                img : '/img/menu/waffle/nutellaList/img1.png',
+                alt : '오레오누텔라와플',
+                title : '오레오누텔라와플',
+                sub : 'Oreo Nutella Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/nutellaList/img2.png',
+                alt : '바나나누텔라와플',
+                title : '바나나누텔라와플',
+                sub : 'Banana Nutella waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/nutellaList/img3.png',
+                alt : '딸기누텔라와플',
+                title : '딸기누텔라와플',
+                sub : 'Strawberry Nutella Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/nutellaList/img4.png',
+                alt : '누텔라에 빠진 마시멜로 젤라또 와플',
+                title : '누텔라에 빠진 마시멜로 젤라또 와플',
+                sub : 'Nutella Marshmallow Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/nutellaList/img5.png',
+                alt : '치즈케이크누텔라젤라또와플',
+                title : '치즈케이크누텔라젤라또와플',
+                sub : 'Cheese Cake Nutella Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/nutellaList/img6.png',
+                alt : '오레오누텔라젤라또와플',
+                title : '오레오누텔라젤라또와플',
+                sub : 'Oreo Nutella Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/nutellaList/img7.png',
+                alt : '누텔라에 빠진 마시멜로 와플',
+                title : '누텔라에 빠진 마시멜로 와플',
+                sub : 'Nutella Marshmallow Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+        ]
+
+        // 스무디/쉐이크 리스트
+        const smoodyList = [
+            {
+                img : '/img/menu/waffle/specialList/img1.png',
+                alt : 'B.C.D 샌드와플',
+                title : 'B.C.D 샌드와플',
+                sub : 'Scallion Bacon Cream Cheese Sand Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img2.png',
+                alt : '와플에빠진붕어 (고구마)',
+                title : '와플에빠진붕어 (고구마)',
+                sub : 'Hot & Sweet stuffed Waffle (Sweet Potato)',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img3.png',
+                alt : '와플에빠진붕어 (슈크림)',
+                title : '와플에빠진붕어 (슈크림)',
+                sub : 'Hot & Sweet stuffed Waffle (Custard)',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img4.png',
+                alt : '와플에빠진붕어 (팥)',
+                title : '와플에빠진붕어 (팥)',
+                sub : 'Hot & Sweet stuffed Waffle (Sweet Red-bean)',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img5.png',
+                alt : '사과는 햄복햄 샌드와플',
+                title : '사과는 햄복햄 샌드와플',
+                sub : 'Double ham & Apple',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img6.png',
+                alt : '에그마요 샌드와플',
+                title : '에그마요 샌드와플',
+                sub : 'Egg Mayo',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img7.png',
+                alt : '바나나와플',
+                title : '바나나와플',
+                sub : 'Banana Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img8.png',
+                alt : '블루베리와플',
+                title : '블루베리와플',
+                sub : 'Blueberry Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img9.png',
+                alt : '베리베리와플',
+                title : '베리베리와플',
+                sub : 'Berry Berry Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img10.png',
+                alt : '딸기와플',
+                title : '딸기와플',
+                sub : 'Strawberry Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img11.png',
+                alt : '모카케이크와플',
+                title : '모카케이크와플',
+                sub : 'Mocha Cake Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img12.png',
+                alt : '베리베리케이크와플',
+                title : '베리베리케이크와플',
+                sub : 'Berryberry Cake Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img13.png',
+                alt : '더티초코케이크와플',
+                title : '더티초코케이크와플',
+                sub : 'Dirty Chocolate Cake Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img14.png',
+                alt : '허니브레드와플',
+                title : '허니브레드와플',
+                sub : 'Honey Bread Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img15.png',
+                alt : '슈크림와플',
+                title : '슈크림와플',
+                sub : 'Choux Cream Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img16.png',
+                alt : '슈크림크런치와플',
+                title : '슈크림크런치와플',
+                sub : 'Choux Cream Crunch Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img17.png',
+                alt : '딸기케이크와플',
+                title : '딸기케이크와플',
+                sub : 'Strawberry Cake Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img18.png',
+                alt : '티라미수와플',
+                title : '티라미수와플',
+                sub : 'Tiramisu Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img19.png',
+                alt : '크런치딸기잼와플',
+                title : '크런치딸기잼와플',
+                sub : 'Crunch Strawberry Jam Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img20.png',
+                alt : '딸기듬뿍와플',
+                title : '딸기듬뿍와플',
+                sub : 'Waffle full of Strawberries',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img21.png',
+                alt : '팥스노우와플',
+                title : '팥스노우와플',
+                sub : 'Red Beans Snow Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img22.png',
+                alt : '호두고구마와플',
+                title : '호두고구마와플',
+                sub : 'Sweetpotato Walnuts Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img23.png',
+                alt : '와숫가루레드빈와플',
+                title : '와숫가루레드빈와플',
+                sub : 'WU MISUGARU Red Bean Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/specialList/img24.png',
+                alt : '치즈케이크&크랜베리와플',
+                title : '치즈케이크&크랜베리와플',
+                sub : 'Cheese cake & Cranberry Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+
+        ]
+
+        // 티/에이드 리스트
+        const teaList = [
+            {
+                img : '/img/menu/waffle/gelatoList/img1.png',
+                alt : '솜사탕 젤라또와플',
+                title : '솜사탕 젤라또와플',
+                sub : 'COTTON CANDY GELATO WAFFLE',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img2.png',
+                alt : '더블 애플 시나몬 젤라또 와플',
+                title : '더블 애플 시나몬 젤라또 와플',
+                sub : 'DOUBLE APPLE CINNAMON GELATO WAFFLE',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img3.png',
+                alt : '슈크림젤라또와플',
+                title : '슈크림젤라또와플',
+                sub : 'Choux Cream Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img4.png',
+                alt : '크런치딸기잼젤라또와플',
+                title : '크런치딸기잼젤라또와플',
+                sub : 'Crunch Strawberry Jam Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img5.png',
+                alt : '초코범벅젤라또와플',
+                title : '초코범벅젤라또와플',
+                sub : 'Chocolate Bomb Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img6.png',
+                alt : '치즈범벅젤라또와플',
+                title : '치즈범벅젤라또와플',
+                sub : 'Cheese Bomb Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img7.png',
+                alt : '블루베리범벅젤라또와플',
+                title : '블루베리범벅젤라또와플',
+                sub : 'Blueberry Bomb Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img8.png',
+                alt : '망고범벅젤라또와플',
+                title : '망고범벅젤라또와플',
+                sub : 'Mango Bomb Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img9.png',
+                alt : '딸기범벅젤라또와플',
+                title : '딸기범벅젤라또와플',
+                sub : 'Strawberry Bomb Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img10.png',
+                alt : '싸만코젤라또와플',
+                title : '싸만코젤라또와플',
+                sub : 'Red Beans Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img11.png',
+                alt : '딸기누텔라젤라또와플',
+                title : '딸기누텔라젤라또와플',
+                sub : 'Strawberry Nutella Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img12.png',
+                alt : '베리베리젤라또와플',
+                title : '베리베리젤라또와플',
+                sub : 'Berryberry Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img13.png',
+                alt : '블루베리젤라또와플',
+                title : '블루베리젤라또와플',
+                sub : 'Blueberry Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img14.png',
+                alt : '크림젤라또와플',
+                title : '크림젤라또와플',
+                sub : 'Cream Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/waffle/gelatoList/img15.png',
+                alt : '젤라또와플',
+                title : '젤라또와플',
+                sub : 'Gelato Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+        ]
+        // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ음료 끝
+
+        // 와플,음료,젤라또,스쿨푸드 메인 탭 스위치문
         const renderContent = () => {
             switch (tabClick) {
                 case 'new':
@@ -1365,6 +2161,61 @@ const Menu = () => {
                         </div>
                     )
                 case 'drink' :
+                    return(
+                        <div className='content2'>
+                            <ul className='content2Tab'>
+                                <li>
+                                    <p className={drinkTab === 'coffee' ? 'waffleTabOn' : ''} onClick={()=>{handleDrinkTab('coffee')}}>
+                                        커피
+                                    </p>
+                                </li>
+                                <li>
+                                    <p className={drinkTab === 'noncoffee' ? 'waffleTabOn' : ''} onClick={()=>{handleDrinkTab('noncoffee')}}>
+                                        논커피
+                                    </p>
+                                </li>
+                                <li>
+                                    <p className={drinkTab === 'smoody' ? 'waffleTabOn' : ''} onClick={()=>{handleDrinkTab('smoody')}}>
+                                        스무디/쉐이크
+                                    </p>
+                                </li>
+                                <li>
+                                    <p className={drinkTab === 'tea' ? 'waffleTabOn' : ''} onClick={()=>{handleDrinkTab('tea')}}>
+                                        티/에이드
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='content2Slide'>
+                                <div className='content2SlideCover'>
+                                    <div className='c2SlideArea'>
+                                        <div className='left'>
+                                            <ul className={dnbmenu === 'newDrink' ? 'tabList bgCh' : 'tabList'}>
+                                                <li>
+                                                    <p className={dnbmenu === 'newDrink' ? 'tabOn' : ''} onClick={ () => {handleDnbmenu('newDrink')}}>
+                                                        신메뉴
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p className={dnbmenu === 'bestDrink' ? 'tabOn2' : ''} onClick={ () => {handleDnbmenu('bestDrink')}}>
+                                                        베스트
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className='right'>
+                                            {renderDnbmenu()}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {renderContentTab2()}
+                        </div>
+                    )
+                case 'gelato' :
+                    return(
+                        <div></div>
+                    )
+                case 'sfood' :
                     return(
                         <div></div>
                     )
