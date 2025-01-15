@@ -37,3 +37,8 @@
 .newWaffleContainer .slick-dots li.slick-active button:before {
     color: #2a56b6;
 }
+
+/* 스쿨푸드에서 3개중에 2개만 보여야하는데 2개를 넣으면 슬릭이 꺠져서 3개를 넣은다음 마지막꺼만 안보이게함 */
+.sfoodContainer .slick-slide:nth-child(3) {
+    visibility: hidden;
+}

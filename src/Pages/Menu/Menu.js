@@ -311,7 +311,7 @@ const NewArea = styled.div`
         }
 
         & .content2List {
-
+            margin-bottom: 80px;
             & .content2ListCover {
                 display: flex;
                 flex-wrap: wrap;
@@ -1481,16 +1481,16 @@ const Menu = () => {
             return (
                 <div className="slider-container newWaffleContainer">
                     <Slider {...settings}>
-                        {bestDrinkList.map((waffle, index) => (
+                        {bestDrinkList.map((drink, index) => (
                             <div className="newMenu bestMenu" key={index}>
                                 <div className="newIcon">
-                                    <img src={process.env.PUBLIC_URL + waffle.icon} alt={waffle.iconalt} />
+                                    <img src={process.env.PUBLIC_URL + drink.icon} alt={drink.iconalt} />
                                 </div>
                                 <div className="img">
-                                    <img src={process.env.PUBLIC_URL + waffle.img} alt={waffle.alt} />
+                                    <img src={process.env.PUBLIC_URL + drink.img} alt={drink.alt} />
                                 </div>
-                                <h2 className="title">{waffle.title}</h2>
-                                <p className="desc">{waffle.desc}</p>
+                                <h2 className="title">{drink.title}</h2>
+                                <p className="desc">{drink.desc}</p>
                             </div>
                         ))}
                     </Slider>
@@ -2055,6 +2055,650 @@ const Menu = () => {
         ]
         // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ음료 끝
 
+        // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ젤라또
+
+        // 신메뉴 베스트 탭 스위치문 usestate
+        const [gnbmenu , setGnbMneu] = useState('newGelato');
+
+        const handleGnbmenu = (GnbmenuTab) => {
+            setGnbMneu(GnbmenuTab)
+        }
+
+        // 신메뉴 베스트 탭 스위치문
+        const renderGnbmenu = () => {
+            switch(gnbmenu) {
+                case 'newGelato' : 
+                    return(
+                        <>
+                            {newGelato()}
+                        </>
+                    )
+                case 'bestGelato' : 
+                    return(
+                        <>
+                            {bestGelato()}
+                        </>
+                    )
+                default :
+                    return(
+                        <></>
+                    )
+            }
+        }
+
+        // 신메뉴 젤라또 리스트
+        const newGelatoList = [
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/gelato/newGelato/img1.png',
+                alt : '솜사탕 젤라또 컵',
+                title : '솜사탕 젤라또 컵',
+                desc : 'COTTON CANDY GELATO',
+            },
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/gelato/newGelato/img2.png',
+                alt : '크런치딸기잼젤라또컵',
+                title : '크런치딸기잼젤라또컵',
+                desc : 'Crunch Strawberry Jam Gelato cup',
+            },
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/gelato/newGelato/img3.png',
+                alt : '팥젤라또컵',
+                title : '팥젤라또컵',
+                desc : 'Red Beans Gelato cup',
+            },
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/gelato/newGelato/img4.png',
+                alt : '오레오젤라또컵',
+                title : '오레오젤라또컵',
+                desc : 'Oreo Gelato cup',
+            },
+        ]
+
+        // 신메뉴 젤라또 슬릭
+        function newGelato() {
+            const settings = {
+                dots: true,
+                infinite: false,
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            };
+            return (
+                <div className="slider-container newWaffleContainer">
+                    <Slider {...settings}>
+                        {newGelatoList.map((gelato, index) => (
+                            <div className="newMenu" key={index}>
+                                <div className="newIcon">
+                                    <img src={process.env.PUBLIC_URL + gelato.icon} alt={gelato.iconalt} />
+                                </div>
+                                <div className="img">
+                                    <img src={process.env.PUBLIC_URL + gelato.img} alt={gelato.alt} />
+                                </div>
+                                <h2 className="title">{gelato.title}</h2>
+                                <p className="desc">{gelato.desc}</p>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+            );
+        }
+
+        // 베스트 젤라또 리스트
+        const bestGelatoList = [
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/gelato/bestGelato/img1.png',
+                alt : '애플 시나몬 젤라또 컵',
+                title : '애플 시나몬 젤라또 컵',
+                desc : 'APPLE CINNAMON GELATO',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/gelato/bestGelato/img2.png',
+                alt : '딸기젤라또컵',
+                title : '딸기젤라또컵',
+                desc : 'Strawberry Gelato cup',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/gelato/bestGelato/img3.png',
+                alt : '블루베리젤라또컵',
+                title : '블루베리젤라또컵',
+                desc : 'Blueberry Gelato cup',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/gelato/bestGelato/img4.png',
+                alt : '오레오젤라또컵',
+                title : '오레오젤라또컵',
+                desc : 'Oreo Gelato cup',
+            },
+        ]
+
+        // 베스트 젤라또 슬릭
+        function bestGelato() {
+            const settings = {
+                dots: true,
+                infinite: false,
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            };
+            return (
+                <div className="slider-container newWaffleContainer">
+                    <Slider {...settings}>
+                        {bestGelatoList.map((gelato, index) => (
+                            <div className="newMenu bestMenu" key={index}>
+                                <div className="newIcon">
+                                    <img src={process.env.PUBLIC_URL + gelato.icon} alt={gelato.iconalt} />
+                                </div>
+                                <div className="img">
+                                    <img src={process.env.PUBLIC_URL + gelato.img} alt={gelato.alt} />
+                                </div>
+                                <h2 className="title">{gelato.title}</h2>
+                                <p className="desc">{gelato.desc}</p>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+            );
+        }
+
+
+        // 와플 음료 젤라또 스쿨푸드 탭에서 젤라또탭
+        const [gelatoTab , setGelatoTab] = useState('gbasic');
+
+        const handleGelatoTab = (gtab) => {
+            setGelatoTab(gtab);
+        }
+
+        // 젤라또 메인 탭 스위치문
+        const renderContentTab3 = () => {
+
+            switch (gelatoTab) {
+                case 'gbasic':
+                    return(
+                        <>
+                            <div className='content2List'>
+                                <div className='content2ListCover'>
+                                    {basicList.slice(0 , visibleItems).map((basic,index) => (
+                                        <div className='content2Listone' key={index}>
+                                            <div className='cloImg'>
+                                                <img src={process.env.PUBLIC_URL + basic.img} alt={basic.alt} />
+                                            </div>
+                                            <div className='cloDesc'>
+                                                <h2>{basic.title}</h2>
+                                                <p>{basic.sub}</p>
+                                            </div>
+                                            <div className='moreIcon'>
+                                                <img src={process.env.PUBLIC_URL + basic.moreimg} alt={basic.morealt} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {visibleItems < basicList.length && (
+                                <div className='content2ListBtn'>
+                                    <button onClick={handleLoadMore}>더보기</button>
+                                </div>
+                            )}
+                        </>
+                    )
+                
+                case 'gtopping' :
+                    return(
+                        <>
+                            <div className='content2List'>
+                                <div className='content2ListCover'>
+                                    {toppingList.slice(0 , visibleItems).map((topping,index) => (
+                                        <div className='content2Listone' key={index}>
+                                            <div className='cloImg'>
+                                                <img src={process.env.PUBLIC_URL + topping.img} alt={topping.alt} />
+                                            </div>
+                                            <div className='cloDesc'>
+                                                <h2>{topping.title}</h2>
+                                                <p>{topping.sub}</p>
+                                            </div>
+                                            <div className='moreIcon'>
+                                                <img src={process.env.PUBLIC_URL + topping.moreimg} alt={topping.morealt} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {visibleItems < toppingList.length && (
+                                <div className='content2ListBtn'>
+                                    <button onClick={handleLoadMore}>더보기</button>
+                                </div>
+                            )}
+                        </>
+                    )
+                default:
+                    return(
+                        <></>
+                    )
+            }
+        }
+
+        // 베이직 리스트
+        const basicList = [
+            {
+                img : '/img/menu/gelato/basicGelato/img1.png',
+                alt : '바나나우유젤라또컵',
+                title : '바나나우유젤라또컵',
+                sub : 'Banana Milk Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/basicGelato/img2.png',
+                alt : '망고젤라또컵',
+                title : '망고젤라또컵',
+                sub : 'Mango Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/basicGelato/img3.png',
+                alt : '녹차젤라또컵',
+                title : '녹차젤라또컵',
+                sub : 'Green Tea Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/basicGelato/img4.png',
+                alt : '블루베리요거트젤라또컵',
+                title : '블루베리요거트젤라또컵',
+                sub : 'Blueberry Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/basicGelato/img5.png',
+                alt : '플레인요거트젤라또컵',
+                title : '플레인요거트젤라또컵',
+                sub : 'Plain Yogurt Gelato Cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/basicGelato/img6.png',
+                alt : '크림치즈젤라또컵',
+                title : '크림치즈젤라또컵',
+                sub : 'Cream Cheese Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/basicGelato/img7.png',
+                alt : '딸기젤라또컵',
+                title : '딸기젤라또컵',
+                sub : 'Strawberry Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/basicGelato/img8.png',
+                alt : '초코바닐라젤라또컵',
+                title : '초코바닐라젤라또컵',
+                sub : 'Chocolate Vanilla Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/basicGelato/img9.png',
+                alt : '초코젤라또컵',
+                title : '초코젤라또컵',
+                sub : 'Chocolate Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/basicGelato/img10.png',
+                alt : '바닐라젤라또컵',
+                title : '바닐라젤라또컵',
+                sub : 'Vanilla Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+        ]
+
+        // 토핑 리스트
+        const toppingList = [
+            {
+                img : '/img/menu/gelato/toppingGelato/img1.png',
+                alt : '솜사탕 젤라또 컵',
+                title : '솜사탕 젤라또 컵',
+                sub : 'COTTON CANDY GELATO',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/toppingGelato/img2.png',
+                alt : '애플 시나몬 젤라또 컵',
+                title : '애플 시나몬 젤라또 컵',
+                sub : 'APPLE CINNAMON GELATO',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/toppingGelato/img3.png',
+                alt : '크런치딸기잼젤라또컵',
+                title : '크런치딸기잼젤라또컵',
+                sub : 'Crunch Strawberry Jam Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/toppingGelato/img4.png',
+                alt : '치즈케이크젤라또컵',
+                title : '치즈케이크젤라또컵',
+                sub : 'Cheese Cake Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/toppingGelato/img5.png',
+                alt : '베리베리젤라또컵',
+                title : '베리베리젤라또컵',
+                sub : 'Berryberry Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/toppingGelato/img6.png',
+                alt : '딸기젤라또컵',
+                title : '딸기젤라또컵',
+                sub : 'Strawberry Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/toppingGelato/img7.png',
+                alt : '블루베리젤라또컵',
+                title : '블루베리젤라또컵',
+                sub : 'Blueberry Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/toppingGelato/img8.png',
+                alt : '팥젤라또컵',
+                title : '팥젤라또컵',
+                sub : 'Red Beans Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+            {
+                img : '/img/menu/gelato/toppingGelato/img9.png',
+                alt : '오레오젤라또컵',
+                title : '오레오젤라또컵',
+                sub : 'Oreo Gelato cup',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+        ]
+        // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ젤라또 끝
+
+        // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ스쿨푸드
+
+        // 와플 음료 젤라또 스쿨푸드 탭에서 스쿨푸드탭
+        const [sfoodTab , setSfoodTab] = useState('haksick');
+
+        const handleSfoodTab = (stab) => {
+            setSfoodTab(stab);
+        }
+
+        // 신메뉴 베스트 탭 스위치문 usestate
+        const [snbmenu , setSnbMneu] = useState('newSfood');
+
+        const handleSnbmenu = (SnbmenuTab) => {
+            setSnbMneu(SnbmenuTab)
+        }
+
+        // 신메뉴 베스트 탭 스위치문
+        const renderSnbmenu = () => {
+            switch(snbmenu) {
+                case 'newSfood' : 
+                    return(
+                        <>
+                            {newSfood()}
+                        </>
+                    )
+                case 'bestSfood' : 
+                    return(
+                        <>
+                            {bestSfood()}
+                        </>
+                    )
+                default :
+                    return(
+                        <></>
+                    )
+            }
+        }
+
+        // 신메뉴 스쿨푸드 리스트
+        const newSfoodList = [
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/sfood/img1.png',
+                alt : '에그버터K-와플',
+                title : '에그버터K-와플',
+                desc : 'Egg Butter K-Waffle',
+            },
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/sfood/img2.png',
+                alt : ' 떡꼬치와플',
+                title : ' 떡꼬치와플',
+                desc : 'Teok-kkochi Waffle',
+            },
+            {
+                icon : '/img/menu/waffle/newWaffle/newicon.png',
+                iconalt : 'newimage',
+                img : '/img/menu/sfood/img2.png',
+                alt : ' 떡꼬치와플',
+                title : ' 떡꼬치와플',
+                desc : 'Teok-kkochi Waffle',
+            },
+        ]
+
+        // 신메뉴 스쿨푸드 슬릭
+        function newSfood() {
+            const settings = {
+                dots: true,
+                infinite: false,
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            };
+            return (
+                <div className="slider-container newWaffleContainer sfoodContainer">
+                    <Slider {...settings}>
+                        {newSfoodList.map((sfood, index) => (
+                            <div className="newMenu" key={index}>
+                                <div className="newIcon">
+                                    <img src={process.env.PUBLIC_URL + sfood.icon} alt={sfood.iconalt} />
+                                </div>
+                                <div className="img">
+                                    <img src={process.env.PUBLIC_URL + sfood.img} alt={sfood.alt} />
+                                </div>
+                                <h2 className="title">{sfood.title}</h2>
+                                <p className="desc">{sfood.desc}</p>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+            );
+        }
+
+        // 베스트 스쿨푸드 리스트
+        const bestSfoodList = [
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/sfood/img1.png',
+                alt : '에그버터K-와플',
+                title : '에그버터K-와플',
+                desc : 'Egg Butter K-Waffle',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/sfood/img2.png',
+                alt : ' 떡꼬치와플',
+                title : ' 떡꼬치와플',
+                desc : 'Teok-kkochi Waffle',
+            },
+            {
+                icon : '/img/menu/waffle/bestWaffle/besticon.png',
+                iconalt : 'bestimage',
+                img : '/img/menu/sfood/img2.png',
+                alt : ' 떡꼬치와플',
+                title : ' 떡꼬치와플',
+                desc : 'Teok-kkochi Waffle',
+            },
+        ]
+
+        // 베스트 스쿨푸드 슬릭
+        function bestSfood() {
+            const settings = {
+                dots: true,
+                infinite: false,
+                speed: 500,
+                slidesToShow: 3,
+                slidesToScroll: 3
+            };
+            return (
+                <div className="slider-container newWaffleContainer sfoodContainer">
+                    <Slider {...settings}>
+                        {bestSfoodList.map((sfood, index) => (
+                            <div className="newMenu bestMenu" key={index}>
+                                <div className="newIcon">
+                                    <img src={process.env.PUBLIC_URL + sfood.icon} alt={sfood.iconalt} />
+                                </div>
+                                <div className="img">
+                                    <img src={process.env.PUBLIC_URL + sfood.img} alt={sfood.alt} />
+                                </div>
+                                <h2 className="title">{sfood.title}</h2>
+                                <p className="desc">{sfood.desc}</p>
+                            </div>
+                        ))}
+                    </Slider>
+                </div>
+            );
+        }
+
+        // 스쿨푸드 메인 탭 스위치문
+        const renderContentTab4 = () => {
+
+            switch (sfoodTab) {
+                case 'haksick':
+                    return(
+                        <>
+                            <div className='content2List'>
+                                <div className='content2ListCover'>
+                                    {haksickList.slice(0 , visibleItems).map((haksick,index) => (
+                                        <div className='content2Listone' key={index}>
+                                            <div className='cloImg'>
+                                                <img src={process.env.PUBLIC_URL + haksick.img} alt={haksick.alt} />
+                                            </div>
+                                            <div className='cloDesc'>
+                                                <h2>{haksick.title}</h2>
+                                                <p>{haksick.sub}</p>
+                                            </div>
+                                            <div className='moreIcon'>
+                                                <img src={process.env.PUBLIC_URL + haksick.moreimg} alt={haksick.morealt} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {visibleItems < haksickList.length && (
+                                <div className='content2ListBtn'>
+                                    <button onClick={handleLoadMore}>더보기</button>
+                                </div>
+                            )}
+                        </>
+                    )
+                
+                case 'gansick' :
+                    return(
+                        <>
+                            <div className='content2List'>
+                                <div className='content2ListCover'>
+                                    {gansickList.slice(0 , visibleItems).map((gansick,index) => (
+                                        <div className='content2Listone' key={index}>
+                                            <div className='cloImg'>
+                                                <img src={process.env.PUBLIC_URL + gansick.img} alt={gansick.alt} />
+                                            </div>
+                                            <div className='cloDesc'>
+                                                <h2>{gansick.title}</h2>
+                                                <p>{gansick.sub}</p>
+                                            </div>
+                                            <div className='moreIcon'>
+                                                <img src={process.env.PUBLIC_URL + gansick.moreimg} alt={gansick.morealt} />
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            {visibleItems < gansickList.length && (
+                                <div className='content2ListBtn'>
+                                    <button onClick={handleLoadMore}>더보기</button>
+                                </div>
+                            )}
+                        </>
+                    )
+                default:
+                    return(
+                        <></>
+                    )
+            }
+        }
+
+        // 학식 리스트
+        const haksickList = [
+            {
+                img : '/img/menu/sfood/img2.png',
+                alt : '떡꼬치와플',
+                title : '떡꼬치와플',
+                sub : 'Teok-kkochi Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+        ]
+
+        // 간식 리스트
+        const gansickList = [
+            {
+                img : '/img/menu/sfood/img1.png',
+                alt : '에그버터K-와플',
+                title : '에그버터K-와플',
+                sub : 'Egg Butter K-Waffle',
+                moreimg : '/img/menu/waffle/waffleList/moreicon.png',
+                morealt : '더보기 이미지',
+            },
+        ]
+
+        // ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ스쿨푸드 끝
+
         // 와플,음료,젤라또,스쿨푸드 메인 탭 스위치문
         const renderContent = () => {
             switch (tabClick) {
@@ -2181,15 +2825,89 @@ const Menu = () => {
                     )
                 case 'gelato' :
                     return(
-                        <div></div>
+                        <div className='content2'>
+                            <ul className='content2Tab'>
+                                <li>
+                                    <p className={gelatoTab === 'gbasic' ? 'waffleTabOn' : ''} onClick={()=>{handleGelatoTab('gbasic')}}>
+                                        베이직 젤라또컵
+                                    </p>
+                                </li>
+                                <li>
+                                    <p className={gelatoTab === 'gtopping' ? 'waffleTabOn' : ''} onClick={()=>{handleGelatoTab('gtopping')}}>
+                                        토핑 젤라또컵
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='content2Slide'>
+                                <div className='content2SlideCover'>
+                                    <div className='c2SlideArea'>
+                                        <div className='left'>
+                                            <ul className={gnbmenu === 'newGelato' ? 'tabList bgCh' : 'tabList'}>
+                                                <li>
+                                                    <p className={gnbmenu === 'newGelato' ? 'tabOn' : ''} onClick={ () => {handleGnbmenu('newGelato')}}>
+                                                        신메뉴
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p className={gnbmenu === 'bestGelato' ? 'tabOn2' : ''} onClick={ () => {handleGnbmenu('bestGelato')}}>
+                                                        베스트
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className='right'>
+                                            {renderGnbmenu()}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {renderContentTab3()}
+                        </div>
                     )
                 case 'sfood' :
                     return(
-                        <div></div>
+                        <div className='content2'>
+                            <ul className='content2Tab'>
+                                <li>
+                                    <p className={sfoodTab === 'haksick' ? 'waffleTabOn' : ''} onClick={()=>{handleSfoodTab('haksick')}}>
+                                        학식
+                                    </p>
+                                </li>
+                                <li>
+                                    <p className={sfoodTab === 'gansick' ? 'waffleTabOn' : ''} onClick={()=>{handleSfoodTab('gansick')}}>
+                                        간식
+                                    </p>
+                                </li>
+                            </ul>
+                            <div className='content2Slide'>
+                                <div className='content2SlideCover'>
+                                    <div className='c2SlideArea'>
+                                        <div className='left'>
+                                            <ul className={snbmenu === 'newSfood' ? 'tabList bgCh' : 'tabList'}>
+                                                <li>
+                                                    <p className={snbmenu === 'newSfood' ? 'tabOn' : ''} onClick={ () => {handleSnbmenu('newSfood')}}>
+                                                        신메뉴
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <p className={snbmenu === 'bestSfood' ? 'tabOn2' : ''} onClick={ () => {handleSnbmenu('bestSfood')}}>
+                                                        베스트
+                                                    </p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div className='right'>
+                                            {renderSnbmenu()}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {renderContentTab4()}
+                        </div>
                     )
                 default:
                     return(
-                        <div></div>
+                        <></>
                     )
             }
         }
