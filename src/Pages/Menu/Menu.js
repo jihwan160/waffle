@@ -312,6 +312,7 @@ const NewArea = styled.div`
 
         & .content2List {
             margin-bottom: 80px;
+            position: relative;
             & .content2ListCover {
                 display: flex;
                 flex-wrap: wrap;
@@ -328,7 +329,6 @@ const NewArea = styled.div`
                     position: relative;
                     background: #fff;
                     transition: all 0.5s;
-                    cursor: pointer;
                     &:nth-child(4n) {
                         border-right: 0px;
                     }
@@ -374,6 +374,126 @@ const NewArea = styled.div`
                     &:hover .moreIcon{
                         opacity: 1;
                         transition: all 0.5s;
+                    }
+
+                    // modal
+
+                    & .modalCover {
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0, 0, 0, 0.12);
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: fixed;
+                        left: 0;
+                        top: 0;
+                        z-index: 99999;
+                        
+                        & .modalArea {
+                            width: 100%;
+                            background: #fff;
+                            max-width: 1100px;
+                            padding: 6px;
+                            box-sizing: border-box;
+                            & .modal {
+                                width: 100%;
+                                display: flex;
+                                align-items: baseline;
+                                border: 1px solid #000;
+                                & .mleft {
+                                    width: 400px;
+                                    padding: 40px;
+                                    box-sizing: border-box;
+
+                                    & .mleftTitle {
+                                        font-size: 40px;
+                                        padding-bottom: 60px;
+                                    }
+                                    & img {
+                                        width: 100%;
+                                    }
+                                }
+
+                                & .mright {
+                                    width: calc(100% - 400px);
+                                    text-align: left;
+                                    & .mrightCover {
+                                        padding: 40px 40px 40px 0px;
+                                        & .mrightList {
+                                            padding-bottom: 30px;
+                                            & .mrightTitle {
+                                                font-size: 18px;
+                                                font-weight: 700;
+                                                color: #202020;
+                                                padding-bottom: 10px;
+                                                border-bottom: 1px solid #000;
+                                                
+                                                & span {
+                                                    font-size: 16px;
+                                                    font-weight: 600;
+                                                    color: #5c5c5c;
+                                                    margin-left: 4px;
+                                                }
+                                            }
+                                            & .mrdesc {
+                                                font-size: 14px;
+                                                color: #202020;
+                                                line-height: 1.5;
+                                                padding: 20px 20px 0;
+                                                font-weight: 500;
+                                            }
+
+                                            & .tableCover {
+                                                width: 100%;
+                                                padding: 20px 20px 0;
+                                                box-sizing: border-box;
+                                                & table {
+                                                    width: 100%;
+                                                    border: 1px solid #fff;
+                                                    border-collapse: collapse;
+                                                    box-sizing: border-box;
+                                                    & thead {
+                                                        
+                                                        & tr {
+                                                            border-bottom: 1px solid #fff;
+                                                            text-align: center;
+                                                            box-sizing: border-box;
+                                                            & th {
+                                                                padding: 5px;
+                                                                background: #b0b0b0;
+                                                                border-right: 1px solid #fff;
+                                                                font-size: 14px;
+                                                                color: #fff;
+                                                                box-sizing: border-box;
+                                                            }
+                                                        }
+                                                    }
+                                                    & tbody {
+
+                                                        & tr {
+                                                            text-align: center;
+                                                            & td {
+                                                                height: 40px;
+                                                                padding: 5px 10px;
+                                                                background: #efefef;
+                                                                font-size: 14px;
+                                                                color: #202020;
+                                                                border-right: 1px solid #fff;
+                                                                box-sizing: border-box;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                            }
+
+                            
+                        }
                     }
                 }
             }
@@ -716,6 +836,7 @@ const Menu = () => {
                 sub : 'Black Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '',
             },
             {
                 img : '/img/menu/waffle/waffleList/img2.png',
@@ -724,6 +845,7 @@ const Menu = () => {
                 sub : 'Plain waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '',
             },
             {
                 img : '/img/menu/waffle/waffleList/img3.png',
@@ -732,6 +854,7 @@ const Menu = () => {
                 sub : 'Rice Flour Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '',
             },
             {
                 img : '/img/menu/waffle/waffleList/img4.png',
@@ -740,6 +863,7 @@ const Menu = () => {
                 sub : 'Strawberry Jam Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '',
             },
             {
                 img : '/img/menu/waffle/waffleList/img5.png',
@@ -748,6 +872,7 @@ const Menu = () => {
                 sub : 'Apple Jam Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '',
             },
             {
                 img : '/img/menu/waffle/waffleList/img6.png',
@@ -756,6 +881,7 @@ const Menu = () => {
                 sub : 'Cream Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '',
             },
             {
                 img : '/img/menu/waffle/waffleList/img7.png',
@@ -764,6 +890,7 @@ const Menu = () => {
                 sub : 'Apple Cinnamon Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '',
             },
             {
                 img : '/img/menu/waffle/waffleList/img8.png',
@@ -772,6 +899,8 @@ const Menu = () => {
                 sub : 'Maple Cinnamon Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '메이플 시럽과 시나몬이 들어간 기본 와플',
+                desc2 : '대두,우유,밀',
             },
             {
                 img : '/img/menu/waffle/waffleList/img9.png',
@@ -780,6 +909,7 @@ const Menu = () => {
                 sub : 'Snow Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '',
             },
         ]
 
@@ -1192,8 +1322,120 @@ const Menu = () => {
                                             <div className='moreIcon'>
                                                 <img src={process.env.PUBLIC_URL + bwaffle.moreimg} alt={bwaffle.morealt} />
                                             </div>
+
+                                            <div className='modalCover'>
+                                                <div className='modalArea'>
+                                                    <div className='modal'>
+                                                        <div className='mleft'>
+                                                            <h2 className='mleftTitle'>waffle</h2>
+                                                            <img src={process.env.PUBLIC_URL + bwaffle.img} alt={bwaffle.alt} />
+                                                        </div>
+                                                        <div className='mright'>
+                                                            <div className='mrightCover'>
+                                                                <div className='mrightList'>
+                                                                    <div>
+                                                                        <h2 className='mrightTitle'>
+                                                                            {bwaffle.title}
+                                                                            <span>({bwaffle.sub})</span>
+                                                                        </h2>
+                                                                    </div>
+                                                                    <p className='mrdesc'>
+                                                                        {bwaffle.desc}
+                                                                    </p>
+                                                                </div>
+                                                                <div className='mrightList'>
+                                                                    <div>
+                                                                        <h2 className='mrightTitle'>
+                                                                            영양성분표 / {bwaffle.title}
+                                                                        </h2>
+                                                                    </div>
+                                                                    <div className='tableCover'>
+                                                                        <table>
+                                                                            <thead>
+                                                                                <tr>
+                                                                                    <th>
+                                                                                        1회제공량<br />
+                                                                                        (g/ml)
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        열량<br />
+                                                                                        (kcal)
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        당류<br />
+                                                                                        (g)
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        단백질<br />
+                                                                                        (g)
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        포화지방<br />
+                                                                                        (g/ml)
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        나트륨<br />
+                                                                                        (mg)
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        탄수화물<br />
+                                                                                        (g)
+                                                                                    </th>
+                                                                                    <th>
+                                                                                        카페인<br />
+                                                                                        (mg)
+                                                                                    </th>
+                                                                                </tr>
+                                                                            </thead>
+                                                                            <tbody>
+                                                                                <tr>
+                                                                                    <td>
+                                                                                        g
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        kcal
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        g
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        g
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        g
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        mg
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        g
+                                                                                    </td>
+                                                                                    <td>
+                                                                                        mg
+                                                                                    </td>
+                                                                                </tr>
+                                                                            </tbody>
+                                                                        </table>
+                                                                    </div>
+                                                                </div>
+                                                                <div className='mrightList'>
+                                                                    <div>
+                                                                        <h2 className='mrightTitle'>
+                                                                            알레르기 유발 성분
+                                                                        </h2>
+                                                                    </div>
+                                                                    <p className='mrdesc'>
+                                                                        {bwaffle.desc2}
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     ))}
+                                    
                                 </div>
                             </div>
                             {visibleItems < basicWaffleList.length && (
