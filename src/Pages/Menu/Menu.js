@@ -365,6 +365,7 @@ const NewArea = styled.div`
                         display: block;
                         opacity: 0;
                         transition: all 0.5s;
+                        cursor: pointer;
                     }
 
                     &:hover {
@@ -1016,6 +1017,16 @@ const Menu = () => {
                 sub : 'Oreo Nutella Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '악마의 잼 누텔라와 생크림, 오레오가 듬뿍 오레오누텔라와플!',
+                desc2 : '대두, 우유, 밀, 헤이즐넛',
+                info1 : '130',
+                info2 : '507',
+                info3 : '26',
+                info4 : '7',
+                info5 : '10',
+                info6 : '417',
+                info7 : '63',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/nutellaList/img2.png',
@@ -1024,6 +1035,16 @@ const Menu = () => {
                 sub : 'Banana Nutella waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '악마의 잼 누텔라와 생크림, 바나나의 만남 바나나누텔라와플!',
+                desc2 : '대두, 우유, 밀, 헤이즐넛',
+                info1 : '180',
+                info2 : '497',
+                info3 : '29',
+                info4 : '6',
+                info5 : '11',
+                info6 : '342',
+                info7 : '73',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/nutellaList/img3.png',
@@ -1032,6 +1053,16 @@ const Menu = () => {
                 sub : 'Strawberry Nutella Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '바삭한 와플에 상큼 달달한 딸기와 누텔라를 더하다',
+                desc2 : '대두, 우유, 밀, 헤이즐넛',
+                info1 : '170',
+                info2 : '519',
+                info3 : '27',
+                info4 : '7',
+                info5 : '11',
+                info6 : '379',
+                info7 : '66',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/nutellaList/img4.png',
@@ -1040,6 +1071,16 @@ const Menu = () => {
                 sub : 'Nutella Marshmallow Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '달콤한 누텔라의 매력에 빠진 마시멜로가 시원한 젤라또와 함께 만난 환상 짝꿍 블랙 젤라또 와플',
+                desc2 : '대두, 우유, 밀, 헤이즐넛, 쇠고기',
+                info1 : '216',
+                info2 : '631',
+                info3 : '50',
+                info4 : '8',
+                info5 : '11',
+                info6 : '348',
+                info7 : '100',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/nutellaList/img5.png',
@@ -1048,6 +1089,16 @@ const Menu = () => {
                 sub : 'Cheese Cake Nutella Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '바닐라 젤라또와 치즈 케이크, 누텔라가 만나 맛있는 치즈케이크누텔라젤라또와플!',
+                desc2 : '대두, 우유, 밀, 헤이즐넛, 계란, 쇠고기',
+                info1 : '230',
+                info2 : '660',
+                info3 : '7',
+                info4 : '10',
+                info5 : '15',
+                info6 : '489',
+                info7 : '94',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/nutellaList/img6.png',
@@ -1056,6 +1107,16 @@ const Menu = () => {
                 sub : 'Oreo Nutella Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '바닐라 젤라또와 누텔라, 오레오가 만나 맛있는 오레오누텔라젤라또와플!',
+                desc2 : '대두, 우유, 밀, 헤이즐넛',
+                info1 : '210',
+                info2 : '615',
+                info3 : '29',
+                info4 : '9',
+                info5 : '12',
+                info6 : '406',
+                info7 : '89',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/nutellaList/img7.png',
@@ -1064,6 +1125,16 @@ const Menu = () => {
                 sub : 'Nutella Marshmallow Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '달콤한 누텔라의 매력에 빠진 폭신폭신 마시멜로의 환상 조합 블랙 와플',
+                desc2 : '대두, 우유, 밀, 헤이즐넛, 쇠고기, 오징어',
+                info1 : '131',
+                info2 : '447',
+                info3 : '27',
+                info4 : '6',
+                info5 : '6',
+                info6 : '305',
+                info7 : '72',
+                info8 : '0',
             },
         ]
 
@@ -1076,6 +1147,16 @@ const Menu = () => {
                 sub : 'Scallion Bacon Cream Cheese Sand Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : 'Bㅔ이컨, C림치즈, Dㅐ파가 가득 담겨 든든하게 즐기는 식사 대용 샌드와플',
+                desc2 : '대두, 계란, 우유, 돼지고기',
+                info1 : '195',
+                info2 : '635',
+                info3 : '8',
+                info4 : '12',
+                info5 : '14',
+                info6 : '736',
+                info7 : '81',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img2.png',
@@ -1084,6 +1165,16 @@ const Menu = () => {
                 sub : 'Hot & Sweet stuffed Waffle (Sweet Potato)',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '고소한 고구마 앙금과 든든한 우리쌀 와플로 건강하게 만든 따끈한 붕어빵',
+                desc2 : '대두, 우유',
+                info1 : '170',
+                info2 : '441',
+                info3 : '10',
+                info4 : '4',
+                info5 : '5',
+                info6 : '342',
+                info7 : '88',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img3.png',
@@ -1092,6 +1183,16 @@ const Menu = () => {
                 sub : 'Hot & Sweet stuffed Waffle (Custard)',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '촉촉한 슈크림이 가득 부드러운 우리쌀 와플로 건강하게 만든 따끈한 붕어빵',
+                desc2 : '대두, 우유',
+                info1 : '170',
+                info2 : '391',
+                info3 : '7',
+                info4 : '4',
+                info5 : '4',
+                info6 : '293',
+                info7 : '76',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img4.png',
@@ -1100,6 +1201,16 @@ const Menu = () => {
                 sub : 'Hot & Sweet stuffed Waffle (Sweet Red-bean)',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '꽉 찬 팥앙금이 달콤한 클래식 우리쌀 와플로 건강하게 만든 따끈한 붕어빵',
+                desc2 : '대두, 우유',
+                info1 : '170',
+                info2 : '468',
+                info3 : '18',
+                info4 : '6',
+                info5 : '4',
+                info6 : '333',
+                info7 : '92',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img5.png',
@@ -1108,6 +1219,16 @@ const Menu = () => {
                 sub : 'Double ham & Apple',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '두 가지 햄을 만나 행복해진 아삭한 식감의 사과를 더해 신선하고 담백한 우리쌀로 만든 사과는 햄복햄 샌드와플',
+                desc2 : '대두, 계란, 우유, 돼지고기',
+                info1 : '280',
+                info2 : '518',
+                info3 : '10',
+                info4 : '17',
+                info5 : '8',
+                info6 : '737',
+                info7 : '60',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img6.png',
@@ -1116,6 +1237,16 @@ const Menu = () => {
                 sub : 'Egg Mayo',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '에그마요를 듬뿍 담은 든든하고 꽉 찬 맛의 우리쌀로 만든 에그마요 샌드와플',
+                desc2 : '대두, 계란, 우유, 돼지고기',
+                info1 : '300',
+                info2 : '803',
+                info3 : '13',
+                info4 : '31',
+                info5 : '13',
+                info6 : '1,186',
+                info7 : '69',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img7.png',
@@ -1124,6 +1255,16 @@ const Menu = () => {
                 sub : 'Banana Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '정말 잘 어울리는 조합 바나나와플!',
+                desc2 : '대두, 우유, 밀, 땅콩',
+                info1 : '170',
+                info2 : '476',
+                info3 : '29',
+                info4 : '5',
+                info5 : '9',
+                info6 : '384',
+                info7 : '72',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img8.png',
@@ -1132,6 +1273,16 @@ const Menu = () => {
                 sub : 'Blueberry Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '블루베리와 생크림이 만난 블루베리와플!',
+                desc2 : '대두, 우유, 밀',
+                info1 : '120',
+                info2 : '366',
+                info3 : '17',
+                info4 : '4',
+                info5 : '9',
+                info6 : '366',
+                info7 : '57',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img9.png',
@@ -1140,6 +1291,16 @@ const Menu = () => {
                 sub : 'Berry Berry Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '블루베리, 크랜베리, 생크림이 만나 배로 더 풍성한 베리베리와플!',
+                desc2 : '대두, 우유, 밀',
+                info1 : '130',
+                info2 : '395',
+                info3 : '23',
+                info4 : '5',
+                info5 : '8',
+                info6 : '369',
+                info7 : '62',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img10.png',
@@ -1148,6 +1309,16 @@ const Menu = () => {
                 sub : 'Strawberry Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '밀크 크림과 딸기가 만나 정말 맛있는 딸기와플!',
+                desc2 : '대두, 우유, 밀',
+                info1 : '150',
+                info2 : '445',
+                info3 : '24',
+                info4 : '4',
+                info5 : '11',
+                info6 : '405',
+                info7 : '60',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img11.png',
@@ -1156,6 +1327,16 @@ const Menu = () => {
                 sub : 'Mocha Cake Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '진한 모카크림과 부드러운 마스카포네 치즈 사이 바삭한 크런치가 샌드 된 식감 폭발 와플',
+                desc2 : '대두, 우유, 밀',
+                info1 : '160',
+                info2 : '608',
+                info3 : '34',
+                info4 : '5',
+                info5 : '24',
+                info6 : '400',
+                info7 : '79',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img12.png',
@@ -1164,6 +1345,16 @@ const Menu = () => {
                 sub : 'Berryberry Cake Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '새콤달콤한 블루베리 크림과 풍미 가득한 마스카포네 치즈가 부드럽게 어우러진 와플',
+                desc2 : '대두, 우유, 밀',
+                info1 : '165',
+                info2 : '594',
+                info3 : '32',
+                info4 : '4',
+                info5 : '23',
+                info6 : '365',
+                info7 : '73',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img13.png',
@@ -1172,6 +1363,16 @@ const Menu = () => {
                 sub : 'Dirty Chocolate Cake Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '달콤하고 진한 초코와 풍미 가득한 마스카포네 치즈가 조화를 이룬 와플',
+                desc2 : '대두, 우유, 밀',
+                info1 : '152',
+                info2 : '570',
+                info3 : '3',
+                info4 : '5',
+                info5 : '21',
+                info6 : '362',
+                info7 : '69',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img14.png',
@@ -1180,6 +1381,16 @@ const Menu = () => {
                 sub : 'Honey Bread Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '꿀과 달콤한 시럽이 만나 맛있는 와플!',
+                desc2 : '대두, 우유, 밀, 아황산류',
+                info1 : '120',
+                info2 : '362',
+                info3 : '25',
+                info4 : '4',
+                info5 : '8',
+                info6 : '362',
+                info7 : '60',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img15.png',
@@ -1188,6 +1399,16 @@ const Menu = () => {
                 sub : 'Choux Cream Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '달콤한 슈크림을 느낄 수 있는 슈크림 와플',
+                desc2 : '대두, 우유, 밀',
+                info1 : '130',
+                info2 : '313',
+                info3 : '21',
+                info4 : '6',
+                info5 : '3',
+                info6 : '290',
+                info7 : '61',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img16.png',
@@ -1196,6 +1417,16 @@ const Menu = () => {
                 sub : 'Choux Cream Crunch Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '달콤한 슈크림에 바삭한 크런치 쿠키로 식감을 살린 와플!',
+                desc2 : '대두, 우유, 밀, 땅콩',
+                info1 : '160',
+                info2 : '400',
+                info3 : '22',
+                info4 : '6',
+                info5 : '8',
+                info6 : '339',
+                info7 : '70',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img17.png',
@@ -1204,6 +1435,16 @@ const Menu = () => {
                 sub : 'Strawberry Cake Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '생크림과 딸기, 치즈 케이크가 들어간 케이크 축소판! 딸기케이크와플!',
+                desc2 : '대두, 우유, 밀, 계란, 쇠고기',
+                info1 : '160',
+                info2 : '92',
+                info3 : '15',
+                info4 : '5',
+                info5 : '9',
+                info6 : '408',
+                info7 : '57',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img18.png',
@@ -1212,6 +1453,16 @@ const Menu = () => {
                 sub : 'Tiramisu Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '디저트 티라미수가 와플로 재탄생! 갓 만들어 더 맛있는 티라미수와플!',
+                desc2 : '대두, 우유, 밀',
+                info1 : '140',
+                info2 : '539',
+                info3 : '18',
+                info4 : '5',
+                info5 : '21',
+                info6 : '399',
+                info7 : '56',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img19.png',
@@ -1220,6 +1471,16 @@ const Menu = () => {
                 sub : 'Crunch Strawberry Jam Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '바삭한 크런치 식감과 딸기잼의 환상의 조합을 즐길 수 있는 와플',
+                desc2 : '대두, 우유, 밀, 땅콩',
+                info1 : '120',
+                info2 : '401',
+                info3 : '27',
+                info4 : '5',
+                info5 : '7',
+                info6 : '389',
+                info7 : '70',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img20.png',
@@ -1228,6 +1489,16 @@ const Menu = () => {
                 sub : 'Waffle full of Strawberries',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '아이들이 좋아 하는 딸기 크림 위에 생딸기를 듬뿍 담아 딸기 크림과 풍부한 생과일 과즙으로 인해 풍부한 맛과 향을 즐길 수 있는 와플 입니다!',
+                desc2 : '대두, 우유, 밀',
+                info1 : '220',
+                info2 : '483',
+                info3 : '26',
+                info4 : '4',
+                info5 : '10',
+                info6 : '385',
+                info7 : '73',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img21.png',
@@ -1236,6 +1507,16 @@ const Menu = () => {
                 sub : 'Red Beans Snow Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '달달한 팥앙금과 생크림의 조화 팥스노우와플',
+                desc2 : '대두, 우유, 밀',
+                info1 : '160',
+                info2 : '467',
+                info3 : '9',
+                info4 : '8',
+                info5 : '8',
+                info6 : '358',
+                info7 : '82',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img22.png',
@@ -1244,6 +1525,16 @@ const Menu = () => {
                 sub : 'Sweetpotato Walnuts Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '달콤한 군고구마와 생크림, 고소한 호두가 씹히는 와플',
+                desc2 : '대두, 우유, 밀, 호두',
+                info1 : '150',
+                info2 : '471',
+                info3 : '21',
+                info4 : '8',
+                info5 : '8',
+                info6 : '418',
+                info7 : '72',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img23.png',
@@ -1252,6 +1543,16 @@ const Menu = () => {
                 sub : 'WU MISUGARU Red Bean Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '달달한 팥앙금과 건강까지 챙길 수 있는 17가지 곡물이 들어간 와숫가루 레드빈 와플',
+                desc2 : '대두, 우유, 밀',
+                info1 : '117',
+                info2 : '342',
+                info3 : '23',
+                info4 : '5',
+                info5 : '2',
+                info6 : '243',
+                info7 : '65',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/specialList/img24.png',
@@ -1260,6 +1561,16 @@ const Menu = () => {
                 sub : 'Cheese cake & Cranberry Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '달달한 치즈 케이크와 새콤한 크랜베리가 어우러진 와플',
+                desc2 : '대두, 우유, 밀, 계란, 쇠고기',
+                info1 : '130',
+                info2 : '504',
+                info3 : '33',
+                info4 : '5',
+                info5 : '12',
+                info6 : '483',
+                info7 : '69',
+                info8 : '0',
             },
 
         ]
@@ -1273,6 +1584,16 @@ const Menu = () => {
                 sub : 'COTTON CANDY GELATO WAFFLE',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '솜사탕 젤라또에 톡톡 터지는 팝핑캔디를 더한 솜사탕 젤라또 와플',
+                desc2 : '대두, 우유, 밀',
+                info1 : '178',
+                info2 : '420',
+                info3 : '31',
+                info4 : '6',
+                info5 : '7',
+                info6 : '280',
+                info7 : '70',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/gelatoList/img2.png',
@@ -1281,6 +1602,16 @@ const Menu = () => {
                 sub : 'DOUBLE APPLE CINNAMON GELATO WAFFLE',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '와플대학의 스테디셀러 애플시나몬와플을 젤라또로 시원하게 즐길 수 있는 와플',
+                desc2 : '대두, 우유, 밀, 계피',
+                info1 : '200',
+                info2 : '469',
+                info3 : '35',
+                info4 : '6',
+                info5 : '7',
+                info6 : '297',
+                info7 : '82',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/gelatoList/img3.png',
@@ -1289,6 +1620,16 @@ const Menu = () => {
                 sub : 'Choux Cream Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '달콤한 슈크림과 쫀쫀한 젤라또가 만난 와플',
+                desc2 : '대두, 우유, 밀, 땅콩',
+                info1 : '240',
+                info2 : '514',
+                info3 : '47',
+                info4 : '8',
+                info5 : '7',
+                info6 : '363',
+                info7 : '90',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/gelatoList/img4.png',
@@ -1297,6 +1638,16 @@ const Menu = () => {
                 sub : 'Crunch Strawberry Jam Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '바삭한 크런치 식감과 딸기잼의 환상의 조합을 즐길 수 있는 와플',
+                desc2 : '대두, 우유, 밀, 땅콩',
+                info1 : '208',
+                info2 : '541',
+                info3 : '37',
+                info4 : '7',
+                info5 : '7',
+                info6 : '416',
+                info7 : '91',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/gelatoList/img5.png',
@@ -1305,6 +1656,16 @@ const Menu = () => {
                 sub : 'Chocolate Bomb Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '달달한 하루를 만들고 싶을 땐, 초코 크림, 초코 젤라또, 초코 시럽, 초코칩으로 초콜릿이 범벅인 와플을 만나보세요!',
+                desc2 : '대두, 우유, 밀',
+                info1 : '240',
+                info2 : '681',
+                info3 : '44',
+                info4 : '8',
+                info5 : '14',
+                info6 : '480',
+                info7 : '100',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/gelatoList/img6.png',
@@ -1313,6 +1674,16 @@ const Menu = () => {
                 sub : 'Cheese Bomb Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '치즈 케이크, 치즈 크림, 치즈 젤라또로 이루어진 치즈범벅젤라또와플!',
+                desc2 : '대두, 우유, 밀, 계란, 쇠고기',
+                info1 : '240',
+                info2 : '675',
+                info3 : '47',
+                info4 : '8',
+                info5 : '17',
+                info6 : '547',
+                info7 : '91',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/gelatoList/img7.png',
@@ -1321,6 +1692,16 @@ const Menu = () => {
                 sub : 'Blueberry Bomb Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '블루베리, 블루베리 크림, 블루베리 요거트 젤라또로 이루어진 블루베리범벅젤라또와플!',
+                desc2 : '대두, 우유, 밀',
+                info1 : '240',
+                info2 : '66',
+                info3 : '50',
+                info4 : '7',
+                info5 : '13',
+                info6 : '434',
+                info7 : '102',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/gelatoList/img8.png',
@@ -1329,6 +1710,16 @@ const Menu = () => {
                 sub : 'Mango Bomb Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '망고, 망고 크림, 망고 젤라또로 이루어진 망고범벅젤라또와플!',
+                desc2 : '대두, 우유, 밀',
+                info1 : '300',
+                info2 : '668',
+                info3 : '51',
+                info4 : '7',
+                info5 : '1',
+                info6 : '447',
+                info7 : '103',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/gelatoList/img9.png',
@@ -1337,6 +1728,16 @@ const Menu = () => {
                 sub : 'Strawberry Bomb Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '딸기, 딸기 크림, 딸기 젤라또, 딸기 시럽으로 이루어진 딸기범벅젤라또와플!',
+                desc2 : '대두, 우유, 밀',
+                info1 : '270',
+                info2 : '614',
+                info3 : '43',
+                info4 : '6',
+                info5 : '13',
+                info6 : '422',
+                info7 : '90',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/gelatoList/img10.png',
@@ -1345,6 +1746,16 @@ const Menu = () => {
                 sub : 'Red Beans Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '젤라또와 팥의 조합으로 이루어진 싸만코 젤라또 와플',
+                desc2 : '대두, 우유, 밀, 땅콩',
+                info1 : '250',
+                info2 : '634',
+                info3 : '49',
+                info4 : '11',
+                info5 : '8',
+                info6 : '417',
+                info7 : '104',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/gelatoList/img11.png',
@@ -1353,6 +1764,16 @@ const Menu = () => {
                 sub : 'Strawberry Nutella Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '바닐라 젤라또와 딸기, 누텔라가 만나 맛있는 딸기누텔라젤라또와플!',
+                desc2 : '대두, 우유, 밀, 헤이즐넛',
+                info1 : '250',
+                info2 : '606',
+                info3 : '44',
+                info4 : '9',
+                info5 : '11',
+                info6 : '350',
+                info7 : '89',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/gelatoList/img12.png',
@@ -1361,6 +1782,16 @@ const Menu = () => {
                 sub : 'Berryberry Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '크랜베리, 블루베리 토핑으로 알록달록한 와플로 입도 눈도 즐거워요.',
+                desc2 : '대두, 우유, 밀',
+                info1 : '220',
+                info2 : '534',
+                info3 : '38',
+                info4 : '7',
+                info5 : '10',
+                info6 : '387',
+                info7 : '89',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/gelatoList/img13.png',
@@ -1369,6 +1800,16 @@ const Menu = () => {
                 sub : 'Blueberry Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '바닐라 젤라또와 블루베리가 만나 맛있는 블루베리젤라또와플!',
+                desc2 : '대두, 우유, 밀',
+                info1 : '210',
+                info2 : '504',
+                info3 : '40',
+                info4 : '7',
+                info5 : '9',
+                info6 : '391',
+                info7 : '83',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/gelatoList/img14.png',
@@ -1377,6 +1818,16 @@ const Menu = () => {
                 sub : 'Cream Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '쫀득한 10가지 젤라또와 바삭한 와플, 10가지 크림이 어우러진 젤라또와플!',
+                desc2 : '대두, 우유, 밀',
+                info1 : '220',
+                info2 : '679',
+                info3 : '43',
+                info4 : '7',
+                info5 : '16',
+                info6 : '476',
+                info7 : '97',
+                info8 : '0',
             },
             {
                 img : '/img/menu/waffle/gelatoList/img15.png',
@@ -1385,6 +1836,16 @@ const Menu = () => {
                 sub : 'Gelato Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '쫀득한 10가지 젤라또와 바삭한 와플이 어우러진 젤라또 와플',
+                desc2 : '대두, 우유, 밀',
+                info1 : '10',
+                info2 : '491',
+                info3 : '5',
+                info4 : '7',
+                info5 : '9',
+                info6 : '413',
+                info7 : '75',
+                info8 : '0',
             },
         ]
 
@@ -1395,259 +1856,21 @@ const Menu = () => {
             setWaffleTab(wtab);
         }
 
+
         // 디테일 탭
-        
-
-        // 와플 메인 탭 스위치문
-        // const renderContentTab = () => {
-
-        //     switch (waffleTab) {
-        //         case 'basic':
-        //             return(
-        //                 <>
-        //                     <div className='content2List'>
-        //                         <div className='content2ListCover'>
-        //                             {basicWaffleList.slice(0 , visibleItems).map((bwaffle,index) => (
-        //                                 <div className='content2Listone' key={index}>
-        //                                     <div className='cloImg'>
-        //                                         <img src={process.env.PUBLIC_URL + bwaffle.img} alt={bwaffle.alt} />
-        //                                     </div>
-        //                                     <div className='cloDesc'>
-        //                                         <h2>{bwaffle.title}</h2>
-        //                                         <p>{bwaffle.sub}</p>
-        //                                     </div>
-        //                                     <div className='moreIcon'>
-        //                                         <img src={process.env.PUBLIC_URL + bwaffle.moreimg} alt={bwaffle.morealt} />
-        //                                     </div>
-                                            
-        //                                     <div className='modalCover'>
-        //                                         <div className='modalArea'>
-        //                                             <div className='modal'>
-        //                                                 <div className='mleft'>
-        //                                                     <h2 className='mleftTitle'>Waffle</h2>
-        //                                                     <img src={process.env.PUBLIC_URL + bwaffle.img} alt={bwaffle.alt} />
-        //                                                 </div>
-        //                                                 <div className='mright'>
-        //                                                     <div className='mrightCover'>
-        //                                                         <div className='mrightList'>
-        //                                                             <div>
-        //                                                                 <h2 className='mrightTitle'>
-        //                                                                     {bwaffle.title}
-        //                                                                     <span>({bwaffle.sub})</span>
-        //                                                                 </h2>
-        //                                                             </div>
-        //                                                             <p className='mrdesc'>
-        //                                                                 {bwaffle.desc}
-        //                                                             </p>
-        //                                                         </div>
-        //                                                         <div className='mrightList'>
-        //                                                             <div>
-        //                                                                 <h2 className='mrightTitle'>
-        //                                                                     영양성분표 / {bwaffle.title}
-        //                                                                 </h2>
-        //                                                             </div>
-        //                                                             <div className='tableCover'>
-        //                                                                 <table>
-        //                                                                     <thead>
-        //                                                                         <tr>
-        //                                                                             <th>
-        //                                                                                 1회제공량<br />
-        //                                                                                 (g/ml)
-        //                                                                             </th>
-        //                                                                             <th>
-        //                                                                                 열량<br />
-        //                                                                                 (kcal)
-        //                                                                             </th>
-        //                                                                             <th>
-        //                                                                                 당류<br />
-        //                                                                                 (g)
-        //                                                                             </th>
-        //                                                                             <th>
-        //                                                                                 단백질<br />
-        //                                                                                 (g)
-        //                                                                             </th>
-        //                                                                             <th>
-        //                                                                                 포화지방<br />
-        //                                                                                 (g/ml)
-        //                                                                             </th>
-        //                                                                             <th>
-        //                                                                                 나트륨<br />
-        //                                                                                 (mg)
-        //                                                                             </th>
-        //                                                                             <th>
-        //                                                                                 탄수화물<br />
-        //                                                                                 (g)
-        //                                                                             </th>
-        //                                                                             <th>
-        //                                                                                 카페인<br />
-        //                                                                                 (mg)
-        //                                                                             </th>
-        //                                                                         </tr>
-        //                                                                     </thead>
-        //                                                                     <tbody>
-        //                                                                         <tr>
-        //                                                                             <td>
-        //                                                                                 {bwaffle.info1}g
-        //                                                                             </td>
-        //                                                                             <td>
-        //                                                                                 {bwaffle.info2}kcal
-        //                                                                             </td>
-        //                                                                             <td>
-        //                                                                                 {bwaffle.info3}g
-        //                                                                             </td>
-        //                                                                             <td>
-        //                                                                                 {bwaffle.info4}g
-        //                                                                             </td>
-        //                                                                             <td>
-        //                                                                                 {bwaffle.info5}g
-        //                                                                             </td>
-        //                                                                             <td>
-        //                                                                                 {bwaffle.info6}mg
-        //                                                                             </td>
-        //                                                                             <td>
-        //                                                                                 {bwaffle.info7}g
-        //                                                                             </td>
-        //                                                                             <td>
-        //                                                                                 {bwaffle.info8}mg
-        //                                                                             </td>
-        //                                                                         </tr>
-        //                                                                     </tbody>
-        //                                                                 </table>
-        //                                                             </div>
-        //                                                         </div>
-        //                                                         <div className='mrightList'>
-        //                                                             <div>
-        //                                                                 <h2 className='mrightTitle'>
-        //                                                                     알레르기 유발 성분
-        //                                                                 </h2>
-        //                                                             </div>
-        //                                                             <p className='mrdesc'>
-        //                                                                 {bwaffle.desc2}
-        //                                                             </p>
-        //                                                         </div>
-        //                                                     </div>
-        //                                                 </div>
-        //                                                 <div className='closeImg'>
-        //                                                     <img src={`${process.env.PUBLIC_URL}img/menu/close.png`} alt='close' />
-        //                                                 </div>
-        //                                             </div>
-        //                                         </div>
-        //                                     </div>
-        //                                 </div>
-        //                             ))}
-                                    
-        //                         </div>
-        //                     </div>
-        //                     {visibleItems < basicWaffleList.length && (
-        //                         <div className='content2ListBtn'>
-        //                             <button onClick={handleLoadMore}>더보기</button>
-        //                         </div>
-        //                     )}
-        //                 </>
-        //             )
-                
-        //         case 'nutella' :
-        //             return(
-        //                 <>
-        //                     <div className='content2List'>
-        //                         <div className='content2ListCover'>
-        //                             {nutellaWaffleList.slice(0 , visibleItems).map((bwaffle,index) => (
-        //                                 <div className='content2Listone' key={index}>
-        //                                     <div className='cloImg'>
-        //                                         <img src={process.env.PUBLIC_URL + bwaffle.img} alt={bwaffle.alt} />
-        //                                     </div>
-        //                                     <div className='cloDesc'>
-        //                                         <h2>{bwaffle.title}</h2>
-        //                                         <p>{bwaffle.sub}</p>
-        //                                     </div>
-        //                                     <div className='moreIcon'>
-        //                                         <img src={process.env.PUBLIC_URL + bwaffle.moreimg} alt={bwaffle.morealt} />
-        //                                     </div>
-        //                                 </div>
-        //                             ))}
-        //                         </div>
-        //                     </div>
-        //                     {visibleItems < nutellaWaffleList.length && (
-        //                         <div className='content2ListBtn'>
-        //                             <button onClick={handleLoadMore}>더보기</button>
-        //                         </div>
-        //                     )}
-        //                 </>
-        //             )
-        //         case 'special' :
-        //             return(
-        //                 <>
-        //                     <div className='content2List'>
-        //                         <div className='content2ListCover'>
-        //                             {specialWaffleList.slice(0 , visibleItems).map((bwaffle,index) => (
-        //                                 <div className='content2Listone' key={index}>
-        //                                     <div className='cloImg'>
-        //                                         <img src={process.env.PUBLIC_URL + bwaffle.img} alt={bwaffle.alt} />
-        //                                     </div>
-        //                                     <div className='cloDesc'>
-        //                                         <h2>{bwaffle.title}</h2>
-        //                                         <p>{bwaffle.sub}</p>
-        //                                     </div>
-        //                                     <div className='moreIcon'>
-        //                                         <img src={process.env.PUBLIC_URL + bwaffle.moreimg} alt={bwaffle.morealt} />
-        //                                     </div>
-        //                                 </div>
-        //                             ))}
-        //                         </div>
-        //                     </div>
-        //                     {visibleItems < specialWaffleList.length && (
-        //                         <div className='content2ListBtn'>
-        //                             <button onClick={handleLoadMore}>더보기</button>
-        //                         </div>
-        //                     )}
-        //                 </>
-        //             )
-        //         case 'gelato' :
-        //             return(
-        //                 <>
-        //                     <div className='content2List'>
-        //                         <div className='content2ListCover'>
-        //                             {gelatoWaffleList.slice(0 , visibleItems).map((bwaffle,index) => (
-        //                                 <div className='content2Listone' key={index}>
-        //                                     <div className='cloImg'>
-        //                                         <img src={process.env.PUBLIC_URL + bwaffle.img} alt={bwaffle.alt} />
-        //                                     </div>
-        //                                     <div className='cloDesc'>
-        //                                         <h2>{bwaffle.title}</h2>
-        //                                         <p>{bwaffle.sub}</p>
-        //                                     </div>
-        //                                     <div className='moreIcon'>
-        //                                         <img src={process.env.PUBLIC_URL + bwaffle.moreimg} alt={bwaffle.morealt} />
-        //                                     </div>
-        //                                 </div>
-        //                             ))}
-        //                         </div>
-        //                     </div>
-        //                     {visibleItems < gelatoWaffleList.length && (
-        //                         <div className='content2ListBtn'>
-        //                             <button onClick={handleLoadMore}>더보기</button>
-        //                         </div>
-        //                     )}
-        //                 </>
-        //             )
-        //         default:
-        //             return(
-        //                 <></>
-        //             )
-        //     }
-        // }
-
         const [activeModalIndex, setActiveModalIndex] = useState(null);
 
-
+        // 모달 오픈
         const handleModalOpen = (index) => {
             setActiveModalIndex(index)
         }
 
+        // 모달 닫기기
         const handleModalClose = () => {
             setActiveModalIndex(null)
         }
 
+        // 스위치문
         const renderContentTab = () => {
 
             const getCurrentList = () => {
@@ -1671,17 +1894,17 @@ const Menu = () => {
                 <>
                     <div className='content2List'>
                         <div className='content2ListCover'>
-                            {currentList.slice(0 , visibleItems).map((bwaffle,index) => (
+                            {currentList.slice(0 , visibleItems).map((list,index) => (
                                 <div className='content2Listone' key={index} onClick={()=>{handleModalOpen(index)}}>
                                     <div className='cloImg'>
-                                        <img src={process.env.PUBLIC_URL + bwaffle.img} alt={bwaffle.alt} />
+                                        <img src={process.env.PUBLIC_URL + list.img} alt={list.alt} />
                                     </div>
                                     <div className='cloDesc'>
-                                        <h2>{bwaffle.title}</h2>
-                                        <p>{bwaffle.sub}</p>
+                                        <h2>{list.title}</h2>
+                                        <p>{list.sub}</p>
                                     </div>
                                     <div className='moreIcon'>
-                                        <img src={process.env.PUBLIC_URL + bwaffle.moreimg} alt={bwaffle.morealt} />
+                                        <img src={process.env.PUBLIC_URL + list.moreimg} alt={list.morealt} />
                                     </div>
                                     { activeModalIndex === index && (
                                         <div className='modalCover' style={{ display: activeModalIndex === index ? 'flex' : 'none' }}>
@@ -1689,25 +1912,25 @@ const Menu = () => {
                                                 <div className='modal'>
                                                     <div className='mleft'>
                                                         <h2 className='mleftTitle'>Waffle</h2>
-                                                        <img src={process.env.PUBLIC_URL + bwaffle.img} alt={bwaffle.alt} />
+                                                        <img src={process.env.PUBLIC_URL + list.img} alt={list.alt} />
                                                     </div>
                                                     <div className='mright'>
                                                         <div className='mrightCover'>
                                                             <div className='mrightList'>
                                                                 <div>
                                                                     <h2 className='mrightTitle'>
-                                                                        {bwaffle.title}
-                                                                        <span>({bwaffle.sub})</span>
+                                                                        {list.title}
+                                                                        <span>({list.sub})</span>
                                                                     </h2>
                                                                 </div>
                                                                 <p className='mrdesc'>
-                                                                    {bwaffle.desc}
+                                                                    {list.desc}
                                                                 </p>
                                                             </div>
                                                             <div className='mrightList'>
                                                                 <div>
                                                                     <h2 className='mrightTitle'>
-                                                                        영양성분표 / {bwaffle.title}
+                                                                        영양성분표 / {list.title}
                                                                     </h2>
                                                                 </div>
                                                                 <div className='tableCover'>
@@ -1751,28 +1974,28 @@ const Menu = () => {
                                                                         <tbody>
                                                                             <tr>
                                                                                 <td>
-                                                                                    {bwaffle.info1}g
+                                                                                    {list.info1}g
                                                                                 </td>
                                                                                 <td>
-                                                                                    {bwaffle.info2}kcal
+                                                                                    {list.info2}kcal
                                                                                 </td>
                                                                                 <td>
-                                                                                    {bwaffle.info3}g
+                                                                                    {list.info3}g
                                                                                 </td>
                                                                                 <td>
-                                                                                    {bwaffle.info4}g
+                                                                                    {list.info4}g
                                                                                 </td>
                                                                                 <td>
-                                                                                    {bwaffle.info5}g
+                                                                                    {list.info5}g
                                                                                 </td>
                                                                                 <td>
-                                                                                    {bwaffle.info6}mg
+                                                                                    {list.info6}mg
                                                                                 </td>
                                                                                 <td>
-                                                                                    {bwaffle.info7}g
+                                                                                    {list.info7}g
                                                                                 </td>
                                                                                 <td>
-                                                                                    {bwaffle.info8}mg
+                                                                                    {list.info8}mg
                                                                                 </td>
                                                                             </tr>
                                                                         </tbody>
@@ -1786,7 +2009,7 @@ const Menu = () => {
                                                                     </h2>
                                                                 </div>
                                                                 <p className='mrdesc'>
-                                                                    {bwaffle.desc2}
+                                                                    {list.desc2}
                                                                 </p>
                                                             </div>
                                                         </div>
@@ -1803,7 +2026,7 @@ const Menu = () => {
                             
                         </div>
                     </div>
-                    {visibleItems < basicWaffleList.length && (
+                    {visibleItems < currentList.length && (
                         <div className='content2ListBtn'>
                             <button onClick={handleLoadMore}>더보기</button>
                         </div>
@@ -2022,128 +2245,169 @@ const Menu = () => {
             setDrinkTab(dtab);
         }
 
-        // 와플 메인 탭 스위치문
+        // 음료 메인 탭 스위치문
         const renderContentTab2 = () => {
 
-            switch (drinkTab) {
-                case 'coffee':
-                    return(
-                        <>
-                            <div className='content2List'>
-                                <div className='content2ListCover'>
-                                    {coffeeList.slice(0 , visibleItems).map((coffee,index) => (
-                                        <div className='content2Listone' key={index}>
-                                            <div className='cloImg'>
-                                                <img src={process.env.PUBLIC_URL + coffee.img} alt={coffee.alt} />
-                                            </div>
-                                            <div className='cloDesc'>
-                                                <h2>{coffee.title}</h2>
-                                                <p>{coffee.sub}</p>
-                                            </div>
-                                            <div className='moreIcon'>
-                                                <img src={process.env.PUBLIC_URL + coffee.moreimg} alt={coffee.morealt} />
+            const getCurrentList2 = () => {
+                switch (drinkTab) {
+                    case 'coffee':
+                        return coffeeList;
+                    case 'noncoffee':
+                        return noncoffeeList;
+                    case 'smoody':
+                        return smoodyList;
+                    case 'tea':
+                        return teaList;
+                    default:
+                        return []
+                }
+            };
+
+            const currentList2 = getCurrentList2();
+
+            return(
+                <>
+                    <div className='content2List'>
+                        <div className='content2ListCover'>
+                            {currentList2.slice(0 , visibleItems).map((list,index) => (
+                                <div className='content2Listone' key={index} onClick={()=>{handleModalOpen(index)}}>
+                                    <div className='cloImg'>
+                                        <img src={process.env.PUBLIC_URL + list.img} alt={list.alt} />
+                                    </div>
+                                    <div className='cloDesc'>
+                                        <h2>{list.title}</h2>
+                                        <p>{list.sub}</p>
+                                    </div>
+                                    <div className='moreIcon'>
+                                        <img src={process.env.PUBLIC_URL + list.moreimg} alt={list.morealt} />
+                                    </div>
+                                    { activeModalIndex === index && (
+                                        <div className='modalCover' style={{ display: activeModalIndex === index ? 'flex' : 'none' }}>
+                                            <div className='modalArea'>
+                                                <div className='modal'>
+                                                    <div className='mleft'>
+                                                        <h2 className='mleftTitle'>Beverage</h2>
+                                                        <img src={process.env.PUBLIC_URL + list.img} alt={list.alt} />
+                                                    </div>
+                                                    <div className='mright'>
+                                                        <div className='mrightCover'>
+                                                            <div className='mrightList'>
+                                                                <div>
+                                                                    <h2 className='mrightTitle'>
+                                                                        {list.title}
+                                                                        <span>({list.sub})</span>
+                                                                    </h2>
+                                                                </div>
+                                                                <p className='mrdesc'>
+                                                                    {list.desc}
+                                                                </p>
+                                                            </div>
+                                                            <div className='mrightList'>
+                                                                <div>
+                                                                    <h2 className='mrightTitle'>
+                                                                        영양성분표 / {list.title}
+                                                                    </h2>
+                                                                </div>
+                                                                <div className='tableCover'>
+                                                                    <table>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    1회제공량<br />
+                                                                                    (g/ml)
+                                                                                </th>
+                                                                                <th>
+                                                                                    열량<br />
+                                                                                    (kcal)
+                                                                                </th>
+                                                                                <th>
+                                                                                    당류<br />
+                                                                                    (g)
+                                                                                </th>
+                                                                                <th>
+                                                                                    단백질<br />
+                                                                                    (g)
+                                                                                </th>
+                                                                                <th>
+                                                                                    포화지방<br />
+                                                                                    (g/ml)
+                                                                                </th>
+                                                                                <th>
+                                                                                    나트륨<br />
+                                                                                    (mg)
+                                                                                </th>
+                                                                                <th>
+                                                                                    탄수화물<br />
+                                                                                    (g)
+                                                                                </th>
+                                                                                <th>
+                                                                                    카페인<br />
+                                                                                    (mg)
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    {list.info1}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info2}kcal
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info3}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info4}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info5}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info6}mg
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info7}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info8}mg
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <div className='mrightList'>
+                                                                <div>
+                                                                    <h2 className='mrightTitle'>
+                                                                        알레르기 유발 성분
+                                                                    </h2>
+                                                                </div>
+                                                                <p className='mrdesc'>
+                                                                    {list.desc2}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className='closeImg' onClick={(e)=>{e.stopPropagation(); handleModalClose()}}>
+                                                        <img src={`${process.env.PUBLIC_URL}/img/menu/close.png`} alt='close' />
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    ))}
+                                    )}
                                 </div>
-                            </div>
-                            {visibleItems < coffeeList.length && (
-                                <div className='content2ListBtn'>
-                                    <button onClick={handleLoadMore}>더보기</button>
-                                </div>
-                            )}
-                        </>
-                    )
-                
-                case 'noncoffee' :
-                    return(
-                        <>
-                            <div className='content2List'>
-                                <div className='content2ListCover'>
-                                    {noncoffeeList.slice(0 , visibleItems).map((noncoffee,index) => (
-                                        <div className='content2Listone' key={index}>
-                                            <div className='cloImg'>
-                                                <img src={process.env.PUBLIC_URL + noncoffee.img} alt={noncoffee.alt} />
-                                            </div>
-                                            <div className='cloDesc'>
-                                                <h2>{noncoffee.title}</h2>
-                                                <p>{noncoffee.sub}</p>
-                                            </div>
-                                            <div className='moreIcon'>
-                                                <img src={process.env.PUBLIC_URL + noncoffee.moreimg} alt={noncoffee.morealt} />
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                            {visibleItems < noncoffeeList.length && (
-                                <div className='content2ListBtn'>
-                                    <button onClick={handleLoadMore}>더보기</button>
-                                </div>
-                            )}
-                        </>
-                    )
-                case 'smoody' :
-                    return(
-                        <>
-                            <div className='content2List'>
-                                <div className='content2ListCover'>
-                                    {smoodyList.slice(0 , visibleItems).map((smoody,index) => (
-                                        <div className='content2Listone' key={index}>
-                                            <div className='cloImg'>
-                                                <img src={process.env.PUBLIC_URL + smoody.img} alt={smoody.alt} />
-                                            </div>
-                                            <div className='cloDesc'>
-                                                <h2>{smoody.title}</h2>
-                                                <p>{smoody.sub}</p>
-                                            </div>
-                                            <div className='moreIcon'>
-                                                <img src={process.env.PUBLIC_URL + smoody.moreimg} alt={smoody.morealt} />
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                            {visibleItems < smoodyList.length && (
-                                <div className='content2ListBtn'>
-                                    <button onClick={handleLoadMore}>더보기</button>
-                                </div>
-                            )}
-                        </>
-                    )
-                case 'tea' :
-                    return(
-                        <>
-                            <div className='content2List'>
-                                <div className='content2ListCover'>
-                                    {teaList.slice(0 , visibleItems).map((tea,index) => (
-                                        <div className='content2Listone' key={index}>
-                                            <div className='cloImg'>
-                                                <img src={process.env.PUBLIC_URL + tea.img} alt={tea.alt} />
-                                            </div>
-                                            <div className='cloDesc'>
-                                                <h2>{tea.title}</h2>
-                                                <p>{tea.sub}</p>
-                                            </div>
-                                            <div className='moreIcon'>
-                                                <img src={process.env.PUBLIC_URL + tea.moreimg} alt={tea.morealt} />
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                            {visibleItems < teaList.length && (
-                                <div className='content2ListBtn'>
-                                    <button onClick={handleLoadMore}>더보기</button>
-                                </div>
-                            )}
-                        </>
-                    )
-                default:
-                    return(
-                        <></>
-                    )
-            }
+                            ))}
+                            
+                        </div>
+                    </div>
+                    {visibleItems < currentList2.length && (
+                        <div className='content2ListBtn'>
+                            <button onClick={handleLoadMore}>더보기</button>
+                        </div>
+                    )}
+                </>
+            )
         }
 
         // 커피 리스트
@@ -2155,6 +2419,16 @@ const Menu = () => {
                 sub : 'Coconut Condensed Milk Latte',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '',
+                desc2 : '',
+                info1 : '',
+                info2 : '',
+                info3 : '',
+                info4 : '',
+                info5 : '',
+                info6 : '',
+                info7 : '',
+                info8 : '',
             },
             {
                 img : '/img/menu/drink/coffeeList/img2.png',
@@ -2744,69 +3018,162 @@ const Menu = () => {
         // 젤라또 메인 탭 스위치문
         const renderContentTab3 = () => {
 
-            switch (gelatoTab) {
-                case 'gbasic':
-                    return(
-                        <>
-                            <div className='content2List'>
-                                <div className='content2ListCover'>
-                                    {basicList.slice(0 , visibleItems).map((basic,index) => (
-                                        <div className='content2Listone' key={index}>
-                                            <div className='cloImg'>
-                                                <img src={process.env.PUBLIC_URL + basic.img} alt={basic.alt} />
-                                            </div>
-                                            <div className='cloDesc'>
-                                                <h2>{basic.title}</h2>
-                                                <p>{basic.sub}</p>
-                                            </div>
-                                            <div className='moreIcon'>
-                                                <img src={process.env.PUBLIC_URL + basic.moreimg} alt={basic.morealt} />
+            const getCurrentList3 = () => {
+                switch(gelatoTab) {
+                    case 'gbasic':
+                        return basicList;
+                    case 'gtopping':
+                        return toppingList;
+                    default:
+                        return []
+                }
+            };
+
+            const currentList3 = getCurrentList3();
+
+            return(
+                <>
+                    <div className='content2List'>
+                        <div className='content2ListCover'>
+                            {currentList3.slice(0 , visibleItems).map((list,index) => (
+                                <div className='content2Listone' key={index} onClick={()=>{handleModalOpen(index)}}>
+                                    <div className='cloImg'>
+                                        <img src={process.env.PUBLIC_URL + list.img} alt={list.alt} />
+                                    </div>
+                                    <div className='cloDesc'>
+                                        <h2>{list.title}</h2>
+                                        <p>{list.sub}</p>
+                                    </div>
+                                    <div className='moreIcon'>
+                                        <img src={process.env.PUBLIC_URL + list.moreimg} alt={list.morealt} />
+                                    </div>
+                                    { activeModalIndex === index && (
+                                        <div className='modalCover' style={{ display: activeModalIndex === index ? 'flex' : 'none' }}>
+                                            <div className='modalArea'>
+                                                <div className='modal'>
+                                                    <div className='mleft'>
+                                                        <h2 className='mleftTitle'>Gelato</h2>
+                                                        <img src={process.env.PUBLIC_URL + list.img} alt={list.alt} />
+                                                    </div>
+                                                    <div className='mright'>
+                                                        <div className='mrightCover'>
+                                                            <div className='mrightList'>
+                                                                <div>
+                                                                    <h2 className='mrightTitle'>
+                                                                        {list.title}
+                                                                        <span>({list.sub})</span>
+                                                                    </h2>
+                                                                </div>
+                                                                <p className='mrdesc'>
+                                                                    {list.desc}
+                                                                </p>
+                                                            </div>
+                                                            <div className='mrightList'>
+                                                                <div>
+                                                                    <h2 className='mrightTitle'>
+                                                                        영양성분표 / {list.title}
+                                                                    </h2>
+                                                                </div>
+                                                                <div className='tableCover'>
+                                                                    <table>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    1회제공량<br />
+                                                                                    (g/ml)
+                                                                                </th>
+                                                                                <th>
+                                                                                    열량<br />
+                                                                                    (kcal)
+                                                                                </th>
+                                                                                <th>
+                                                                                    당류<br />
+                                                                                    (g)
+                                                                                </th>
+                                                                                <th>
+                                                                                    단백질<br />
+                                                                                    (g)
+                                                                                </th>
+                                                                                <th>
+                                                                                    포화지방<br />
+                                                                                    (g/ml)
+                                                                                </th>
+                                                                                <th>
+                                                                                    나트륨<br />
+                                                                                    (mg)
+                                                                                </th>
+                                                                                <th>
+                                                                                    탄수화물<br />
+                                                                                    (g)
+                                                                                </th>
+                                                                                <th>
+                                                                                    카페인<br />
+                                                                                    (mg)
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    {list.info1}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info2}kcal
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info3}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info4}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info5}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info6}mg
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info7}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info8}mg
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <div className='mrightList'>
+                                                                <div>
+                                                                    <h2 className='mrightTitle'>
+                                                                        알레르기 유발 성분
+                                                                    </h2>
+                                                                </div>
+                                                                <p className='mrdesc'>
+                                                                    {list.desc2}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className='closeImg' onClick={(e)=>{e.stopPropagation(); handleModalClose()}}>
+                                                        <img src={`${process.env.PUBLIC_URL}/img/menu/close.png`} alt='close' />
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    ))}
+                                    )}
                                 </div>
-                            </div>
-                            {visibleItems < basicList.length && (
-                                <div className='content2ListBtn'>
-                                    <button onClick={handleLoadMore}>더보기</button>
-                                </div>
-                            )}
-                        </>
-                    )
-                
-                case 'gtopping' :
-                    return(
-                        <>
-                            <div className='content2List'>
-                                <div className='content2ListCover'>
-                                    {toppingList.slice(0 , visibleItems).map((topping,index) => (
-                                        <div className='content2Listone' key={index}>
-                                            <div className='cloImg'>
-                                                <img src={process.env.PUBLIC_URL + topping.img} alt={topping.alt} />
-                                            </div>
-                                            <div className='cloDesc'>
-                                                <h2>{topping.title}</h2>
-                                                <p>{topping.sub}</p>
-                                            </div>
-                                            <div className='moreIcon'>
-                                                <img src={process.env.PUBLIC_URL + topping.moreimg} alt={topping.morealt} />
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                            {visibleItems < toppingList.length && (
-                                <div className='content2ListBtn'>
-                                    <button onClick={handleLoadMore}>더보기</button>
-                                </div>
-                            )}
-                        </>
-                    )
-                default:
-                    return(
-                        <></>
-                    )
-            }
+                            ))}
+                            
+                        </div>
+                    </div>
+                    {visibleItems < currentList3.length && (
+                        <div className='content2ListBtn'>
+                            <button onClick={handleLoadMore}>더보기</button>
+                        </div>
+                    )}
+                </>
+            )
         }
 
         // 베이직 리스트
@@ -3125,69 +3492,162 @@ const Menu = () => {
         // 스쿨푸드 메인 탭 스위치문
         const renderContentTab4 = () => {
 
-            switch (sfoodTab) {
-                case 'haksick':
-                    return(
-                        <>
-                            <div className='content2List'>
-                                <div className='content2ListCover'>
-                                    {haksickList.slice(0 , visibleItems).map((haksick,index) => (
-                                        <div className='content2Listone' key={index}>
-                                            <div className='cloImg'>
-                                                <img src={process.env.PUBLIC_URL + haksick.img} alt={haksick.alt} />
-                                            </div>
-                                            <div className='cloDesc'>
-                                                <h2>{haksick.title}</h2>
-                                                <p>{haksick.sub}</p>
-                                            </div>
-                                            <div className='moreIcon'>
-                                                <img src={process.env.PUBLIC_URL + haksick.moreimg} alt={haksick.morealt} />
+            const getCurrentList4 = () => {
+                switch(sfoodTab) {
+                    case 'haksick' :
+                        return haksickList;
+                    case 'gansick' :
+                        return gansickList;
+                    default : 
+                        return []
+                }
+            };
+
+            const currentList4 = getCurrentList4();
+
+            return(
+                <>
+                    <div className='content2List'>
+                        <div className='content2ListCover'>
+                            {currentList4.slice(0 , visibleItems).map((list,index) => (
+                                <div className='content2Listone' key={index} onClick={()=>{handleModalOpen(index)}}>
+                                    <div className='cloImg'>
+                                        <img src={process.env.PUBLIC_URL + list.img} alt={list.alt} />
+                                    </div>
+                                    <div className='cloDesc'>
+                                        <h2>{list.title}</h2>
+                                        <p>{list.sub}</p>
+                                    </div>
+                                    <div className='moreIcon'>
+                                        <img src={process.env.PUBLIC_URL + list.moreimg} alt={list.morealt} />
+                                    </div>
+                                    { activeModalIndex === index && (
+                                        <div className='modalCover' style={{ display: activeModalIndex === index ? 'flex' : 'none' }}>
+                                            <div className='modalArea'>
+                                                <div className='modal'>
+                                                    <div className='mleft'>
+                                                        <h2 className='mleftTitle'>School Food</h2>
+                                                        <img src={process.env.PUBLIC_URL + list.img} alt={list.alt} />
+                                                    </div>
+                                                    <div className='mright'>
+                                                        <div className='mrightCover'>
+                                                            <div className='mrightList'>
+                                                                <div>
+                                                                    <h2 className='mrightTitle'>
+                                                                        {list.title}
+                                                                        <span>({list.sub})</span>
+                                                                    </h2>
+                                                                </div>
+                                                                <p className='mrdesc'>
+                                                                    {list.desc}
+                                                                </p>
+                                                            </div>
+                                                            <div className='mrightList'>
+                                                                <div>
+                                                                    <h2 className='mrightTitle'>
+                                                                        영양성분표 / {list.title}
+                                                                    </h2>
+                                                                </div>
+                                                                <div className='tableCover'>
+                                                                    <table>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>
+                                                                                    1회제공량<br />
+                                                                                    (g/ml)
+                                                                                </th>
+                                                                                <th>
+                                                                                    열량<br />
+                                                                                    (kcal)
+                                                                                </th>
+                                                                                <th>
+                                                                                    당류<br />
+                                                                                    (g)
+                                                                                </th>
+                                                                                <th>
+                                                                                    단백질<br />
+                                                                                    (g)
+                                                                                </th>
+                                                                                <th>
+                                                                                    포화지방<br />
+                                                                                    (g/ml)
+                                                                                </th>
+                                                                                <th>
+                                                                                    나트륨<br />
+                                                                                    (mg)
+                                                                                </th>
+                                                                                <th>
+                                                                                    탄수화물<br />
+                                                                                    (g)
+                                                                                </th>
+                                                                                <th>
+                                                                                    카페인<br />
+                                                                                    (mg)
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>
+                                                                                    {list.info1}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info2}kcal
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info3}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info4}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info5}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info6}mg
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info7}g
+                                                                                </td>
+                                                                                <td>
+                                                                                    {list.info8}mg
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                            <div className='mrightList'>
+                                                                <div>
+                                                                    <h2 className='mrightTitle'>
+                                                                        알레르기 유발 성분
+                                                                    </h2>
+                                                                </div>
+                                                                <p className='mrdesc'>
+                                                                    {list.desc2}
+                                                                </p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className='closeImg' onClick={(e)=>{e.stopPropagation(); handleModalClose()}}>
+                                                        <img src={`${process.env.PUBLIC_URL}/img/menu/close.png`} alt='close' />
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    ))}
+                                    )}
                                 </div>
-                            </div>
-                            {visibleItems < haksickList.length && (
-                                <div className='content2ListBtn'>
-                                    <button onClick={handleLoadMore}>더보기</button>
-                                </div>
-                            )}
-                        </>
-                    )
-                
-                case 'gansick' :
-                    return(
-                        <>
-                            <div className='content2List'>
-                                <div className='content2ListCover'>
-                                    {gansickList.slice(0 , visibleItems).map((gansick,index) => (
-                                        <div className='content2Listone' key={index}>
-                                            <div className='cloImg'>
-                                                <img src={process.env.PUBLIC_URL + gansick.img} alt={gansick.alt} />
-                                            </div>
-                                            <div className='cloDesc'>
-                                                <h2>{gansick.title}</h2>
-                                                <p>{gansick.sub}</p>
-                                            </div>
-                                            <div className='moreIcon'>
-                                                <img src={process.env.PUBLIC_URL + gansick.moreimg} alt={gansick.morealt} />
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                            {visibleItems < gansickList.length && (
-                                <div className='content2ListBtn'>
-                                    <button onClick={handleLoadMore}>더보기</button>
-                                </div>
-                            )}
-                        </>
-                    )
-                default:
-                    return(
-                        <></>
-                    )
-            }
+                            ))}
+                            
+                        </div>
+                    </div>
+                    {visibleItems < currentList4.length && (
+                        <div className='content2ListBtn'>
+                            <button onClick={handleLoadMore}>더보기</button>
+                        </div>
+                    )}
+                </>
+            )
         }
 
         // 학식 리스트
@@ -3199,6 +3659,16 @@ const Menu = () => {
                 sub : 'Teok-kkochi Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '와플대학 감성 한 스푼 추가한 추억의 떡꼬치 와플',
+                desc2 : '대두, 밀',
+                info1 : '125',
+                info2 : '318',
+                info3 : '8',
+                info4 : '8',
+                info5 : '9',
+                info6 : '376',
+                info7 : '68',
+                info8 : '0',
             },
         ]
 
@@ -3211,6 +3681,16 @@ const Menu = () => {
                 sub : 'Egg Butter K-Waffle',
                 moreimg : '/img/menu/waffle/waffleList/moreicon.png',
                 morealt : '더보기 이미지',
+                desc : '와플대학이 선택한 우리밀 크래커로 고소하고 향긋한 버터의 풍미와 우리 밀이 조화를 이루어 바삭한 식감이 돋보이는 간식입니다. 부드럽게 부서지는 식감이라 커피나 차에 곁들기 좋습니다. 나만의 즐거운 티타임을 즐겨보세요!',
+                desc2 : '계란, 우유, 밀',
+                info1 : '80',
+                info2 : '408',
+                info3 : '33',
+                info4 : '5',
+                info5 : '11',
+                info6 : '186',
+                info7 : '52',
+                info8 : '0',
             },
         ]
 
