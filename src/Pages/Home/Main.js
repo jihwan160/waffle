@@ -3,14 +3,13 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styled, { keyframes } from 'styled-components'
-
 import './Main.css'
 
 // sec1
 
 const Sec1 = styled.div`
     padding: 120px 0;
-    background-image: url('./../../img/main/sec1/sec01_bg.png');
+    background-image: url('./img/main/sec1/sec01_bg.png');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -38,7 +37,7 @@ const Sec1 = styled.div`
                 top: 0;
                 width: 100%;
                 height: 100%;
-                background-image: url('./../../img/main/sec1/sec01_visual__ele01.png');
+                background-image: url('./img/main/sec1/sec01_visual__ele01.png');
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: contain;
@@ -51,7 +50,7 @@ const Sec1 = styled.div`
                 top: 0;
                 width: 100%;
                 height: 100%;
-                background-image: url('./../../img/main/sec1/sec01_visual__ele02.png');
+                background-image: url('./img/main/sec1/sec01_visual__ele02.png');
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: contain;
@@ -126,7 +125,7 @@ const BmImg = styled.div`
     & .imgArea {
         position: relative;
         width: 100%;
-        background-image: url('./../../img/main/sec2/waffle/sec02_menu__bg01.png');
+        background-image: url('./img/main/sec2/waffle/sec02_menu__bg01.png');
         background-repeat: no-repeat;
         background-position: 0 0;
         background-size: contain;
@@ -136,7 +135,7 @@ const BmImg = styled.div`
     & .imgArea2 {
         position: relative;
         width: 100%;
-        background-image: url('./../../img/main/sec2/coffee/sec02_menu__bg02.png');
+        background-image: url('./img/main/sec2/coffee/sec02_menu__bg02.png');
         background-repeat: no-repeat;
         background-position: 0 0;
         background-size: contain;
@@ -318,7 +317,7 @@ const BmTopping = styled.div`
 const Sec3 = styled.div`
     width: 100%;
     padding: 340px 0;
-    background-image: url('./../../img/main/sec3/sec03_bg.png'),linear-gradient(to bottom, #fffce8, #fff);
+    background-image: url('./img/main/sec3/sec03_bg.png'),linear-gradient(to bottom, #fffce8, #fff);
     background-repeat: no-repeat;
     background-position: 0 0;
     background-size: cover;
@@ -333,7 +332,7 @@ const Sec3 = styled.div`
             display: block;
             width: 344px;
             height: 344px;
-            background-image: url('./../../img/main/sec3/sec03_ele01.png');
+            background-image: url('./img/main/sec3/sec03_ele01.png');
             background-repeat: no-repeat;
             background-position: 0 0;
             background-size: cover;
@@ -347,7 +346,7 @@ const Sec3 = styled.div`
             content: '';
             width: 532px;
             height: 532px;
-            background-image: url('./../../img/main/sec3/sec03_ele02.png');
+            background-image: url('./img/main/sec3/sec03_ele02.png');
             background-repeat: no-repeat;
             background-position: 0 0;
             background-size: cover;
@@ -587,7 +586,7 @@ const rotate = keyframes`
 const Sec5 = styled.div`
         padding: 80px 0;
         background: #fffce8;
-        background-image: url('./../../img/main/sec5/sec05_bg.png');
+        background-image: url('./img/main/sec5/sec05_bg.png');
         background-repeat: no-repeat;
         background-position: 0 130px;
         background-size: contain;
@@ -610,7 +609,7 @@ const Sec5 = styled.div`
                     position: relative;
                     &::after {
                         content: '';
-                        background-image: url('./../../img/main/sec5/sec00_rolling02.png');
+                        background-image: url('./img/main/sec5/sec00_rolling02.png');
                         display: block;
                         width: 88px;
                         height: 88px;
@@ -648,7 +647,7 @@ const Sec5 = styled.div`
                     display: block;
                     width: 100%;
                     height: 130px;
-                    background-image: url('./../../img/main/sec5/sec05_ai01.png');
+                    background-image: url('./img/main/sec5/sec05_ai01.png');
                     background-repeat: no-repeat;
                     background-position: center;
                     position: absolute;
@@ -710,7 +709,7 @@ const Sec5 = styled.div`
                                     display: block;
                                     width: 100%;
                                     height: 100%;
-                                    background-image: url('./../../img/main/sec5/sec05_sch.png');
+                                    background-image: url('./img/main/sec5/sec05_sch.png');
                                     background-position: center;
                                     background-repeat: no-repeat;
                                 }

@@ -16,7 +16,7 @@ const FooterArea = styled.div`
             padding: 0 15px;
 
             & .f_logo {
-                background-image: url('./../../img/footer/f_logo.svg');
+                background-image: url('./img/footer/f_logo.svg');
                 background-repeat: no-repeat;
                 background-position: center;
                 width: 100%;

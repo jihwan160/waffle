@@ -129,7 +129,7 @@ const BottomArea = styled.div`
                 
                 &::before {
                     content: '';
-                    background-image: url('./../../img/aside/band_con__logo.png');
+                    background-image: url('./img/aside/band_con__logo.png');
                     background-repeat: no-repeat;
                     background-position: 0 0;
                     background-size: contain;
